@@ -1,0 +1,20 @@
+/* ==========================================================================
+   PUFFY · FOUNDATIONS
+   Single entry point. One link tag gets you the whole system:
+
+     <link rel="stylesheet" href="../system/puffy.css">
+
+   Order matters — tokens define the values everything else consumes,
+   base sets the document floor, components build on both, utilities
+   land last so they can win a specificity tie.
+
+   Fonts are loaded by the page, not by the system, so a page can choose
+   its own loading strategy. Both families are on Google Fonts:
+     Mukta    — 400, 500, 600, 700
+     PT Serif — 400, 700
+   ========================================================================== */
+
+@import url("01-tokens.css");
+@import url("02-base.css");
+@import url("03-components.css");
+@import url("04-utilities.css");

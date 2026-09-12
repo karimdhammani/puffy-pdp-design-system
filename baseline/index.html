@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Puffy Lux Mattress — Local PDP Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================== HEADER ============================== -->
+<header class="site-header" id="header">
+  <div class="navbar">
+    <div class="navbar-left">
+      <a class="logo" href="#" aria-label="home"><img src="assets/icons/logo.svg" alt="Puffy"></a>
+      <nav class="nav-main" aria-label="Main">
+        <a href="#"><span>Mattresses</span></a>
+        <a href="#"><span>Smart Beds</span></a>
+        <a href="#"><span>Bed Frames</span></a>
+        <a href="#"><span>Bedding</span></a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <nav class="nav-secondary" aria-label="Secondary">
+        <a href="#">365-Night Guarantee</a>
+        <a href="#">Puffy VS</a>
+        <a href="#">Support</a>
+        <a href="#">Stores</a>
+      </nav>
+      <button class="search-btn" aria-label="Search"><img src="assets/icons/search.svg" alt=""></button>
+      <a class="cart" href="#" aria-label="Shopping cart with 0 items">
+        <img src="assets/icons/cart.svg" alt="">
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="sale-banner">
+    <div class="sale-text">LABOR DAY LAST CHANCE:</div>
+    <div class="sale-text sale-desc"><span>SAVE $1,350</span> + FREE MATTRESS UPGRADE IN CART</div>
+    <div class="countdown" id="countdown">
+      <div class="cd-group">
+        <div class="cd-digits"><div class="cd-digit" data-cd="h1">0</div><div class="cd-digit" data-cd="h2">0</div><span class="cd-colon">:</span></div>
+        <span class="cd-label">hour</span>
+      </div>
+      <div class="cd-group">
+        <div class="cd-digits"><div class="cd-digit" data-cd="m1">0</div><div class="cd-digit" data-cd="m2">0</div><span class="cd-colon">:</span></div>
+        <span class="cd-label">minutes</span>
+      </div>
+      <div class="cd-group">
+        <div class="cd-digits"><div class="cd-digit" data-cd="s1">0</div><div class="cd-digit" data-cd="s2">0</div></div>
+        <span class="cd-label">seconds</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="header-spacer"></div>
+
+  <div class="product-page">
+    <section id="pdp-top-fold">
+
+      <!-- ============================== GALLERY ============================== -->
+      <div id="pdp-gallery">
+
+        <!-- Thumbnails -->
+        <div class="thumbs">
+          <div class="thumbs-viewport" id="thumbs-viewport">
+            <div class="thumbs-track" id="thumbs-track">
+              <button class="thumb" data-slide="0"><div class="thumb-inner"><img src="assets/thumbs/01.jpg" alt="Front View"></div></button>
+              <button class="thumb" data-slide="1"><div class="thumb-inner"><img src="assets/thumbs/02.jpg" alt="Back Support"></div></button>
+              <button class="thumb" data-slide="2"><div class="thumb-inner"><img src="assets/thumbs/03.jpg" alt="Spotlight"></div></button>
+              <button class="thumb" data-slide="3"><div class="thumb-inner"><img src="assets/thumbs/04.jpg" alt="Layers"></div></button>
+              <button class="thumb" data-slide="4"><div class="thumb-inner"><img src="assets/thumbs/05.jpg" alt="Side View"></div></button>
+              <button class="thumb" data-slide="5"><div class="thumb-inner"><img src="assets/thumbs/06.jpg" alt="Layers Overview"></div></button>
+              <button class="thumb" data-slide="6"><div class="thumb-inner"><img src="assets/thumbs/07.jpg" alt="Layers Details"></div></button>
+              <button class="thumb" data-slide="7"><div class="thumb-inner"><img class="thumb-play" src="assets/icons/play.svg" alt=""><img src="assets/thumbs/08.jpg" alt="Top Layer"></div></button>
+              <button class="thumb" data-slide="8"><div class="thumb-inner"><img src="assets/thumbs/09.jpg" alt="Sleepers View"></div></button>
+              <button class="thumb" data-slide="9"><div class="thumb-inner"><img src="assets/thumbs/10.jpg" alt="Gift Bundle"></div></button>
+              <button class="thumb" data-slide="10"><div class="thumb-inner"><img src="assets/thumbs/11.jpg" alt="Top View"></div></button>
+            </div>
+          </div>
+          <div class="thumbs-fade top is-hidden" id="thumbs-fade-top"></div>
+          <button class="thumbs-nav prev is-hidden" id="thumbs-prev" aria-label="Previous slide"><img src="assets/icons/thumb-next.svg" alt=""></button>
+          <div class="thumbs-fade bottom" id="thumbs-fade-bottom"></div>
+          <button class="thumbs-nav next" id="thumbs-next" aria-label="Next slide"><img src="assets/icons/thumb-next.svg" alt=""></button>
+        </div>
+
+        <!-- Main carousel -->
+        <div class="carousel" id="carousel" role="region" aria-label="Product gallery">
+
+          <!-- 1. Front view + See What's Inside -->
+          <div class="slide is-active" data-index="0">
+            <header class="slide-header">
+              <h2>1M+ Sold. Sleep on Our Award-Winning Luxury Mattress</h2>
+              <ul class="badges">
+                <li class="badge"><img src="assets/icons/badge-best-luxury-2026.svg" alt=""><p>Best Luxury<br>Mattress 2026</p></li>
+                <li class="badge-award"><img src="assets/img/award-winner-badge.png" alt="Award Winner Badge"></li>
+                <li class="badge"><img src="assets/icons/badge-healthline.svg" alt=""><p>Best Mattress for<br>Back Pain 2025</p></li>
+              </ul>
+            </header>
+            <div class="slide-media"><img id="hero-img" src="assets/gallery/01.jpg" alt="Puffy Lux Mattress - Front View - in modern bedroom setting"></div>
+            <div class="hero-stage" id="hero-stage">
+              <div style="left:50%;top:50%">
+                <button class="see-inside-btn" id="see-inside-btn" type="button">
+                  <span class="si-trigger">
+                    <span class="si-pill">
+                      <span class="si-icon"><span class="si-icon-pulse"></span><span class="si-icon-core"><img src="assets/icons/layers.svg" alt=""></span></span>
+                      <span class="si-label">See What's Inside</span>
+                    </span>
+                    <img class="si-chevron" src="assets/icons/chevron-down-beige.svg" alt="">
+                  </span>
+                </button>
+              </div>
+              <div style="left:50%;top:77.5%"><img class="poty" src="assets/icons/product-of-the-year-2025.svg" alt="Product of the Year 2025"></div>
+            </div>
+          </div>
+
+          <!-- 2. Back support -->
+          <div class="slide" data-index="1">
+            <header class="slide-header">
+              <h2>Responsive Back Support <span>Endorsed by Chiropractic Experts</span></h2>
+              <div class="chiro-badge"><img src="assets/icons/badge-chiropractic.svg" alt=""></div>
+            </header>
+            <div class="slide-media"><img src="assets/gallery/02.jpg" alt="Puffy Lux Mattress - Back Support"></div>
+          </div>
+
+          <!-- 3. Spotlight / cooling -->
+          <div class="slide" data-index="2">
+            <header class="slide-header">
+              <h2>Advanced Cooling With Cooling Cloud™ Layer</h2>
+              <ul class="features">
+                <li class="feature"><img src="assets/icons/cooling.svg" alt=""><span class="feature-text">Sleep Cooler</span></li>
+                <li class="feature"><img src="assets/icons/sleep-deeper.svg" alt=""><span class="feature-text">Sleep Deeper</span></li>
+                <li class="feature"><img src="assets/icons/wake-revitalized.svg" alt=""><span class="feature-text">Wake Revitalized</span></li>
+              </ul>
+            </header>
+            <div class="slide-media"><img src="assets/gallery/03.jpg" alt="Puffy Lux Mattress - Spotlight"></div>
+          </div>
+
+          <!-- 4. Layers (plush + firm) -->
+          <div class="slide" data-index="3">
+            <header class="slide-header">
+              <h2>The 2-in-1 Mattress: Plush + Firm</h2>
+              <ul class="features">
+                <li class="feature"><img src="assets/icons/plush-top.svg" alt=""><span class="feature-text">Plush on top<br>for pressure support</span></li>
+                <li class="feature"><img src="assets/icons/firm-below.svg" alt=""><span class="feature-text">Firm below<br>for optimal alignment</span></li>
+              </ul>
+            </header>
+            <div class="slide-media"><img src="assets/gallery/04.jpg" alt="Puffy Lux Mattress - Layers"></div>
+          </div>
+
+          <!-- 5. Side view / risk-free -->
+          <div class="slide" data-index="4">
+            <header class="slide-header">
+              <h2>Join 1M+ Sleepers and Try Puffy Risk-Free</h2>
+              <ul class="features">
+                <li class="feature"><img src="assets/icons/sleep-trial-white.svg" alt=""><span class="feature-text">365-Night<br>Sleep Trial</span></li>
+                <li class="feature"><img src="assets/icons/free-shipping-white.svg" alt=""><span class="feature-text">Free Shipping<br>&amp; Returns</span></li>
+                <li class="feature"><img src="assets/icons/warranty-white.svg" alt=""><span class="feature-text">Lifetime<br>Warranty</span></li>
+              </ul>
+            </header>
+            <div class="slide-media"><img src="assets/gallery/05.jpg" alt="Puffy Lux Mattress - Side View - in modern bedroom setting"></div>
+          </div>
+
+          <!-- 6. Layers overview -->
+          <div class="slide" data-index="5">
+            <header class="slide-header">
+              <h2>Discover 12" of Luxurious Comfort</h2>
+              <ul class="features">
+                <li class="feature"><img src="assets/icons/height-12.svg" alt=""><span class="feature-text">12" Mattress Height</span></li>
+                <li class="feature"><img src="assets/icons/eight-layers.svg" alt=""><span class="feature-text">8-Layer Construction</span></li>
+                <li class="feature"><img src="assets/icons/medium-plush.svg" alt=""><span class="feature-text">Medium-Plush Feel</span></li>
+              </ul>
+            </header>
+            <div class="slide-media"><img src="assets/gallery/06.jpg" alt="Puffy Lux Mattress - Layers Overview"></div>
+          </div>
+
+          <!-- 7. Layers details / airflow -->
+          <div class="slide" data-index="6">
+            <header class="slide-header">
+              <h2>Cooling Airflow, All Night Long</h2>
+              <ul class="features">
+                <li class="feature"><img src="assets/icons/cooling-cloud-white.svg" alt=""><span class="feature-text">2" Cooling Cloud™ Layer</span></li>
+                <li class="feature"><img src="assets/icons/coils-white.svg" alt=""><span class="feature-text">6" Contour-Adapt Coils</span></li>
+              </ul>
+            </header>
+            <div class="slide-media"><img src="assets/gallery/07.jpg" alt="Puffy Lux Mattress - Layers Details"></div>
+          </div>
+
+          <!-- 8. Top layer (video) -->
+          <div class="slide" data-index="7">
+            <header class="slide-header">
+              <h2>Silky-Smooth Feel With Built-In Breathability</h2>
+              <ul class="features">
+                <li class="feature"><img src="assets/icons/tencel.svg" alt=""><span class="feature-text">TENCEL™ Fibers</span></li>
+                <li class="feature"><img src="assets/icons/quilted.svg" alt=""><span class="feature-text">Quilted Finish</span></li>
+                <li class="feature"><img src="assets/icons/moisture-wicking.svg" alt=""><span class="feature-text">Moisture-Wicking</span></li>
+              </ul>
+            </header>
+            <div class="slide-media is-video">
+              <video muted loop playsinline preload="metadata" poster="assets/gallery/08.jpg">
+                <source src="assets/gallery/08-top-layer.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <!-- 9. Sleepers view -->
+          <div class="slide" data-index="8">
+            <header class="slide-header">
+              <h2>Sleep Peacefully With Minimal Motion Transfer</h2>
+              <p class="slide-sub">Supportive layers help absorb movement between sleepers</p>
+            </header>
+            <div class="slide-media"><img src="assets/gallery/09.jpg" alt="Mattress - Sleepers View"></div>
+          </div>
+
+          <!-- 10. Free bundle -->
+          <div class="slide" data-index="9">
+            <header class="slide-header">
+              <h2>Free Luxury Sleep Bundle</h2>
+              <div class="bundle">
+                <section class="bundle-item">
+                  <span class="free-chip">Free</span>
+                  <img src="assets/img/bundle-2-pillows.png" alt="2 Signature Memory Foam Pillows">
+                  <article><p class="feature-text">2 Signature Memory<br>Foam Pillows</p><s>$240</s></article>
+                </section>
+                <section class="bundle-item">
+                  <span class="free-chip">Free</span>
+                  <img src="assets/img/bundle-sleep-mask.png" alt="1 Signature Sleep Mask">
+                  <article><p class="feature-text">Signature<br>Sleep Mask</p><s>$75</s></article>
+                </section>
+                <div class="bundle-value">
+                  <img src="assets/icons/luxury-frame.svg" alt="">
+                  <div><strong>$315</strong><span>VALUE</span></div>
+                </div>
+              </div>
+            </header>
+            <div class="slide-media"><img src="assets/gallery/10.jpg" alt="Gift Bundle - 2 pillows and 1 mask"></div>
+          </div>
+
+          <!-- 11. Top view -->
+          <div class="slide" data-index="10">
+            <header class="slide-header">
+              <h2>1M+ Sold. Sleep on Our Award-Winning Luxury Mattress</h2>
+              <ul class="badges">
+                <li class="badge"><img src="assets/icons/badge-best-luxury-2026.svg" alt=""><p>Best Luxury<br>Mattress 2026</p></li>
+                <li class="badge-award"><img src="assets/img/award-winner-badge.png" alt="Award Winner Badge"></li>
+                <li class="badge"><img src="assets/icons/badge-healthline.svg" alt=""><p>Best Mattress for<br>Back Pain 2025</p></li>
+              </ul>
+            </header>
+            <div class="slide-media"><img src="assets/gallery/11.jpg" alt="Puffy Lux Mattress - Top View - in modern bedroom setting"></div>
+          </div>
+
+          <!-- "See What's Inside" layer breakdown — layers are rendered from LAYERS in script.js -->
+          <div class="si" id="see-inside" aria-hidden="true">
+            <div class="si-backdrop"></div>
+            <div class="si-scene" role="group" aria-label="See what's inside layer breakdown">
+              <div class="si-stack" id="si-stack">
+                <div class="si-glow" id="si-glow"></div>
+              </div>
+              <div class="si-panel">
+                <div class="si-info">
+                  <div class="si-meta"><span class="si-tag" id="si-tag"></span><span class="si-count" id="si-count"></span></div>
+                  <p class="si-name" id="si-name"></p>
+                  <h3 class="si-title" id="si-title"></h3>
+                  <p class="si-desc" id="si-desc"></p>
+                </div>
+                <div class="si-tabs" id="si-tabs" role="tablist" aria-label="Mattress layers"></div>
+              </div>
+            </div>
+            <button class="si-close" id="si-close" type="button" aria-label="Close layer breakdown and return to the mattress"><img src="assets/icons/close.svg" alt=""></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================== BUY BOX ============================== -->
+      <aside id="pdp-description">
+        <div class="desc-stack">
+
+          <div class="title-block">
+            <div>
+              <h1>Puffy <b>LUX</b> Mattress</h1><span class="hybrid-badge">Hybrid<img src="assets/icons/info-amber.svg" alt=""></span>
+            </div>
+            <div class="rating">
+              <span class="stars">
+                <img src="assets/icons/star.svg" alt=""><img src="assets/icons/star.svg" alt=""><img src="assets/icons/star.svg" alt=""><img src="assets/icons/star.svg" alt=""><img src="assets/icons/star.svg" alt="">
+              </span>
+              <a href="#">4.9 based on all 14,072 Puffy Mattress reviews</a>
+            </div>
+          </div>
+
+          <div class="benefits">
+            <div class="benefit"><span class="benefit-icon"><img src="assets/icons/back-support.svg" alt=""></span><h3>Cushioned back support with responsive foam and coils</h3></div>
+            <div class="benefit"><span class="benefit-icon"><img src="assets/icons/cooling-cloud.svg" alt=""></span><h3>Cooler sleep with gel foam that draws heat away</h3></div>
+          </div>
+
+          <div class="upgrades">
+            <div class="row-head">
+              <div class="row-title">Available Upgrades:</div>
+              <button class="link-btn" type="button">Compare</button>
+            </div>
+            <div class="upgrade-grid">
+              <a class="upgrade-card is-current" aria-label="Current product">
+                <div class="radio-row"><span class="radio is-checked"><img src="assets/icons/check-circle.svg" alt=""></span></div>
+                <div class="upgrade-img"><img src="assets/img/lux-cutout.png" alt="Puffy Lux"></div>
+                <div class="upgrade-info">
+                  <div class="upgrade-name">Puffy <b>LUX</b> <span class="mini-badge">Hybrid</span></div>
+                  <ul class="upgrade-list">
+                    <li><img src="assets/icons/tick-green.svg" alt="">8 layers</li>
+                    <li><img src="assets/icons/tick-green.svg" alt="">Medium-plush</li>
+                    <li><img src="assets/icons/tick-green.svg" alt="">Memory foam &amp; wrapped coils</li>
+                  </ul>
+                </div>
+              </a>
+              <a class="upgrade-card" href="https://puffy.com/products/puffy-royal-mattress" target="_blank" rel="noopener" aria-label="Upgrade product">
+                <div class="premium-tab">Premium Choice</div>
+                <div class="radio-row"><span class="radio"></span><span class="upgrade-price" id="upgrade-price">+ $340</span></div>
+                <div class="upgrade-img"><img src="assets/img/royal-cutout.png" alt="Puffy Royal"></div>
+                <div class="upgrade-info">
+                  <div class="upgrade-name">Puffy <b>ROYAL</b> <span class="mini-badge">Hybrid</span></div>
+                  <ul class="upgrade-list">
+                    <li><img src="assets/icons/tick-green.svg" alt="">10 layers</li>
+                    <li><img src="assets/icons/tick-green.svg" alt="">Ultra-plush</li>
+                    <li><img src="assets/icons/tick-green.svg" alt="">5-Zoned support foam &amp; coils</li>
+                  </ul>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="sizes">
+            <dl>
+              <dt class="row-head">
+                <div class="row-title">Choose Your Size:</div>
+                <button class="link-btn" type="button">Size Guide</button>
+              </dt>
+              <dd class="size-grid" id="size-grid">
+                <button class="size-btn is-selected" data-size="Twin">Twin</button>
+                <button class="size-btn" data-size="Twin XL">Twin XL</button>
+                <button class="size-btn" data-size="Full">Full</button>
+                <button class="size-btn" data-size="Queen">Queen</button>
+                <button class="size-btn" data-size="King">King</button>
+                <button class="size-btn" data-size="Cal King">Cal King</button>
+                <button class="size-btn" data-size="Split Head Queen"><span>Split Head<br>Queen</span></button>
+                <button class="size-btn" data-size="Split Head King"><span>Split Head<br>King</span></button>
+                <button class="size-btn" data-size="Split King">Split King</button>
+              </dd>
+            </dl>
+          </div>
+
+          <div class="offer-box">
+            <div class="offer-chip">LABOR DAY LAST CHANCE</div>
+
+            <div class="offer-top">
+              <div class="offer-price">
+                <span class="price" id="price">$749</span>
+                <div class="offer-total">(Total Value <span><s id="total-value">$2,149</s>)</span><img src="assets/icons/info-dark.svg" alt=""></div>
+              </div>
+              <span class="offer-code">Save $1,350 with<br>code LABORDAY</span>
+            </div>
+
+            <div class="offer-rows">
+              <div class="offer-row">
+                <div class="offer-icon"><img class="lg" src="assets/icons/upgrade.svg" alt=""></div>
+                <div class="offer-content">
+                  <div class="offer-label"><span class="green">FREE Upgrade</span><span>Included</span></div>
+                  <div class="offer-detail">Get our 10-layer Royal, <b>worth <span id="royal-worth">$1,089</span>, at no extra cost.</b></div>
+                </div>
+              </div>
+              <div class="offer-row">
+                <div class="offer-icon"><img src="assets/icons/gift.svg" alt=""></div>
+                <div class="offer-content">
+                  <div class="offer-label"><span class="green">FREE Bundle</span><span id="bundle-worth">Worth $315</span></div>
+                  <div class="offer-detail" id="bundle-detail"><span class="ib">2 Signature Pillows</span> + <span class="ib">1 Signature Sleep Mask</span></div>
+                </div>
+              </div>
+              <div class="offer-row">
+                <div class="offer-icon"><img src="assets/icons/sleep-trial.svg" alt=""></div>
+                <div class="offer-content">
+                  <div class="offer-label"><span class="green">365 Nights</span><span>Sleep Trial</span></div>
+                  <div class="offer-detail">Try it at home for<br><button class="u-btn" type="button">365-nights</button>, risk-free</div>
+                </div>
+              </div>
+              <div class="offer-row">
+                <div class="offer-icon"><img src="assets/icons/warranty.svg" alt=""></div>
+                <div class="offer-content">
+                  <div class="offer-label"><span class="green">Lifetime</span><span>Warranty</span></div>
+                  <div class="offer-detail">Backed by our<br><button class="u-btn" type="button">lifetime warranty</button></div>
+                </div>
+              </div>
+              <div class="offer-row">
+                <div class="offer-icon"><img class="lg" src="assets/icons/delivery.svg" alt=""></div>
+                <div class="offer-content">
+                  <div class="offer-label"><span class="green">FREE Delivery</span><span id="ships-in">Ships in 1–2 days</span></div>
+                  <div class="offer-detail"><button class="u-btn" type="button">Free shipping,<br>Free returns</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="atc-box">
+              <button class="atc-btn" id="atc-main" type="button" aria-label="Add to cart">
+                <span>
+                  <span class="atc-label"><span class="ping"></span>Add to Cart</span>
+                  <span class="atc-sub">Free Upgrade Included</span>
+                </span>
+              </button>
+              <div class="atc-note">Free Upgrade to <span>Puffy Royal</span></div>
+            </div>
+
+            <div class="finance">
+              <p>Starting at <span id="affirm-price">$47</span>/mo or 0% APR with <span class="affirm-logo">affirm</span>. <a href="#">See if you qualify</a></p>
+              <div class="guarantee"><span>100% money-back guarantee.</span><img src="assets/icons/info-dark.svg" alt=""></div>
+            </div>
+          </div>
+
+          <div class="white-glove">
+            <button type="button">
+              <img class="wg-img" src="assets/img/white-glove.jpg" alt="">
+              <span class="wg-title">Full-Service In-Home Setup &amp;&nbsp;Assembly</span>
+              <img class="wg-chevron" src="assets/icons/chevron-down.svg" alt="">
+            </button>
+          </div>
+
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============================== USP BANNER ============================== -->
+    <div class="usp-banner">
+      <section>
+        <article class="usp-item"><img src="assets/icons/usp-sleep-trial.svg" alt=""><p>365-Night Sleep Trial</p></article>
+        <article class="usp-item"><img src="assets/icons/usp-free-shipping.svg" alt=""><p>Free Shipping &amp; Returns</p></article>
+        <article class="usp-item"><img src="assets/icons/usp-warranty.svg" alt=""><p>Lifetime Warranty</p></article>
+        <article class="usp-item"><img src="assets/icons/usp-usa.svg" alt=""><p>Assembled in USA</p></article>
+      </section>
+    </div>
+    <div class="page-end"></div>
+  </div>
+</main>
+
+<!-- Sticky add-to-cart bar -->
+<div class="sticky-atc" id="sticky-atc">
+  <div class="sticky-title">
+    <h2>Puffy <b>LUX</b> Mattress</h2><span class="hybrid-badge">Hybrid<img src="assets/icons/info-amber.svg" alt=""></span>
+  </div>
+  <button class="atc-btn" type="button" aria-label="Add to cart">
+    <span>
+      <span class="atc-label"><span class="ping"></span>Add to Cart <span id="sticky-price">| $749</span></span>
+      <span class="atc-sub">Free Upgrade to Royal</span>
+    </span>
+  </button>
+</div>
+
+<button class="chat-pill" type="button" aria-label="Puffy customer support chat">Chat <img src="assets/img/chat-avatar.png" alt=""></button>
+
+<script src="script.js"></script>
+</body>
+</html>

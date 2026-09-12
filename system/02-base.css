@@ -1,0 +1,199 @@
+/* ==========================================================================
+   PUFFY · FOUNDATIONS — 02 BASE
+   Reset, document defaults, and the accessibility floor every page inherits.
+   Depends on: 01-tokens.css
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+html,
+body { margin: 0; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-regular);
+  color: var(--text-strong);
+  background: var(--bg-base-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: none;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, dl, dd, figure, blockquote { margin: 0; padding: 0; }
+
+ul, ol { list-style: none; }
+
+img, video, svg, picture { display: block; max-width: 100%; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+a { color: inherit; text-decoration: none; }
+
+b, strong { font-weight: var(--puffy-weight-bold); }
+
+hr {
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: var(--border-soft);
+}
+
+/* --------------------------------------------------------------------------
+   Focus — WCAG 2.2 · 2.4.11 Focus Not Obscured, 2.4.13 Focus Appearance
+   One ring, defined once, visible on every ground the system uses.
+   Never remove it without replacing it.
+   ----------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--fill-cta);
+  outline-offset: 2px;
+  border-radius: var(--puffy-radius-2);
+}
+
+/* On the navy ground the dark ring disappears — invert it. */
+.pf-on-dark :focus-visible,
+.pf-surface--cta :focus-visible {
+  outline-color: var(--base-white);
+}
+
+/* --------------------------------------------------------------------------
+   Motion — respect the OS setting. Nothing in this system depends on
+   animation to convey meaning, so cutting it is always safe.
+   ----------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TYPE SCALE
+   Each class maps to one Figma text style. Names match the library exactly:
+   `Puffy/Heading/Section` → `.pf-heading-section`.
+
+   ✓ = the style is bound in the Figma file and its metrics were read back
+       from the library, not transcribed by hand.
+   ----------------------------------------------------------------------- */
+
+/* ✓ Puffy/Display — PT Serif Regular 28/36. Product name, sticky-bar title. */
+.pf-display {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-28);
+  line-height: var(--puffy-leading-36);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* ✓ Puffy/Heading/Section — PT Serif Regular 40/48. One per section, max. */
+.pf-heading-section {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-40);
+  line-height: var(--puffy-leading-48);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* ✓ Puffy/Heading/Support — PT Serif Bold 24/32. Sub-heads, panel titles. */
+.pf-heading-support {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-24);
+  line-height: var(--puffy-leading-32);
+  font-weight: var(--puffy-weight-bold);
+}
+
+/* Puffy/Heading/Row — Mukta Regular 20/28. "Choose Your Size:" row titles. */
+.pf-heading-row {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-20);
+  line-height: var(--puffy-leading-28);
+  font-weight: var(--puffy-weight-regular);
+}
+
+/* Puffy/Price — PT Serif Bold 32/40. Money, and only money. */
+.pf-price {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-32);
+  line-height: var(--puffy-leading-40);
+  font-weight: var(--puffy-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ✓ Puffy/Body/Large — Mukta Regular 18/24. */
+.pf-body-lg {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-18);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-regular);
+}
+
+/* ✓ Puffy/Body/Default — Mukta Regular 16/24. The page's baseline voice. */
+.pf-body {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-regular);
+}
+
+/* ✓ Puffy/Body/Benefit desktop — Mukta Medium 16/24. Benefit bullets. */
+.pf-body-benefit {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-medium);
+}
+
+/* ✓ Puffy/Body/Small — Mukta Regular 14/20. */
+.pf-body-sm {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-regular);
+}
+
+/* ✓ Puffy/Label/Caption — Mukta Medium 14/20. Metadata, helper text. */
+.pf-caption {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-medium);
+}
+
+/* ✓ Puffy/Label/Inside — Mukta SemiBold 14/20, +1.4px tracking, uppercase.
+   Eyebrows and section markers. Uppercase is baked in: this style IS the
+   caps treatment, so never stack `text-transform` on top of another style. */
+.pf-label {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-semibold);
+  letter-spacing: var(--puffy-tracking-label);
+  text-transform: uppercase;
+}
+
+/* Puffy/Label/Micro — Mukta Medium 12/15. Badge interiors only. */
+.pf-label-micro {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-12);
+  line-height: var(--puffy-leading-15);
+  font-weight: var(--puffy-weight-medium);
+  letter-spacing: var(--puffy-tracking-wide);
+  text-transform: uppercase;
+}

@@ -1,0 +1,264 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "Puffy · Foundations — PDP design tokens. W3C DTCG format, so this file imports into Figma Variables, Style Dictionary, and Tokens Studio without translation. Mirrors system/01-tokens.css; `npm run check` proves the two agree.",
+  "puffy": {
+    "$description": "TIER 1 — primitives. Raw values with no assigned meaning.",
+    "color": {
+      "navy-blue-light-1000": { "$type": "color", "$value": "#2b2f44" },
+      "navy-blue-dark-1000": { "$type": "color", "$value": "#777b91" },
+      "slate-gray-light-1000": { "$type": "color", "$value": "#596c7f" },
+      "slate-gray-dark-1000": { "$type": "color", "$value": "#869cb2" },
+      "solid-beige-700": { "$type": "color", "$value": "#464645" },
+      "solid-beige-600": { "$type": "color", "$value": "#8e8c89" },
+      "solid-beige-500": { "$type": "color", "$value": "#d5d2cc" },
+      "solid-beige-400": { "$type": "color", "$value": "#f1e3cf" },
+      "solid-beige-300": { "$type": "color", "$value": "#e5e3df" },
+      "solid-beige-200": { "$type": "color", "$value": "#ebeae7" },
+      "solid-beige-100": { "$type": "color", "$value": "#fbfbfa" },
+      "beige-100": { "$type": "color", "$value": "#faf6ef" },
+      "beige-200": { "$type": "color", "$value": "#f1eeea" },
+      "beige-600": { "$type": "color", "$value": "#e0c194" },
+      "beige-700": { "$type": "color", "$value": "#c79344" },
+      "primary-600": { "$type": "color", "$value": "#1b1d2b" },
+      "amber-light-1000": { "$type": "color", "$value": "#8f6c1a" },
+      "amber-dark-1000": { "$type": "color", "$value": "#e0be70" },
+      "green-light-1000": { "$type": "color", "$value": "#067a57" },
+      "red-light-1000": { "$type": "color", "$value": "#c73a3a" },
+      "base-black": { "$type": "color", "$value": "#333333" },
+      "base-white": { "$type": "color", "$value": "#ffffff" }
+    },
+    "space": {
+      "$type": "dimension",
+      "$description": "4px base grid.",
+      "0": { "$value": "0px" },
+      "2": { "$value": "2px" },
+      "4": { "$value": "4px" },
+      "6": { "$value": "6px" },
+      "8": { "$value": "8px" },
+      "12": { "$value": "12px" },
+      "16": { "$value": "16px" },
+      "20": { "$value": "20px" },
+      "24": { "$value": "24px" },
+      "32": { "$value": "32px" },
+      "40": { "$value": "40px" },
+      "48": { "$value": "48px" },
+      "56": { "$value": "56px" },
+      "64": { "$value": "64px" },
+      "80": { "$value": "80px" },
+      "96": { "$value": "96px" }
+    },
+    "radius": {
+      "$type": "dimension",
+      "0": { "$value": "0px" },
+      "2": { "$value": "2px" },
+      "4": { "$value": "4px" },
+      "6": { "$value": "6px" },
+      "8": { "$value": "8px" },
+      "12": { "$value": "12px" },
+      "pill": { "$value": "999px" },
+      "circle": { "$value": "50%" }
+    },
+    "size": {
+      "$type": "dimension",
+      "$description": "Font sizes.",
+      "10": { "$value": "10px" },
+      "12": { "$value": "12px" },
+      "14": { "$value": "14px" },
+      "16": { "$value": "16px" },
+      "18": { "$value": "18px" },
+      "20": { "$value": "20px" },
+      "24": { "$value": "24px" },
+      "28": { "$value": "28px" },
+      "32": { "$value": "32px" },
+      "40": { "$value": "40px" }
+    },
+    "leading": {
+      "$type": "dimension",
+      "12": { "$value": "12px" },
+      "15": { "$value": "15px" },
+      "18": { "$value": "18px" },
+      "20": { "$value": "20px" },
+      "24": { "$value": "24px" },
+      "28": { "$value": "28px" },
+      "32": { "$value": "32px" },
+      "36": { "$value": "36px" },
+      "40": { "$value": "40px" },
+      "48": { "$value": "48px" }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500 },
+      "semibold": { "$value": 600 },
+      "bold": { "$value": 700 }
+    },
+    "tracking": {
+      "$type": "dimension",
+      "tight": { "$value": "-0.03em" },
+      "none": { "$value": "0" },
+      "label": { "$value": "0.1em" },
+      "wide": { "$value": "0.12em" },
+      "wider": { "$value": "0.14em" }
+    },
+    "family": {
+      "$type": "fontFamily",
+      "sans": { "$value": ["Mukta", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"] },
+      "serif": { "$value": ["PT Serif", "ui-serif", "Georgia", "Cambria", "Times New Roman", "serif"] }
+    }
+  },
+
+  "text": {
+    "$type": "color",
+    "$description": "TIER 2 — semantic. Contrast ratios stated against the ground each role is approved for.",
+    "strong": { "$value": "{puffy.color.base-black}", "$extensions": { "contrast": "12.63:1 on bg.base-white — AAA" } },
+    "sub-strong": { "$value": "rgba(43, 47, 68, 0.8)", "$extensions": { "contrast": "8.20:1 on bg.base-white — AAA" } },
+    "soft": { "$value": "{puffy.color.slate-gray-light-1000}", "$extensions": { "contrast": "5.42:1 on bg.base-white — AA" } },
+    "sub-soft": { "$value": "{puffy.color.solid-beige-500}", "$extensions": { "contrast": "8.74:1 on fill.cta — AAA. Light-on-dark only." } },
+    "on-fill": { "$value": "{puffy.color.base-white}", "$extensions": { "contrast": "13.18:1 on fill.cta — AAA" } }
+  },
+
+  "highlight": {
+    "$type": "color",
+    "strong": { "$value": "{puffy.color.amber-light-1000}", "$extensions": { "contrast": "4.85:1 on bg.base-white — AA. The text-safe amber." } },
+    "soft": { "$value": "{puffy.color.amber-dark-1000}", "$extensions": { "contrast": "7.39:1 on fill.cta — AAA. Fails on white; dark grounds only." } }
+  },
+
+  "status": {
+    "$type": "color",
+    "success": { "$value": "{puffy.color.green-light-1000}", "$extensions": { "contrast": "5.34:1 on bg.base-white — AA" } },
+    "warning": { "$value": "{puffy.color.red-light-1000}", "$extensions": { "contrast": "5.13:1 on bg.base-white — AA" } },
+    "brand": { "$value": "{puffy.color.navy-blue-dark-1000}", "$extensions": { "contrast": "3.16:1 on fill.cta — large text and non-text only." } }
+  },
+
+  "border": {
+    "$type": "color",
+    "$description": "Non-text boundaries. WCAG 2.2 · 1.4.11 requires 3:1; the softest in use clears it at 3.35:1.",
+    "strong": { "$value": "{puffy.color.navy-blue-light-1000}" },
+    "sub-strong": { "$value": "{puffy.color.solid-beige-600}" },
+    "soft": { "$value": "{puffy.color.solid-beige-500}" },
+    "hairline": { "$value": "{puffy.color.solid-beige-300}" },
+    "green-strong": { "$value": "rgba(6, 122, 87, 0.8)" },
+    "green-soft": { "$value": "rgba(6, 122, 87, 0.14)" },
+    "amber": { "$value": "{puffy.color.amber-dark-1000}" }
+  },
+
+  "bg": {
+    "$type": "color",
+    "$description": "Page and surface grounds.",
+    "base-white": { "$value": "{puffy.color.base-white}" },
+    "strong": { "$value": "{puffy.color.solid-beige-600}" },
+    "sub-strong": { "$value": "{puffy.color.solid-beige-500}" },
+    "normal": { "$value": "{puffy.color.solid-beige-300}" },
+    "soft": { "$value": "{puffy.color.solid-beige-200}" },
+    "sub-soft": { "$value": "{puffy.color.solid-beige-100}" },
+    "warm": { "$value": "{puffy.color.beige-100}" }
+  },
+
+  "fill": {
+    "$type": "color",
+    "$description": "Deliberate blocks of colour that carry meaning.",
+    "strong": { "$value": "{puffy.color.solid-beige-700}" },
+    "offer": { "$value": "{puffy.color.solid-beige-400}" },
+    "cta": { "$value": "{puffy.color.navy-blue-light-1000}" },
+    "cta-hover": { "$value": "{puffy.color.primary-600}" },
+    "lighter": { "$value": "{puffy.color.solid-beige-200}" },
+    "green-strong": { "$value": "{puffy.color.green-light-1000}" },
+    "green-soft": { "$value": "rgba(6, 122, 87, 0.1)" }
+  },
+
+  "icon": {
+    "$type": "color",
+    "strong": { "$value": "{puffy.color.base-black}" },
+    "soft": { "$value": "{puffy.color.solid-beige-500}" },
+    "green": { "$value": "{puffy.color.green-light-1000}" },
+    "amber-soft": { "$value": "{puffy.color.amber-dark-1000}" },
+    "on-fill": { "$value": "{puffy.color.base-white}" }
+  },
+
+  "typography": {
+    "$type": "typography",
+    "$description": "The 12 text styles. Names map 1:1 to the Figma library and to the .pf-* classes in system/02-base.css.",
+    "display": {
+      "$value": { "fontFamily": "{puffy.family.serif}", "fontSize": "{puffy.size.28}", "lineHeight": "{puffy.leading.36}", "fontWeight": "{puffy.weight.regular}", "letterSpacing": "{puffy.tracking.none}" },
+      "$extensions": { "figma": "Puffy/Display", "class": ".pf-display", "use": "Product name, sticky-bar title." }
+    },
+    "heading-section": {
+      "$value": { "fontFamily": "{puffy.family.serif}", "fontSize": "{puffy.size.40}", "lineHeight": "{puffy.leading.48}", "fontWeight": "{puffy.weight.regular}", "letterSpacing": "{puffy.tracking.none}" },
+      "$extensions": { "figma": "Puffy/Heading/Section", "class": ".pf-heading-section", "use": "One per section, at most." }
+    },
+    "heading-support": {
+      "$value": { "fontFamily": "{puffy.family.serif}", "fontSize": "{puffy.size.24}", "lineHeight": "{puffy.leading.32}", "fontWeight": "{puffy.weight.bold}" },
+      "$extensions": { "figma": "Puffy/Heading/Support", "class": ".pf-heading-support", "use": "Sub-heads and panel titles." }
+    },
+    "heading-row": {
+      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.20}", "lineHeight": "{puffy.leading.28}", "fontWeight": "{puffy.weight.regular}" },
+      "$extensions": { "figma": "Puffy/Heading/Row", "class": ".pf-heading-row", "use": "Buy-box row titles — \"Choose Your Size:\"." }
+    },
+    "price": {
+      "$value": { "fontFamily": "{puffy.family.serif}", "fontSize": "{puffy.size.32}", "lineHeight": "{puffy.leading.40}", "fontWeight": "{puffy.weight.bold}" },
+      "$extensions": { "figma": "Puffy/Price", "class": ".pf-price", "use": "Money, and only money. Tabular figures." }
+    },
+    "body-large": {
+      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.18}", "lineHeight": "{puffy.leading.24}", "fontWeight": "{puffy.weight.regular}" },
+      "$extensions": { "figma": "Puffy/Body/Large", "class": ".pf-body-lg" }
+    },
+    "body-default": {
+      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.16}", "lineHeight": "{puffy.leading.24}", "fontWeight": "{puffy.weight.regular}" },
+      "$extensions": { "figma": "Puffy/Body/Default", "class": ".pf-body", "use": "The page's baseline voice." }
+    },
+    "body-benefit": {
+      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.16}", "lineHeight": "{puffy.leading.24}", "fontWeight": "{puffy.weight.medium}" },
+      "$extensions": { "figma": "Puffy/Body/Benefit desktop", "class": ".pf-body-benefit" }
+    },
+    "body-small": {
+      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.14}", "lineHeight": "{puffy.leading.20}", "fontWeight": "{puffy.weight.regular}" },
+      "$extensions": { "figma": "Puffy/Body/Small", "class": ".pf-body-sm" }
+    },
+    "label-caption": {
+      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.14}", "lineHeight": "{puffy.leading.20}", "fontWeight": "{puffy.weight.medium}" },
+      "$extensions": { "figma": "Puffy/Label/Caption", "class": ".pf-caption", "use": "Metadata and helper text." }
+    },
+    "label-inside": {
+      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.14}", "lineHeight": "{puffy.leading.20}", "fontWeight": "{puffy.weight.semibold}", "letterSpacing": "{puffy.tracking.label}", "textCase": "uppercase" },
+      "$extensions": { "figma": "Puffy/Label/Inside", "class": ".pf-label", "use": "Eyebrows and section markers. Caps are baked in — never stack another text-transform on it." }
+    },
+    "label-micro": {
+      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.12}", "lineHeight": "{puffy.leading.15}", "fontWeight": "{puffy.weight.medium}", "letterSpacing": "{puffy.tracking.wide}", "textCase": "uppercase" },
+      "$extensions": { "figma": "Puffy/Label/Micro", "class": ".pf-label-micro", "use": "Badge interiors only." }
+    }
+  },
+
+  "effect": {
+    "$type": "shadow",
+    "$description": "The five effect styles.",
+    "float": { "$value": { "offsetX": "0px", "offsetY": "4px", "blur": "16px", "spread": "0px", "color": "rgba(0,0,0,0.2)" }, "$extensions": { "use": "Floating affordances — help pill, toast." } },
+    "lift": { "$value": { "offsetX": "0px", "offsetY": "8px", "blur": "20px", "spread": "0px", "color": "rgba(0,0,0,0.5)" }, "$extensions": { "use": "An element pulled off a dark ground." } },
+    "ring-focus": { "$value": "0 0 0 3px #ffffff, 0 0 0 5px #2b2f44", "$extensions": { "use": "Keyboard focus. WCAG 2.2 · 2.4.13." } },
+    "ring-selected": { "$value": "0 0 0 3px #e0c194", "$extensions": { "use": "Selected state on imagery, where a border would be lost." } },
+    "inset-hairline": { "$value": "inset 0 0 0 1px rgba(255,255,255,0.25)", "$extensions": { "use": "Separates a light element from a light photo." } }
+  },
+
+  "motion": {
+    "duration": {
+      "$type": "duration",
+      "fast": { "$value": "150ms" },
+      "base": { "$value": "200ms" },
+      "slow": { "$value": "500ms" }
+    },
+    "ease": {
+      "$type": "cubicBezier",
+      "standard": { "$value": [0.4, 0, 0.2, 1] },
+      "out": { "$value": [0, 0, 0.2, 1] }
+    }
+  },
+
+  "layout": {
+    "$type": "dimension",
+    "max": { "$value": "1440px" },
+    "gutter": { "$value": "32px", "$extensions": { "responsive": "24px ≤1024, 16px ≤640" } },
+    "rhs-column": { "$value": "450px", "$extensions": { "use": "Buy-box width on the source PDP." } },
+    "navbar-height": { "$value": "64px" },
+    "banner-height": { "$value": "58px" },
+    "target-min": { "$value": "44px", "$extensions": { "use": "Comfortable interactive target. WCAG 2.2 · 2.5.8 floor is 24px." } }
+  }
+}

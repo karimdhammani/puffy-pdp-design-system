@@ -1,0 +1,20 @@
+name: check
+
+# The design system is described in two files — a CSS runtime and a DTCG JSON
+# for tooling. Whenever two files describe one thing they drift, so every push
+# re-resolves both to literal values and diffs them.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tokens:
+    name: tokens in sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node tools/check-tokens.js

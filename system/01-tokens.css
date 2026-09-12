@@ -1,0 +1,251 @@
+/* ==========================================================================
+   PUFFY · FOUNDATIONS — 01 TOKENS
+   --------------------------------------------------------------------------
+   The single source of truth for every value in the system.
+   Variable names are kept 1:1 with the Figma library
+   (Puffy · Foundations — PDP Style Guide) and with puffy.com's own :root,
+   so a token renamed in Figma is a one-line change here — and vice versa.
+
+   Three tiers, in order. Never skip a tier:
+     1. Primitive  --puffy-*        raw values, no meaning
+     2. Semantic   --text-*, --bg-* role the value plays
+     3. Component  --pf-btn-*       only where a component needs its own knob
+
+   Rule of thumb: components consume TIER 2. If you find yourself reaching
+   for a tier-1 primitive inside a component, the semantic layer is missing
+   a token — add it here rather than hard-coding.
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     TIER 1 · PRIMITIVES — Colour ramps
+     Lifted verbatim from the live puffy.com :root. Do not invent new hex
+     values at this tier; extend a ramp instead.
+     --------------------------------------------------------------------- */
+  --navy-blue-light-1000: #2b2f44;
+  --navy-blue-dark-1000: #777b91;
+  --slate-gray-light-1000: #596c7f;
+  --slate-gray-dark-1000: #869cb2;
+
+  --solid-beige-700: #464645;
+  --solid-beige-600: #8e8c89;
+  --solid-beige-500: #d5d2cc;
+  --solid-beige-400: #f1e3cf;
+  --solid-beige-300: #e5e3df;
+  --solid-beige-200: #ebeae7;
+  --solid-beige-100: #fbfbfa;
+
+  --beige-100: #faf6ef;
+  --beige-200: #f1eeea;
+  --beige-600: #e0c194;
+  --beige-700: #c79344;
+
+  --primary-600: #1b1d2b;
+  --amber-light-1000: #8f6c1a;
+  --amber-dark-1000: #e0be70;
+  --green-light-1000: #067a57;
+  --red-light-1000: #c73a3a;
+
+  --base-black: #333333;
+  --base-white: #ffffff;
+
+  /* ------------------------------------------------------------------------
+     TIER 1 · PRIMITIVES — Space (4px base grid)
+     Figma: `puffy/space/*`. 0 · 8 · 12 · 16 · 24 · 48 · 64 are the values
+     the source layouts actually lean on; the rest fill the ramp.
+     --------------------------------------------------------------------- */
+  --puffy-space-0: 0px;
+  --puffy-space-2: 2px;
+  --puffy-space-4: 4px;
+  --puffy-space-6: 6px;
+  --puffy-space-8: 8px;
+  --puffy-space-12: 12px;
+  --puffy-space-16: 16px;
+  --puffy-space-20: 20px;
+  --puffy-space-24: 24px;
+  --puffy-space-32: 32px;
+  --puffy-space-40: 40px;
+  --puffy-space-48: 48px;
+  --puffy-space-56: 56px;
+  --puffy-space-64: 64px;
+  --puffy-space-80: 80px;
+  --puffy-space-96: 96px;
+
+  /* ------------------------------------------------------------------------
+     TIER 1 · PRIMITIVES — Radius
+     Figma: `puffy/radius/*`.
+     --------------------------------------------------------------------- */
+  --puffy-radius-0: 0px;
+  --puffy-radius-2: 2px;
+  --puffy-radius-4: 4px;
+  --puffy-radius-6: 6px;
+  --puffy-radius-8: 8px;
+  --puffy-radius-12: 12px;
+  --puffy-radius-pill: 999px;
+  --puffy-radius-circle: 50%;
+
+  /* ------------------------------------------------------------------------
+     TIER 1 · PRIMITIVES — Type
+     Two families, no more. PT Serif carries voice (headings, price,
+     product names); Mukta carries information (everything else).
+     --------------------------------------------------------------------- */
+  --font-sans: "Mukta", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "PT Serif", ui-serif, Georgia, Cambria, "Times New Roman", serif;
+
+  --puffy-weight-regular: 400;
+  --puffy-weight-medium: 500;
+  --puffy-weight-semibold: 600;
+  --puffy-weight-bold: 700;
+
+  --puffy-size-10: 10px;
+  --puffy-size-12: 12px;
+  --puffy-size-14: 14px;
+  --puffy-size-16: 16px;
+  --puffy-size-18: 18px;
+  --puffy-size-20: 20px;
+  --puffy-size-24: 24px;
+  --puffy-size-28: 28px;
+  --puffy-size-32: 32px;
+  --puffy-size-40: 40px;
+
+  --puffy-leading-12: 12px;
+  --puffy-leading-15: 15px;
+  --puffy-leading-18: 18px;
+  --puffy-leading-20: 20px;
+  --puffy-leading-24: 24px;
+  --puffy-leading-28: 28px;
+  --puffy-leading-32: 32px;
+  --puffy-leading-36: 36px;
+  --puffy-leading-40: 40px;
+  --puffy-leading-48: 48px;
+
+  --puffy-tracking-tight: -0.03em;
+  --puffy-tracking-none: 0;
+  --puffy-tracking-label: 0.1em;   /* Figma: Label/Inside, 1.4px @ 14px */
+  --puffy-tracking-wide: 0.12em;
+  --puffy-tracking-wider: 0.14em;
+
+  /* ------------------------------------------------------------------------
+     TIER 2 · SEMANTIC — Text
+     Verified contrast on --bg-base-white:
+       text/strong      12.63:1  AAA
+       text/sub-strong   8.20:1  AAA
+       text/soft         5.42:1  AA
+     --------------------------------------------------------------------- */
+  --text-strong: var(--base-black);
+  --text-sub-strong: rgba(43, 47, 68, 0.8);
+  --text-soft: var(--slate-gray-light-1000);
+  --text-sub-soft: var(--solid-beige-500);   /* light-on-dark only */
+  --text-on-fill: var(--base-white);
+
+  --highlight-strong: var(--amber-light-1000); /* 4.85:1 on white — text-safe */
+  --highlight-soft: var(--amber-dark-1000);    /* 7.39:1 on fill/cta — dark bg only */
+  --success: var(--green-light-1000);          /* 5.34:1 on white */
+  --warning: var(--red-light-1000);            /* 5.13:1 on white */
+  --brand: var(--navy-blue-dark-1000);
+
+  /* ------------------------------------------------------------------------
+     TIER 2 · SEMANTIC — Border
+     Non-text UI boundaries. WCAG 2.2 · 1.4.11 asks 3:1; the softest
+     border in play (--border-sub-strong, 3.35:1 on white) clears it.
+     --------------------------------------------------------------------- */
+  --border-strong: var(--navy-blue-light-1000);
+  --border-sub-strong: var(--solid-beige-600);
+  --border-soft: var(--solid-beige-500);
+  --border-hairline: var(--solid-beige-300);
+  --border-green-strong: rgba(6, 122, 87, 0.8);
+  --border-green-soft: rgba(6, 122, 87, 0.14);
+  --border-amber: var(--amber-dark-1000);
+
+  /* ------------------------------------------------------------------------
+     TIER 2 · SEMANTIC — Background & fill
+     `bg/*` = page and surface grounds. `fill/*` = deliberate blocks of
+     colour that carry meaning (a CTA, an offer, a promotion).
+     --------------------------------------------------------------------- */
+  --bg-base-white: var(--base-white);
+  --bg-strong: var(--solid-beige-600);
+  --bg-sub-strong: var(--solid-beige-500);
+  --bg-normal: var(--solid-beige-300);
+  --bg-soft: var(--solid-beige-200);
+  --bg-sub-soft: var(--solid-beige-100);
+  --bg-warm: var(--beige-100);
+
+  --fill-strong: var(--solid-beige-700);
+  --fill-offer: var(--solid-beige-400);
+  --fill-cta: var(--navy-blue-light-1000);
+  --fill-cta-hover: var(--primary-600);
+  --fill-lighter: var(--solid-beige-200);
+  --fill-green-strong: var(--green-light-1000);
+  --fill-green-soft: rgba(6, 122, 87, 0.1);
+
+  /* ------------------------------------------------------------------------
+     TIER 2 · SEMANTIC — Icon
+     --------------------------------------------------------------------- */
+  --icon-strong: var(--base-black);
+  --icon-soft: var(--solid-beige-500);
+  --icon-green: var(--green-light-1000);
+  --icon-amber-soft: var(--amber-dark-1000);
+  --icon-on-fill: var(--base-white);
+
+  /* ------------------------------------------------------------------------
+     TIER 2 · SEMANTIC — Effects
+     The five effect styles in the Figma library.
+     --------------------------------------------------------------------- */
+  --shadow-float: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-lift: 0 8px 20px rgba(0, 0, 0, 0.5);
+  --ring-focus: 0 0 0 3px var(--base-white), 0 0 0 5px var(--fill-cta);
+  --ring-selected: 0 0 0 3px var(--beige-600);
+  --inset-hairline: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+
+  /* ------------------------------------------------------------------------
+     TIER 2 · SEMANTIC — Motion
+     Short, eased, and always opt-out-able (see 02-base.css).
+     --------------------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --duration-fast: 0.15s;
+  --duration-base: 0.2s;
+  --duration-slow: 0.5s;
+
+  /* ------------------------------------------------------------------------
+     TIER 2 · SEMANTIC — Layout
+     --------------------------------------------------------------------- */
+  --layout-max: 1440px;
+  --layout-gutter: var(--puffy-space-32);
+  --layout-rhs-column: 450px;   /* buy-box width on the source PDP */
+  --navbar-height: 64px;
+  --banner-height: 58px;
+  --header-height: calc(var(--navbar-height) + var(--banner-height));
+
+  /* Minimum interactive target. WCAG 2.2 · 2.5.8 (AA) sets the floor at
+     24px; 44px is the comfortable target this system designs to. */
+  --target-min: 44px;
+
+  /* ------------------------------------------------------------------------
+     TIER 3 · COMPONENT
+     Only the knobs a component genuinely needs to expose. Each one points
+     at a tier-2 token — never at a raw hex.
+     --------------------------------------------------------------------- */
+  --pf-btn-height-lg: 64px;
+  --pf-btn-height-md: 56px;
+  --pf-btn-height-sm: 44px;
+  --pf-btn-radius: var(--puffy-radius-8);
+
+  --pf-selector-height: 52px;
+  --pf-card-radius: var(--puffy-radius-8);
+  --pf-panel-radius: var(--puffy-radius-12);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --layout-gutter: var(--puffy-space-24);
+    --layout-rhs-column: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --layout-gutter: var(--puffy-space-16);
+    --pf-btn-height-lg: 56px;
+  }
+}

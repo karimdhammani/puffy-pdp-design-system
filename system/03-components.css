@@ -1,0 +1,670 @@
+/* ==========================================================================
+   PUFFY · FOUNDATIONS — 03 COMPONENTS
+   --------------------------------------------------------------------------
+   Every component below was extracted from the source Lux PDP, then
+   generalised: page-specific measurements became tokens, one-off colours
+   became semantic roles, and each pattern gained the states the source
+   was missing (focus, disabled, selected).
+
+   Naming: `pf-` block, `pf-block--modifier`, `pf-block__element`.
+   States are `is-` classes so JS can toggle them without touching styles.
+
+   Components consume TIER 2 tokens only. No raw hex below this line.
+   ========================================================================== */
+
+/* ==========================================================================
+   SURFACE — the grounds a section can sit on
+   ========================================================================== */
+
+.pf-surface { background: var(--bg-base-white); color: var(--text-strong); }
+.pf-surface--soft { background: var(--bg-soft); color: var(--text-strong); }
+.pf-surface--warm { background: var(--bg-warm); color: var(--text-strong); }
+.pf-surface--offer { background: var(--fill-offer); color: var(--text-strong); }
+
+/* The navy ground. Pairs with `.pf-on-dark` for the inverted focus ring. */
+.pf-surface--cta {
+  background: var(--fill-cta);
+  color: var(--text-sub-soft);
+}
+.pf-surface--cta .pf-heading-section,
+.pf-surface--cta .pf-heading-support,
+.pf-surface--cta .pf-display { color: var(--base-white); }
+.pf-surface--cta .pf-label { color: var(--highlight-soft); }
+
+/* ==========================================================================
+   BUTTON
+   Three intents, three sizes. `--lg` is the primary add-to-cart moment;
+   there should only ever be one on screen at a time.
+   ========================================================================== */
+
+.pf-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--puffy-space-8);
+  min-height: var(--pf-btn-height-sm);
+  padding: 0 var(--puffy-space-24);
+  border: 1px solid transparent;
+  border-radius: var(--pf-btn-radius);
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-18);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-medium);
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--duration-base) var(--ease-standard),
+              border-color var(--duration-base) var(--ease-standard),
+              color var(--duration-base) var(--ease-standard);
+}
+
+.pf-btn:disabled,
+.pf-btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* --- Intent ------------------------------------------------------------ */
+
+.pf-btn--primary {
+  background: var(--fill-cta);
+  color: var(--text-on-fill);
+}
+.pf-btn--primary:hover:not(:disabled) { background: var(--fill-cta-hover); }
+
+.pf-btn--secondary {
+  background: var(--bg-base-white);
+  border-color: var(--border-strong);
+  color: var(--text-strong);
+}
+.pf-btn--secondary:hover:not(:disabled) { background: var(--fill-offer); }
+
+.pf-btn--quiet {
+  background: transparent;
+  border-color: var(--border-sub-strong);
+  color: var(--text-strong);
+}
+.pf-btn--quiet:hover:not(:disabled) { background: var(--bg-sub-soft); }
+
+/* --- Size -------------------------------------------------------------- */
+
+.pf-btn--lg {
+  width: 100%;
+  min-height: var(--pf-btn-height-lg);
+  font-size: var(--puffy-size-20);
+  line-height: var(--puffy-leading-28);
+}
+.pf-btn--md { min-height: var(--pf-btn-height-md); }
+
+/* --- Stacked label (price under the verb) ------------------------------ */
+
+.pf-btn__label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--puffy-space-12);
+  line-height: 1.25;
+}
+.pf-btn__sub {
+  display: block;
+  font-size: 0.9em;
+  line-height: 1.25;
+}
+
+/* --- Text link --------------------------------------------------------- */
+
+.pf-link {
+  display: inline-block;
+  color: var(--text-soft);
+  font-weight: var(--puffy-weight-medium);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.pf-link:hover { text-decoration: none; }
+.pf-link--strong { color: var(--text-strong); }
+
+/* ==========================================================================
+   SELECTOR — a grid of mutually exclusive choices (size, firmness, colour)
+   Semantics: a <fieldset> of radios, or role="radiogroup" + role="radio".
+   Never a bare <div> — the selected state has to reach a screen reader.
+   ========================================================================== */
+
+.pf-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--pf-selector-cols, 3), 1fr);
+  gap: var(--puffy-space-8);
+}
+
+.pf-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--pf-selector-height);
+  padding: var(--puffy-space-6) var(--puffy-space-8);
+  border: 1px solid var(--border-sub-strong);
+  border-radius: var(--pf-card-radius);
+  background: var(--bg-base-white);
+  font-size: var(--puffy-size-18);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-medium);
+  color: var(--text-sub-strong);
+  text-align: center;
+  transition: background-color var(--duration-base) var(--ease-standard),
+              border-color var(--duration-base) var(--ease-standard),
+              color var(--duration-base) var(--ease-standard);
+}
+.pf-selector:hover {
+  background: var(--fill-offer);
+  color: var(--text-strong);
+}
+.pf-selector.is-selected,
+.pf-selector[aria-checked="true"] {
+  border-color: var(--border-strong);
+  background: var(--fill-offer);
+  color: var(--text-strong);
+  font-weight: var(--puffy-weight-bold);
+  cursor: default;
+}
+.pf-selector:disabled,
+.pf-selector[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+.pf-selector__meta {
+  font-size: var(--puffy-size-12);
+  line-height: var(--puffy-leading-15);
+  font-weight: var(--puffy-weight-regular);
+  color: var(--text-soft);
+}
+
+/* ==========================================================================
+   RADIO — the visual mark only. Pair with a real <input type="radio">.
+   ========================================================================== */
+
+.pf-radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border: 2px solid var(--border-sub-strong);
+  border-radius: var(--puffy-radius-circle);
+  background: transparent;
+  transition: background-color var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard);
+}
+.pf-radio.is-checked,
+[aria-checked="true"] > .pf-radio,
+:checked + .pf-radio {
+  border-color: var(--icon-green);
+  background: var(--icon-green);
+}
+.pf-radio__mark {
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+.pf-radio.is-checked .pf-radio__mark,
+[aria-checked="true"] > .pf-radio .pf-radio__mark,
+:checked + .pf-radio .pf-radio__mark { opacity: 1; }
+
+/* ==========================================================================
+   OPTION CARD — a richer choice: image, name, price, and what you get.
+   Used for model upgrades and bundles.
+   ========================================================================== */
+
+.pf-option-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--pf-option-cols, 2), 1fr);
+  gap: var(--puffy-space-8) var(--puffy-space-16);
+}
+
+.pf-option-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--puffy-space-8);
+  padding: var(--puffy-space-8);
+  border: 1px solid var(--border-sub-strong);
+  /* The notched corner leaves room for the `--flag` tab to dock. */
+  border-radius: var(--pf-card-radius) 0 var(--pf-card-radius) var(--pf-card-radius);
+  background: var(--bg-base-white);
+  text-align: left;
+  transition: background-color var(--duration-base) var(--ease-standard),
+              border-color var(--duration-base) var(--ease-standard);
+}
+.pf-option-card:hover { background: var(--bg-sub-soft); }
+
+.pf-option-card.is-current {
+  border-color: var(--text-strong);
+  border-radius: var(--pf-card-radius);
+  background: var(--fill-offer);
+  pointer-events: none;
+}
+
+.pf-option-card--plain { border-radius: var(--pf-card-radius); }
+
+.pf-option-card__flag {
+  position: absolute;
+  bottom: 100%;
+  right: -1px;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 var(--puffy-space-8);
+  border-radius: var(--puffy-radius-4) var(--puffy-radius-4) 0 0;
+  background: var(--fill-strong);
+  color: var(--text-on-fill);
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-bold);
+}
+
+.pf-option-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--puffy-space-8);
+}
+.pf-option-card__media {
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+}
+.pf-option-card__media img {
+  width: 172px;
+  max-width: 100%;
+  aspect-ratio: 40 / 19;
+  object-fit: contain;
+  object-position: bottom;
+}
+.pf-option-card__name {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
+}
+.pf-option-card__price {
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-bold);
+}
+
+/* Bulleted "what you get" list inside a card. */
+.pf-option-list {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-medium);
+}
+.pf-option-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--puffy-space-4);
+  color: var(--text-sub-strong);
+}
+.pf-option-list img,
+.pf-option-list svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ==========================================================================
+   BADGE
+   --rule   hairline above/below, serif caps — the "HYBRID" treatment
+   --solid  filled block, for a claim that needs to win
+   --chip   pill that straddles a panel edge, for an offer headline
+   ========================================================================== */
+
+.pf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--puffy-space-4);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.pf-badge--rule {
+  padding: 0 var(--puffy-space-4);
+  border-top: 1px solid var(--border-amber);
+  border-bottom: 1px solid var(--border-amber);
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-18);
+  text-transform: uppercase;
+}
+.pf-badge--rule.pf-badge--sm {
+  padding: 0 var(--puffy-space-2);
+  font-size: var(--puffy-size-12);
+  line-height: var(--puffy-leading-15);
+}
+.pf-badge--rule img,
+.pf-badge--rule svg { width: 18px; height: 18px; margin-block: -4px; }
+
+.pf-badge--solid {
+  padding: var(--puffy-space-2) var(--puffy-space-8);
+  border-radius: var(--puffy-radius-4);
+  background: var(--fill-strong);
+  color: var(--text-on-fill);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-semibold);
+}
+.pf-badge--success { background: var(--fill-green-strong); }
+.pf-badge--warning { background: var(--warning); }
+
+.pf-badge--chip {
+  padding: var(--puffy-space-2) var(--puffy-space-8);
+  border-radius: var(--puffy-radius-4);
+  background: var(--fill-green-strong);
+  color: var(--text-on-fill);
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-medium);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   PANEL — a bordered block that groups a claim with its proof.
+   `--offer` is the green promotional variant with a straddling chip.
+   ========================================================================== */
+
+.pf-panel {
+  position: relative;
+  padding: var(--puffy-space-16);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--pf-panel-radius);
+  background: var(--bg-base-white);
+}
+
+.pf-panel--offer {
+  padding: 0 var(--puffy-space-16) var(--puffy-space-16);
+  border-color: var(--border-green-strong);
+}
+.pf-panel--offer .pf-panel__chip {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+.pf-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--puffy-space-4) var(--puffy-space-8);
+  margin-inline: calc(var(--puffy-space-16) * -1);
+  padding: var(--puffy-space-24) var(--puffy-space-16);
+  border-bottom: 1px solid var(--border-green-strong);
+  border-radius: var(--pf-panel-radius) var(--pf-panel-radius) 0 0;
+  background: var(--fill-green-soft);
+}
+.pf-panel__rows { padding-block: var(--puffy-space-12); }
+.pf-panel__row {
+  display: flex;
+  align-items: center;
+  gap: var(--puffy-space-6);
+  padding-block: var(--puffy-space-16);
+  border-top: 1px solid var(--border-green-soft);
+}
+.pf-panel__row:first-child { border-top: 0; }
+.pf-panel__row-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--puffy-space-16);
+  width: 100%;
+  min-width: 0;
+}
+.pf-panel__row-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 50%;
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-bold);
+}
+.pf-panel__row-detail {
+  max-width: 172px;
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-medium);
+  color: var(--text-sub-strong);
+  text-align: right;
+  text-wrap: balance;
+}
+
+/* ==========================================================================
+   PRICE BLOCK
+   ========================================================================== */
+
+.pf-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.pf-price-block .pf-price { color: var(--success); }
+.pf-price-block__was {
+  display: flex;
+  align-items: center;
+  gap: var(--puffy-space-4);
+  color: var(--text-soft);
+}
+.pf-price-block__was s {
+  text-decoration-color: var(--text-strong);
+  text-decoration-thickness: 1px;
+}
+
+/* ==========================================================================
+   BENEFIT ROW — icon + one-line claim. The workhorse of the buy box.
+   ========================================================================== */
+
+.pf-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--puffy-space-8);
+  padding-block: var(--puffy-space-4);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+.pf-benefit {
+  display: flex;
+  align-items: center;
+  gap: var(--puffy-space-8);
+}
+.pf-benefit__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.pf-benefit__text {
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-medium);
+  color: var(--text-soft);
+}
+
+/* ==========================================================================
+   SECTION HEAD — a row title with an optional action on the right.
+   ========================================================================== */
+
+.pf-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--puffy-space-8);
+}
+
+/* ==========================================================================
+   RATING
+   ========================================================================== */
+
+.pf-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--puffy-space-6);
+  font-size: var(--puffy-size-16);
+  font-weight: var(--puffy-weight-medium);
+  color: var(--text-soft);
+}
+.pf-rating__stars { display: flex; }
+.pf-rating__stars img,
+.pf-rating__stars svg { height: 16px; width: auto; }
+
+/* ==========================================================================
+   ACCORDION — disclosure. Drive it with <details>/<summary> or a
+   <button aria-expanded>; the chevron follows `[aria-expanded]`/`[open]`.
+   ========================================================================== */
+
+.pf-accordion {
+  padding: var(--puffy-space-12);
+  border: 1px solid var(--border-sub-strong);
+  border-radius: var(--pf-card-radius);
+  background: var(--bg-sub-soft);
+}
+.pf-accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--puffy-space-12);
+  width: 100%;
+  text-align: left;
+}
+.pf-accordion__media {
+  width: 80px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: var(--pf-card-radius);
+  object-fit: cover;
+}
+.pf-accordion__title {
+  flex: 1;
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-20);
+  line-height: var(--puffy-leading-28);
+  font-weight: var(--puffy-weight-bold);
+}
+.pf-accordion__chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+[aria-expanded="true"] .pf-accordion__chevron,
+[open] .pf-accordion__chevron { transform: rotate(180deg); }
+
+.pf-accordion__panel { padding-top: var(--puffy-space-12); }
+
+/* ==========================================================================
+   USP BAR — the navy reassurance strip.
+   ========================================================================== */
+
+.pf-usp {
+  padding: var(--puffy-space-24) var(--layout-gutter);
+  background: var(--fill-cta);
+  color: var(--text-sub-soft);
+}
+.pf-usp__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: var(--puffy-space-16) var(--puffy-space-20);
+  max-width: var(--layout-max);
+  margin-inline: auto;
+}
+.pf-usp__item {
+  display: flex;
+  align-items: center;
+  gap: var(--puffy-space-8);
+}
+.pf-usp__item img,
+.pf-usp__item svg { width: 56px; height: 56px; flex-shrink: 0; }
+.pf-usp__item p {
+  font-size: var(--puffy-size-20);
+  line-height: var(--puffy-leading-28);
+  font-weight: var(--puffy-weight-medium);
+}
+
+/* ==========================================================================
+   STICKY BAR — reappears once the primary CTA leaves the viewport.
+   ========================================================================== */
+
+.pf-stickybar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: var(--puffy-space-24);
+  padding: var(--puffy-space-12) var(--layout-gutter);
+  border-top: 1px solid var(--border-soft);
+  background: var(--fill-lighter);
+  transform: translateY(100%);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+.pf-stickybar.is-visible { transform: translateY(0); }
+.pf-stickybar__title {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--puffy-space-12);
+  min-width: 0;
+}
+.pf-stickybar .pf-btn { width: 336px; min-height: var(--pf-btn-height-md); }
+
+@media (max-width: 640px) {
+  .pf-stickybar { gap: var(--puffy-space-12); }
+  .pf-stickybar__title { display: none; }
+  .pf-stickybar .pf-btn { width: 100%; }
+}
+
+/* ==========================================================================
+   FLOATING PILL — persistent help affordance.
+   ========================================================================== */
+
+.pf-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--puffy-space-8);
+  height: 48px;
+  padding: 0 var(--puffy-space-6) 0 var(--puffy-space-20);
+  border-radius: var(--puffy-radius-pill);
+  background: var(--text-soft);
+  color: var(--text-on-fill);
+  font-size: var(--puffy-size-18);
+  font-weight: var(--puffy-weight-medium);
+  box-shadow: var(--shadow-float);
+}
+.pf-pill img { width: 36px; height: 36px; border-radius: var(--puffy-radius-pill); }
+
+/* ==========================================================================
+   ICON — one sizing contract, so icons never drift.
+   `currentColor` fills mean an icon inherits the text colour around it.
+   ========================================================================== */
+
+.pf-icon { display: inline-block; flex-shrink: 0; width: 24px; height: 24px; }
+.pf-icon--16 { width: 16px; height: 16px; }
+.pf-icon--20 { width: 20px; height: 20px; }
+.pf-icon--28 { width: 28px; height: 28px; }
+.pf-icon--32 { width: 32px; height: 32px; }
+.pf-icon--40 { width: 40px; height: 40px; }
+.pf-icon--48 { width: 48px; height: 48px; }
+.pf-icon--56 { width: 56px; height: 56px; }
+.pf-icon--64 { width: 64px; height: 64px; }

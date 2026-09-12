@@ -1,0 +1,11 @@
+{
+  "name": "puffy-pdp-design-system",
+  "version": "1.0.0",
+  "description": "Tokenised design system extracted from the Puffy Lux mattress PDP.",
+  "private": true,
+  "scripts": {
+    "check": "node tools/check-tokens.js",
+    "serve": "npx --yes serve . -l 4173"
+  },
+  "license": "UNLICENSED"
+}

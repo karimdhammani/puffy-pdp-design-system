@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puffy · Foundations</title>
+<meta name="description" content="A tokenised design system extracted from the Puffy Lux mattress PDP.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap">
+<link rel="stylesheet" href="system/puffy.css">
+
+<style>
+  body { background: var(--fill-cta); }
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding-block: var(--puffy-space-64);
+  }
+  .home__logo { width: 149px; height: auto; margin-bottom: var(--puffy-space-32); }
+  .home__lede { margin-top: var(--puffy-space-16); max-width: 58ch; color: var(--text-sub-soft); }
+  .home__rule {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 520px;
+    margin-block: var(--puffy-space-48);
+    border-radius: var(--puffy-radius-pill);
+    overflow: hidden;
+  }
+  .home__rule span { height: 12px; }
+
+  .home__links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--puffy-space-16);
+  }
+  .home__card {
+    display: block;
+    padding: var(--puffy-space-24);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--pf-panel-radius);
+    transition: background-color var(--duration-base) var(--ease-standard),
+                border-color var(--duration-base) var(--ease-standard);
+  }
+  .home__card:hover { background: rgba(255, 255, 255, 0.06); border-color: var(--highlight-soft); }
+  .home__card h2 { color: var(--base-white); margin-bottom: var(--puffy-space-6); }
+  .home__card p { color: var(--text-sub-soft); }
+  .home__card span { display: block; margin-top: var(--puffy-space-12); color: var(--highlight-soft); }
+
+  .home__foot { margin-top: var(--puffy-space-64); color: var(--text-sub-soft); }
+  .home__foot a { color: var(--highlight-soft); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+
+<body class="pf-on-dark">
+<main class="home">
+  <div class="pf-container">
+    <img class="home__logo" src="system/icons/logo.svg" alt="Puffy" width="149" height="36">
+    <p class="pf-label" style="color: var(--highlight-soft)">Puffy &nbsp;/&nbsp; Foundations &nbsp;/&nbsp; v1.0</p>
+    <h1 class="pf-heading-section" style="color: var(--base-white)">Comfort, made consistent.</h1>
+    <p class="pf-body-lg home__lede">
+      A tokenised design system extracted from the Lux mattress PDP, so new pages can be
+      built in the existing design language instead of re-deriving it each time.
+    </p>
+
+    <div class="home__rule" role="presentation">
+      <span style="background: var(--fill-offer)"></span>
+      <span style="background: var(--bg-soft)"></span>
+      <span style="background: var(--highlight-soft)"></span>
+      <span style="background: var(--success)"></span>
+    </div>
+
+    <nav class="home__links" aria-label="Sections">
+      <a class="home__card" href="style-guide/">
+        <h2 class="pf-heading-support">Style guide</h2>
+        <p class="pf-body-sm">Tokens, type, components, and the rules for using them — generated live from the stylesheet.</p>
+        <span class="pf-caption">Open →</span>
+      </a>
+      <a class="home__card" href="baseline/">
+        <h2 class="pf-heading-support">Source baseline</h2>
+        <p class="pf-body-sm">A 1:1 replica of the live Lux PDP. The reference floor the redesign has to beat.</p>
+        <span class="pf-caption">Open →</span>
+      </a>
+      <a class="home__card" href="pages/_template.html">
+        <h2 class="pf-heading-support">Page template</h2>
+        <p class="pf-body-sm">A working starting point with the scaffolding and the pre-ship checklist in place.</p>
+        <span class="pf-caption">Open →</span>
+      </a>
+    </nav>
+
+    <p class="pf-body-sm home__foot">
+      Lux PDP &nbsp;·&nbsp; Source-derived reference &nbsp;·&nbsp; September 2026<br>
+      <a href="https://github.com/karimdhammani/puffy-pdp-design-system">Repository and documentation on GitHub</a>
+    </p>
+  </div>
+</main>
+</body>
+</html>

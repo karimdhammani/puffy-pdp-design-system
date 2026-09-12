@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New page — Puffy</title>
+<meta name="description" content="">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap">
+
+<!-- The whole design system. Nothing else should be needed. -->
+<link rel="stylesheet" href="../system/puffy.css">
+</head>
+
+<body>
+<!-- Always first in the tab order. -->
+<a class="pf-skip-link" href="#main">Skip to content</a>
+
+<main id="main">
+
+  <!-- ====================================================================
+       A section is: a surface, a container, and a stack.
+       Those three plus the type classes cover most of a page.
+       ================================================================== -->
+  <section class="pf-surface pf-section">
+    <div class="pf-container pf-stack" style="--gap: var(--puffy-space-24)">
+      <p class="pf-label pf-text-highlight">Eyebrow</p>
+      <h1 class="pf-heading-section">A headline in the brand voice</h1>
+      <p class="pf-body-lg pf-text-soft pf-prose">
+        Supporting copy. <code>.pf-prose</code> caps the line length so it stays readable
+        however wide the viewport gets.
+      </p>
+      <div class="pf-cluster" style="--gap: var(--puffy-space-12)">
+        <button class="pf-btn pf-btn--primary pf-btn--md">Primary action</button>
+        <button class="pf-btn pf-btn--secondary pf-btn--md">Secondary action</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- A tinted band to separate sections without adding a rule. -->
+  <section class="pf-surface--soft pf-section">
+    <div class="pf-container pf-stack" style="--gap: var(--puffy-space-32)">
+      <h2 class="pf-heading-support">Why it works</h2>
+      <div class="pf-benefits" style="max-width: var(--layout-rhs-column)">
+        <div class="pf-benefit">
+          <span class="pf-benefit__icon">
+            <img class="pf-icon--40" src="../system/icons/cooling-cloud.svg" alt="">
+          </span>
+          <h3 class="pf-benefit__text">One claim per row, no paragraph</h3>
+        </div>
+        <div class="pf-benefit">
+          <span class="pf-benefit__icon">
+            <img class="pf-icon--40" src="../system/icons/back-support.svg" alt="">
+          </span>
+          <h3 class="pf-benefit__text">Decorative icons take alt=""</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- On the navy ground, add .pf-on-dark so the focus ring inverts. -->
+  <section class="pf-usp pf-on-dark">
+    <div class="pf-usp__inner">
+      <div class="pf-usp__item"><img src="../system/icons/usp-sleep-trial.svg" alt=""><p>101-Night Trial</p></div>
+      <div class="pf-usp__item"><img src="../system/icons/usp-free-shipping.svg" alt=""><p>Free Shipping</p></div>
+      <div class="pf-usp__item"><img src="../system/icons/usp-warranty.svg" alt=""><p>Lifetime Warranty</p></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     BEFORE YOU SHIP
+
+     1. No raw hex, px, or font sizes in this file. Reach for a token; if one
+        is missing, add it to system/01-tokens.css rather than inlining.
+     2. One .pf-btn--lg.pf-btn--primary on screen at a time.
+     3. Tab through the page. Every control keeps a visible focus ring.
+     4. Headings descend without skipping a level.
+     5. Decorative images take alt=""; meaningful ones take real alt text.
+     6. Icon-only controls carry a .pf-sr-only label.
+
+     The full component set and the rules for each are in /style-guide.
+     ==================================================================== -->
+</body>
+</html>
