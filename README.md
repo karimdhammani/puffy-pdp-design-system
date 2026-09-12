@@ -4,9 +4,16 @@ A tokenised design system extracted from the Puffy Lux mattress PDP, built so ne
 pages can be designed and shipped in the existing design language instead of
 re-deriving it every time.
 
-**[→ Open the living style guide](https://karimdhammani.github.io/puffy-pdp-design-system/style-guide/)**
-&nbsp;·&nbsp;
-**[→ View the source baseline](https://karimdhammani.github.io/puffy-pdp-design-system/baseline/)**
+Clone it and open `index.html` — there is no build step.
+
+```bash
+git clone https://github.com/karimdhammani/puffy-pdp-design-system.git
+cd puffy-pdp-design-system
+npx --yes serve . -l 4173
+```
+
+`/` is the index · `/style-guide/` is the living style guide · `/baseline/` is the
+source replica · `/pages/_template.html` starts a new page.
 
 ---
 
@@ -125,19 +132,18 @@ metrics were read back from the library itself rather than transcribed, so
 `Puffy/Heading/Section` in Figma and `.pf-heading-section` in CSS are guaranteed to be
 the same 40/48 PT Serif Regular.
 
-The file currently contains two built pages — `00 · Cover` and `06 · Source Icons` —
-against a library of 256 variables, 22 text styles, and 5 effect styles. Those two pages
-bind roughly 30 variables and 8 text styles between them, and those are the values
-confirmed directly from Figma.
+The library holds 256 variables, 22 text styles, and 5 effect styles. Values read back
+directly from it so far cover the colour roles (`--fill-cta`, `--fill-offer`, `--bg-soft`,
+`--bg-sub-soft`, `--bg-base-white`, `--success`, `--highlight-soft`, `--highlight-strong`,
+`--text-strong`, `--text-soft`, `--icon-strong`), the `puffy/space/*` and `puffy/radius/*`
+scales, and 8 of the text styles.
 
-**The live source CSS** — everything else is derived from puffy.com's own `:root` and the
-Lux PDP stylesheet, using the naming convention Figma established. Token names are kept
-1:1 with the live site, so this system can be adopted incrementally rather than as a
-rewrite.
+**The live source CSS** — the rest is derived from puffy.com's own `:root` and the Lux PDP
+stylesheet, using the naming convention Figma established. Token names are kept 1:1 with
+the live site, so this system can be adopted incrementally rather than as a rewrite.
 
-The practical upshot: spec pages `01`–`05` don't exist in Figma yet. This repository is
-where that specification now lives, and `tokens/puffy.tokens.json` can be imported
-straight back into Figma Variables to close the loop.
+`tokens/puffy.tokens.json` imports straight back into Figma Variables, so the two stay
+reconcilable in either direction.
 
 ---
 
@@ -146,18 +152,25 @@ straight back into Figma Variables to close the loop.
 The baseline is preserved unmodified as the reference floor. The system deliberately
 diverges from it in three places:
 
-1. **Interactive borders.** The source uses `--border-soft` (#d5d2cc) for size selectors,
-   quiet buttons, and the delivery accordion. That measures **1.51:1** against white and
-   fails WCAG 2.2 · 1.4.11, which requires 3:1 for the boundary of a UI component. The
-   system uses `--border-sub-strong` (**3.35:1**) for anything interactive and keeps
+All three were verified against production `puffy.com/products/puffy-lux-mattress`, not
+just against the local replica.
+
+1. **Interactive borders.** Unselected size selectors on the live PDP carry
+   `1px solid rgb(213,210,204)` — `--border-soft` / #d5d2cc — on a white ground. Measured:
+   **1.51:1**, against the 3:1 that WCAG 2.2 · 1.4.11 requires for the boundary of a UI
+   component. Nine interactive elements on the live page share that border. The selected
+   state is fine (#333333, 12.63:1); it's the unselected control boundaries that fail.
+   The system uses `--border-sub-strong` (**3.35:1**) for anything interactive and keeps
    `--border-soft` for dividers, where the criterion doesn't apply.
 
 2. **Focus.** The source has no consistent focus treatment. The system defines one ring in
    `02-base.css`, inverted on dark grounds, and never removes it.
 
-3. **Semantics.** Size and upgrade pickers are `radiogroup`s with arrow-key navigation;
-   disclosures are real `<details>`. The source builds both from unlabelled `<div>`s, so
-   the selected state never reaches a screen reader.
+3. **Semantics.** The live size buttons are bare `<button>`s — no `role`, no `aria-checked`,
+   no `aria-pressed`. The selected size is conveyed by border and background alone, so it
+   reaches neither a screen reader (4.1.2) nor a user who can't rely on colour (1.4.1).
+   The system makes size and upgrade pickers `radiogroup`s with arrow-key navigation, and
+   disclosures real `<details>`.
 
 ---
 
