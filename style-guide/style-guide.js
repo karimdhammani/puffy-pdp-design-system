@@ -74,10 +74,13 @@
 
   const PRIMITIVES = [
     "--navy-blue-light-1000", "--navy-blue-dark-1000", "--slate-gray-light-1000", "--slate-gray-dark-1000",
-    "--primary-600", "--solid-beige-700", "--solid-beige-600", "--solid-beige-500", "--solid-beige-400",
-    "--solid-beige-300", "--solid-beige-200", "--solid-beige-100", "--beige-100", "--beige-200",
-    "--beige-600", "--beige-700", "--amber-light-1000", "--amber-dark-1000", "--green-light-1000",
-    "--red-light-1000", "--base-black", "--base-white",
+    "--blue-100", "--blue-200", "--blue-300", "--blue-500", "--blue-600",
+    "--solid-beige-700", "--solid-beige-600", "--solid-beige-500", "--solid-beige-400",
+    "--solid-beige-300", "--solid-beige-200", "--solid-beige-100",
+    "--beige-100", "--beige-150", "--beige-200", "--beige-300", "--beige-600", "--beige-700",
+    "--neutral-200", "--neutral-300", "--neutral-500", "--neutral-600", "--neutral-700", "--neutral-800",
+    "--amber-light-1000", "--amber-dark-1000", "--green-light-1000", "--green-600",
+    "--red-light-1000", "--red-500", "--base-black", "--base-white",
   ];
 
   const ramp = document.getElementById("ramp");
@@ -102,21 +105,25 @@
     { name: "--text-soft",        on: "--bg-base-white", kind: "text" },
     { name: "--text-soft",        on: "--bg-soft",       kind: "text" },
     { name: "--text-sub-soft",    on: "--fill-cta",      kind: "text", note: "Light-on-dark only." },
-    { name: "--text-on-fill",     on: "--fill-cta",      kind: "text" },
+    { name: "--white",            on: "--fill-cta",      kind: "text" },
     { name: "--highlight-strong", on: "--bg-base-white", kind: "text", note: "The text-safe amber." },
-    { name: "--highlight-soft",   on: "--fill-cta",      kind: "text", note: "Fails on white — dark grounds only." },
+    { name: "--highlight-soft",   on: "--fill-cta",      kind: "text", note: "Fails on white \u2014 dark grounds only." },
     { name: "--success",          on: "--bg-base-white", kind: "text" },
     { name: "--warning",          on: "--bg-base-white", kind: "text" },
     { name: "--brand",            on: "--fill-cta",      kind: "large", note: "Large text and non-text only." },
+    { name: "--disabled",         on: "--bg-base-white", kind: "inactive", note: "1.4.3 exempts inactive controls. Disabled also drops to 50% opacity, per Figma page 05." },
     { name: "--border-strong",    on: "--bg-base-white", kind: "ui" },
     { name: "--border-sub-strong",on: "--bg-base-white", kind: "ui", note: "The boundary of every interactive control." },
-    { name: "--border-soft",      on: "--bg-base-white", kind: "divider", note: "Dividers and non-interactive containers only. 1.4.11 exempts decorative separators — an interactive boundary uses --border-sub-strong." },
+    { name: "--border-soft",      on: "--bg-base-white", kind: "divider", note: "Dividers and non-interactive containers only. 1.4.11 exempts decorative separators \u2014 an interactive boundary uses --border-sub-strong." },
+    { name: "--border-green-strong", on: "--bg-base-white", kind: "ui" },
     { name: "--fill-cta",         on: "--bg-base-white", kind: "ui" },
-    // A ground is judged by what sits on it, so this row measures the
-    // foreground instead — the reverse of every row above.
+    // A ground is judged by what sits on it, so these rows measure the
+    // foreground instead \u2014 the reverse of every row above.
     { name: "--fill-offer",       on: "--text-strong",   kind: "ground", note: "A ground, not a foreground." },
     { name: "--bg-soft",          on: "--text-strong",   kind: "ground" },
-    { name: "--fill-green-soft",  on: "--success",       kind: "ground", note: "The offer panel's tint." },
+    { name: "--bg-normal",        on: "--text-strong",   kind: "ground" },
+    { name: "--fill-green-soft",  on: "--success",       kind: "ground", note: "The offer panel tint \u2014 5% teal, per the live site." },
+    { name: "--fill-amber-soft",  on: "--highlight-strong", kind: "ground" },
   ];
 
   // 4.5:1 for body text · 3:1 for large text and non-text UI (1.4.11).
@@ -124,6 +131,9 @@
   // rather than graded — grading it would be a meaningless red mark.
   const grade = (ratio, kind) => {
     if (kind === "divider") return { cls: "sg-pill--large", label: "Decorative" };
+    // WCAG 1.4.3 exempts "text that is part of an inactive user interface
+    // component", so a disabled colour is reported, not graded.
+    if (kind === "inactive") return { cls: "sg-pill--large", label: "Inactive · exempt" };
     if (kind === "text" || kind === "ground") {
       if (ratio >= 7) return { cls: "sg-pill--pass", label: "AAA" };
       if (ratio >= 4.5) return { cls: "sg-pill--pass", label: "AA" };
@@ -148,6 +158,7 @@
 
     const card = el("div", "sg-role");
     const sample = el("div", "sg-role__sample", kind === "ui" || kind === "divider" ? "" : "Aa");
+    if (kind === "inactive") sample.style.opacity = "0.5";
     sample.style.background = bg;
     sample.style.color = fg;
     if (kind === "ui") sample.style.boxShadow = `inset 0 0 0 3px ${token(name)}`;
@@ -172,18 +183,29 @@
      cannot claim a size the stylesheet doesn't actually set.             */
 
   const TYPE = [
-    ["pf-display",         "Puffy/Display",              "Puffy Lux Mattress",              "Product name, sticky-bar title"],
-    ["pf-heading-section", "Puffy/Heading/Section",      "Comfort, made consistent.",       "One per section, at most"],
-    ["pf-heading-support", "Puffy/Heading/Support",      "Why eight layers matter",         "Sub-heads and panel titles"],
-    ["pf-heading-row",     "Puffy/Heading/Row",          "Choose Your Size:",               "Buy-box row titles"],
-    ["pf-price",           "Puffy/Price",                "$1,699",                          "Money, and only money"],
-    ["pf-body-lg",         "Puffy/Body/Large",           "Cooling Cloud™ gel disperses heat so you sleep two degrees cooler.", "Intros and lede copy"],
-    ["pf-body",            "Puffy/Body/Default",         "The page's baseline voice. Everything that isn't a heading, a label, or a price.", "Default body"],
-    ["pf-body-benefit",    "Puffy/Body/Benefit desktop", "Medium-plush — the feel 8 in 10 sleepers pick",  "Benefit bullets"],
-    ["pf-body-sm",         "Puffy/Body/Small",           "Free shipping and returns in the contiguous United States.", "Dense secondary copy"],
-    ["pf-caption",         "Puffy/Label/Caption",        "Queen · 60\" × 80\" · 12\" profile", "Metadata and helper text"],
-    ["pf-label",           "Puffy/Label/Inside",         "Limited offer",                   "Eyebrows and section markers"],
-    ["pf-label-micro",     "Puffy/Label/Micro",          "Hybrid",                          "Badge interiors only"],
+    // [class, Figma name, specimen, where it is used]
+    ["pf-heading-product-mobile",  "Puffy/Heading/Product mobile",  "Puffy LUX Mattress",        "Product title, small screens"],
+    ["pf-heading-product-desktop", "Puffy/Heading/Product desktop", "Puffy LUX Mattress",        "Product title, desktop rail"],
+    ["pf-heading-product-wide",    "Puffy/Heading/Product wide",    "Puffy LUX Mattress",        "Product title, wide screens"],
+    ["pf-heading-section",         "Puffy/Heading/Section",         "Comfort, made consistent.", "One per section, at most"],
+    ["pf-heading-support",         "Puffy/Heading/Support",         "Why eight layers matter",   "Sub-heads and panel titles"],
+    ["pf-heading-gallery-mobile",  "Puffy/Heading/Gallery mobile",  "Sleep on a cloud.",         "Gallery captions"],
+    ["pf-heading-footer",          "Puffy/Heading/Footer",          "Shop by size",              "Footer column headings"],
+    ["pf-price-large",             "Puffy/Price/Large",             "$1,549",                    "The headline price"],
+    ["pf-price-small",             "Puffy/Price/Small",             "$1,549",                    "Bundle and add-on prices"],
+    ["pf-label-product-badge",     "Puffy/Label/Product badge",     "Hybrid",                    "The amber rule badge"],
+    ["pf-label-section",           "Puffy/Label/Section",           "Choose Your Size:",         "Buy-box row titles"],
+    ["pf-label-control",           "Puffy/Label/Control",           "Queen",                     "Size options, unselected"],
+    ["pf-label-control-selected",  "Puffy/Label/Control selected",  "Queen",                     "Selected \u2014 weight is the non-colour signal"],
+    ["pf-action-primary",          "Puffy/Action/Primary",          "Add to Cart",               "The primary purchase action"],
+    ["pf-action-link",             "Puffy/Action/Link",             "Size guide",                "Inline actions"],
+    ["pf-body-large",              "Puffy/Body/Large",              "Cooling Cloud\u2122 gel disperses heat so you sleep two degrees cooler.", "Intros and lede copy"],
+    ["pf-body-default",            "Puffy/Body/Default",            "The page's baseline voice. Everything that isn't a heading, a label, or a price.", "Default body"],
+    ["pf-body-small",              "Puffy/Body/Small",              "Free shipping and returns in the contiguous United States.", "Dense secondary copy"],
+    ["pf-body-benefit-desktop",    "Puffy/Body/Benefit desktop",    "Medium-plush \u2014 the feel 8 in 10 sleepers pick", "Benefit bullets, desktop"],
+    ["pf-body-benefit-mobile",     "Puffy/Body/Benefit mobile",     "Medium-plush \u2014 the feel 8 in 10 sleepers pick", "Benefit bullets, mobile"],
+    ["pf-label-inside",            "Puffy/Label/Inside",            "See What's Inside",         "Eyebrows \u2014 add .pf-uppercase for caps"],
+    ["pf-label-caption",           "Puffy/Label/Caption",           "Queen \u00b7 Metadata and helper text", "Metadata and helper text"],
   ];
 
   const typelist = document.getElementById("typelist");
@@ -216,7 +238,7 @@
 
   /* ---------------------------------------------------------------- SPACE */
 
-  const SPACE = [0, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96];
+  const SPACE = [0, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96];
   const spaces = document.getElementById("spaces");
   SPACE.forEach((n) => {
     const row = el("div", "sg-space");
@@ -228,7 +250,7 @@
     spaces.appendChild(row);
   });
 
-  const RADII = ["0", "2", "4", "6", "8", "12", "pill"];
+  const RADII = ["0", "2", "4", "6", "8", "12", "16", "20", "full"];
   const radii = document.getElementById("radii");
   RADII.forEach((n) => {
     const wrap = el("div", "sg-radius");

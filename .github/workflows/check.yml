@@ -1,8 +1,10 @@
 name: check
 
-# The design system is described in two files — a CSS runtime and a DTCG JSON
-# for tooling. Whenever two files describe one thing they drift, so every push
-# re-resolves both to literal values and diffs them.
+# The system is reconciled three ways: the live puffy.com PDP is the source of
+# truth, Figma supplies naming and intent, and system/*.css is the
+# implementation. Every push re-checks that the generated token JSON is current,
+# that all 22 Figma text styles still match the library metrics, and that the
+# colour primitives still match what the live site serves.
 on:
   push:
     branches: [main]
@@ -10,7 +12,7 @@ on:
 
 jobs:
   tokens:
-    name: tokens in sync
+    name: reconciled
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

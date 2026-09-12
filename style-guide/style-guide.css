@@ -48,7 +48,7 @@ code {
   max-width: 660px;
   margin-block: var(--puffy-space-48);
   margin-left: auto;
-  border-radius: var(--puffy-radius-pill);
+  border-radius: var(--puffy-radius-full);
   overflow: hidden;
 }
 .sg-signature span { height: 12px; }
@@ -110,7 +110,7 @@ code {
   gap: var(--puffy-space-8);
 }
 .sg-chip {
-  border: 1px solid var(--border-hairline);
+  border: 1px solid var(--border-soft);
   border-radius: var(--pf-card-radius);
   overflow: hidden;
   background: var(--bg-base-white);
@@ -143,7 +143,7 @@ code {
   align-items: stretch;
   gap: var(--puffy-space-12);
   padding: var(--puffy-space-12);
-  border: 1px solid var(--border-hairline);
+  border: 1px solid var(--border-soft);
   border-radius: var(--pf-card-radius);
   background: var(--bg-base-white);
 }
@@ -195,9 +195,9 @@ code {
   gap: var(--puffy-space-24);
   align-items: baseline;
   padding-block: var(--puffy-space-32);
-  border-top: 1px solid var(--border-hairline);
+  border-top: 1px solid var(--border-soft);
 }
-.sg-type:last-child { border-bottom: 1px solid var(--border-hairline); }
+.sg-type:last-child { border-bottom: 1px solid var(--border-soft); }
 .sg-type__sample { min-width: 0; overflow-wrap: anywhere; }
 .sg-type__meta { display: flex; flex-direction: column; gap: 2px; }
 .sg-type__class {
@@ -296,7 +296,7 @@ code {
   align-items: center;
   gap: var(--puffy-space-8);
   padding: var(--puffy-space-16) var(--puffy-space-8);
-  border: 1px solid var(--border-hairline);
+  border: 1px solid var(--border-soft);
   border-radius: var(--pf-card-radius);
   background: var(--bg-base-white);
   text-align: center;
@@ -306,8 +306,8 @@ code {
 .sg-iconcard img { height: 40px; width: auto; max-width: 100%; object-fit: contain; }
 .sg-iconcard__name {
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: var(--puffy-size-10);
-  line-height: var(--puffy-leading-15);
+  font-size: var(--puffy-size-12);
+  line-height: var(--puffy-leading-18);
   color: var(--text-soft);
   word-break: break-all;
 }
@@ -321,7 +321,7 @@ code {
 .sg-canvas {
   margin-top: var(--puffy-space-24);
   padding: var(--puffy-space-32);
-  border: 1px solid var(--border-hairline);
+  border: 1px solid var(--border-soft);
   border-radius: var(--pf-panel-radius);
   background: var(--bg-sub-soft);
 }
@@ -352,7 +352,7 @@ code {
    ========================================================================== */
 
 .sg-footer { padding-block: var(--puffy-space-64); }
-.sg-footer .pf-body { color: var(--text-sub-soft); }
+.sg-footer .pf-body-default { color: var(--text-sub-soft); }
 .sg-footer a { color: var(--highlight-soft); }
 
 @media (max-width: 640px) {

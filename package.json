@@ -4,6 +4,7 @@
   "description": "Tokenised design system extracted from the Puffy Lux mattress PDP.",
   "private": true,
   "scripts": {
+    "build": "node tools/build-tokens.js",
     "check": "node tools/check-tokens.js",
     "serve": "npx --yes serve . -l 4173"
   },

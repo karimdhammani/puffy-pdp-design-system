@@ -1,6 +1,6 @@
 /* ==========================================================================
    PUFFY · FOUNDATIONS — 02 BASE
-   Reset, document defaults, and the accessibility floor every page inherits.
+   Reset, document defaults, the accessibility floor, and the 22 text styles.
    Depends on: 01-tokens.css
    ========================================================================== */
 
@@ -45,17 +45,12 @@ a { color: inherit; text-decoration: none; }
 
 b, strong { font-weight: var(--puffy-weight-bold); }
 
-hr {
-  height: 1px;
-  margin: 0;
-  border: 0;
-  background: var(--border-soft);
-}
+hr { height: 1px; margin: 0; border: 0; background: var(--border-soft); }
 
 /* --------------------------------------------------------------------------
-   Focus — WCAG 2.2 · 2.4.11 Focus Not Obscured, 2.4.13 Focus Appearance
-   One ring, defined once, visible on every ground the system uses.
-   Never remove it without replacing it.
+   Focus — WCAG 2.2 · 2.4.7 Focus Visible, 2.4.13 Focus Appearance
+   Figma page 05 specifies a 2px ring at 2px offset. Defined once here;
+   never removed without a replacement.
    ----------------------------------------------------------------------- */
 :focus-visible {
   outline: 2px solid var(--fill-cta);
@@ -63,7 +58,7 @@ hr {
   border-radius: var(--puffy-radius-2);
 }
 
-/* On the navy ground the dark ring disappears — invert it. */
+/* The dark ring vanishes on the navy ground — invert it. */
 .pf-on-dark :focus-visible,
 .pf-surface--cta :focus-visible {
   outline-color: var(--base-white);
@@ -84,17 +79,32 @@ hr {
   }
 }
 
-/* --------------------------------------------------------------------------
-   TYPE SCALE
-   Each class maps to one Figma text style. Names match the library exactly:
-   `Puffy/Heading/Section` → `.pf-heading-section`.
+/* ==========================================================================
+   TYPE SCALE — all 22 styles from Figma page `03 · Typography`.
 
-   ✓ = the style is bound in the Figma file and its metrics were read back
-       from the library, not transcribed by hand.
+   Every class maps to exactly one Figma text style, and the names match:
+   `Puffy/Heading/Product desktop` → `.pf-heading-product-desktop`.
+   Metrics were read back from the library, not transcribed.
+
+   PT Serif carries voice. Mukta carries information. A page that mixes the
+   two jobs reads as two brands.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Product, editorial & price — PT Serif
    ----------------------------------------------------------------------- */
 
-/* ✓ Puffy/Display — PT Serif Regular 28/36. Product name, sticky-bar title. */
-.pf-display {
+/* Puffy/Heading/Product mobile — PT Serif Regular 24/32 */
+.pf-heading-product-mobile {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-24);
+  line-height: var(--puffy-leading-32);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Heading/Product desktop — PT Serif Regular 28/36 */
+.pf-heading-product-desktop {
   font-family: var(--font-serif);
   font-size: var(--puffy-size-28);
   line-height: var(--puffy-leading-36);
@@ -102,7 +112,25 @@ hr {
   letter-spacing: var(--puffy-tracking-none);
 }
 
-/* ✓ Puffy/Heading/Section — PT Serif Regular 40/48. One per section, max. */
+/* Puffy/Heading/Product wide — PT Serif Regular 32/40 */
+.pf-heading-product-wide {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-32);
+  line-height: var(--puffy-leading-40);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Heading/Gallery mobile — PT Serif Regular 20/28 */
+.pf-heading-gallery-mobile {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-20);
+  line-height: var(--puffy-leading-28);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Heading/Section — PT Serif Regular 40/48. One per section, at most. */
 .pf-heading-section {
   font-family: var(--font-serif);
   font-size: var(--puffy-size-40);
@@ -111,89 +139,192 @@ hr {
   letter-spacing: var(--puffy-tracking-none);
 }
 
-/* ✓ Puffy/Heading/Support — PT Serif Bold 24/32. Sub-heads, panel titles. */
+/* Puffy/Heading/Support — PT Serif Bold 24/32. Sub-heads and panel titles. */
 .pf-heading-support {
   font-family: var(--font-serif);
   font-size: var(--puffy-size-24);
   line-height: var(--puffy-leading-32);
   font-weight: var(--puffy-weight-bold);
+  letter-spacing: var(--puffy-tracking-none);
 }
 
-/* Puffy/Heading/Row — Mukta Regular 20/28. "Choose Your Size:" row titles. */
-.pf-heading-row {
-  font-family: var(--font-sans);
+/* Puffy/Heading/Footer — PT Serif Regular 20/28 */
+.pf-heading-footer {
+  font-family: var(--font-serif);
   font-size: var(--puffy-size-20);
   line-height: var(--puffy-leading-28);
   font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
 }
 
-/* Puffy/Price — PT Serif Bold 32/40. Money, and only money. */
-.pf-price {
+/* Puffy/Price/Large — PT Serif Bold 32/40. Money, and only money. */
+.pf-price-large {
   font-family: var(--font-serif);
   font-size: var(--puffy-size-32);
   line-height: var(--puffy-leading-40);
   font-weight: var(--puffy-weight-bold);
+  letter-spacing: var(--puffy-tracking-none);
   font-variant-numeric: tabular-nums;
 }
 
-/* ✓ Puffy/Body/Large — Mukta Regular 18/24. */
-.pf-body-lg {
+/* Puffy/Price/Small — PT Serif Bold 16/24 */
+.pf-price-small {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-bold);
+  letter-spacing: var(--puffy-tracking-none);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Puffy/Label/Product badge — PT Serif Regular 14/20. The "HYBRID" rule. */
+.pf-label-product-badge {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* --------------------------------------------------------------------------
+   Interface & supporting text — Mukta
+   ----------------------------------------------------------------------- */
+
+/* Puffy/Body/Small — Mukta Regular 14/20 */
+.pf-body-small {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Body/Default — Mukta Regular 16/24. The page's baseline voice. */
+.pf-body-default {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Body/Large — Mukta Regular 18/24 */
+.pf-body-large {
   font-family: var(--font-sans);
   font-size: var(--puffy-size-18);
   line-height: var(--puffy-leading-24);
   font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
 }
 
-/* ✓ Puffy/Body/Default — Mukta Regular 16/24. The page's baseline voice. */
-.pf-body {
-  font-family: var(--font-sans);
-  font-size: var(--puffy-size-16);
-  line-height: var(--puffy-leading-24);
-  font-weight: var(--puffy-weight-regular);
-}
-
-/* ✓ Puffy/Body/Benefit desktop — Mukta Medium 16/24. Benefit bullets. */
-.pf-body-benefit {
+/* Puffy/Body/Benefit desktop — Mukta Medium 16/24 */
+.pf-body-benefit-desktop {
   font-family: var(--font-sans);
   font-size: var(--puffy-size-16);
   line-height: var(--puffy-leading-24);
   font-weight: var(--puffy-weight-medium);
+  letter-spacing: var(--puffy-tracking-none);
 }
 
-/* ✓ Puffy/Body/Small — Mukta Regular 14/20. */
-.pf-body-sm {
+/* Puffy/Body/Benefit mobile — Mukta Medium 18/24 */
+.pf-body-benefit-mobile {
   font-family: var(--font-sans);
-  font-size: var(--puffy-size-14);
-  line-height: var(--puffy-leading-20);
-  font-weight: var(--puffy-weight-regular);
-}
-
-/* ✓ Puffy/Label/Caption — Mukta Medium 14/20. Metadata, helper text. */
-.pf-caption {
-  font-family: var(--font-sans);
-  font-size: var(--puffy-size-14);
-  line-height: var(--puffy-leading-20);
+  font-size: var(--puffy-size-18);
+  line-height: var(--puffy-leading-24);
   font-weight: var(--puffy-weight-medium);
+  letter-spacing: var(--puffy-tracking-none);
 }
 
-/* ✓ Puffy/Label/Inside — Mukta SemiBold 14/20, +1.4px tracking, uppercase.
-   Eyebrows and section markers. Uppercase is baked in: this style IS the
-   caps treatment, so never stack `text-transform` on top of another style. */
-.pf-label {
+/* Puffy/Label/Section — Mukta Regular 20/28. "Choose Your Size:" */
+.pf-label-section {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-20);
+  line-height: var(--puffy-leading-28);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Label/Control — Mukta Medium 18/18. Size options, unselected. */
+.pf-label-control {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-18);
+  line-height: var(--puffy-leading-18);
+  font-weight: var(--puffy-weight-medium);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Label/Control selected — Mukta Bold 18/18.
+   The weight change is a second, non-colour signal for the selected state —
+   which is what WCAG 1.4.1 asks for. */
+.pf-label-control-selected {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-18);
+  line-height: var(--puffy-leading-18);
+  font-weight: var(--puffy-weight-bold);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Action/Primary — Mukta Medium 20/25. Add to Cart. */
+.pf-action-primary {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-20);
+  line-height: var(--puffy-leading-25);
+  font-weight: var(--puffy-weight-medium);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Action/Link — Mukta Medium 16/24 */
+.pf-action-link {
+  font-family: var(--font-sans);
+  font-size: var(--puffy-size-16);
+  line-height: var(--puffy-leading-24);
+  font-weight: var(--puffy-weight-medium);
+  letter-spacing: var(--puffy-tracking-none);
+}
+
+/* Puffy/Label/Inside — Mukta SemiBold 14/20, +1.4px tracking.
+   Eyebrows and section markers. Uppercase is applied at the call site on the
+   live page, so it is NOT baked in here — add `.pf-uppercase` when needed. */
+.pf-label-inside {
   font-family: var(--font-sans);
   font-size: var(--puffy-size-14);
   line-height: var(--puffy-leading-20);
   font-weight: var(--puffy-weight-semibold);
   letter-spacing: var(--puffy-tracking-label);
-  text-transform: uppercase;
 }
 
-/* Puffy/Label/Micro — Mukta Medium 12/15. Badge interiors only. */
-.pf-label-micro {
+/* Puffy/Label/Caption — Mukta Medium 14/20. Metadata and helper text. */
+.pf-label-caption {
   font-family: var(--font-sans);
-  font-size: var(--puffy-size-12);
-  line-height: var(--puffy-leading-15);
+  font-size: var(--puffy-size-14);
+  line-height: var(--puffy-leading-20);
   font-weight: var(--puffy-weight-medium);
-  letter-spacing: var(--puffy-tracking-wide);
-  text-transform: uppercase;
+  letter-spacing: var(--puffy-tracking-none);
 }
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE PRODUCT TITLE
+   Figma page 03 records the source's ramp, which is not monotonic:
+   24/32 mobile → 32/40 tablet → 28/36 desktop → 32/40 wide.
+   The dip at desktop is deliberate — the title sits in a narrow purchase
+   rail there, and 32px would wrap. `.pf-heading-product` applies the whole
+   ramp so a page doesn't have to swap classes at breakpoints.
+   ----------------------------------------------------------------------- */
+.pf-heading-product {
+  font-family: var(--font-serif);
+  font-size: var(--puffy-size-24);
+  line-height: var(--puffy-leading-32);
+  font-weight: var(--puffy-weight-regular);
+  letter-spacing: var(--puffy-tracking-none);
+}
+@media (min-width: 768px) {
+  .pf-heading-product { font-size: var(--puffy-size-32); line-height: var(--puffy-leading-40); }
+}
+@media (min-width: 1025px) {
+  .pf-heading-product { font-size: var(--puffy-size-28); line-height: var(--puffy-leading-36); }
+}
+@media (min-width: 1536px) {
+  .pf-heading-product { font-size: var(--puffy-size-32); line-height: var(--puffy-leading-40); }
+}
+
+.pf-uppercase { text-transform: uppercase; }

@@ -25,9 +25,9 @@
 <header class="sg-masthead pf-surface--cta pf-on-dark">
   <div class="sg-wrap">
     <img class="sg-masthead__logo" src="../system/icons/logo.svg" alt="Puffy" width="149" height="36">
-    <p class="pf-label sg-eyebrow">Puffy &nbsp;/&nbsp; Foundations &nbsp;/&nbsp; v1.0</p>
+    <p class="pf-label-inside pf-uppercase sg-eyebrow">Puffy &nbsp;/&nbsp; Foundations &nbsp;/&nbsp; v1.0</p>
     <h1 class="pf-heading-section">Comfort, made consistent.</h1>
-    <p class="pf-body sg-masthead__lede">
+    <p class="pf-body-default sg-masthead__lede">
       A working foundation for the Lux mattress PDP redesign.<br>
       Source styles, reusable components, and the language behind the page.
     </p>
@@ -40,10 +40,10 @@
     </div>
 
     <dl class="sg-stats">
-      <div><dt class="pf-heading-section" id="stat-tokens">—</dt><dd class="pf-body">CSS tokens</dd></div>
-      <div><dt class="pf-heading-section">12</dt><dd class="pf-body">text styles</dd></div>
-      <div><dt class="pf-heading-section">05</dt><dd class="pf-body">effect styles</dd></div>
-      <div><dt class="pf-heading-section" id="stat-icons">—</dt><dd class="pf-body">icons &amp; logo</dd></div>
+      <div><dt class="pf-heading-section" id="stat-tokens">—</dt><dd class="pf-body-default">CSS tokens</dd></div>
+      <div><dt class="pf-heading-section">22</dt><dd class="pf-body-default">text styles</dd></div>
+      <div><dt class="pf-heading-section">05</dt><dd class="pf-body-default">effect styles</dd></div>
+      <div><dt class="pf-heading-section" id="stat-icons">—</dt><dd class="pf-body-default">icons &amp; logo</dd></div>
     </dl>
 
     <nav class="sg-nav" aria-label="Style guide sections">
@@ -64,25 +64,25 @@
 <!-- ====================================================================== -->
 <section class="sg-section" id="principles">
   <div class="sg-wrap">
-    <p class="pf-label sg-eyebrow sg-eyebrow--dark">01 &nbsp;/&nbsp; Principles</p>
+    <p class="pf-label-inside pf-uppercase sg-eyebrow sg-eyebrow--dark">01 &nbsp;/&nbsp; Principles</p>
     <h2 class="pf-heading-section">Four rules that keep pages consistent.</h2>
 
     <ol class="sg-principles">
       <li>
         <h3 class="pf-heading-support">Semantic over raw</h3>
-        <p class="pf-body pf-text-soft">A component asks for <code>--fill-cta</code>, never <code>#2b2f44</code>. Rebrand, dark mode, and a seasonal promo all become edits to one file instead of a find-and-replace across every page.</p>
+        <p class="pf-body-default pf-text-soft">A component asks for <code>--fill-cta</code>, never <code>#2b2f44</code>. Rebrand, dark mode, and a seasonal promo all become edits to one file instead of a find-and-replace across every page.</p>
       </li>
       <li>
         <h3 class="pf-heading-support">Serif speaks, sans informs</h3>
-        <p class="pf-body pf-text-soft">PT Serif carries voice — product names, headlines, price. Mukta carries information — specs, labels, helper text. A page that mixes the two jobs reads as two brands.</p>
+        <p class="pf-body-default pf-text-soft">PT Serif carries voice — product names, headlines, price. Mukta carries information — specs, labels, helper text. A page that mixes the two jobs reads as two brands.</p>
       </li>
       <li>
         <h3 class="pf-heading-support">One primary action per view</h3>
-        <p class="pf-body pf-text-soft">There is exactly one <code>.pf-btn--lg.pf-btn--primary</code> on screen at a time. Everything competing with Add&nbsp;to&nbsp;Cart is <code>--secondary</code> or <code>--quiet</code>.</p>
+        <p class="pf-body-default pf-text-soft">There is exactly one <code>.pf-btn--lg.pf-btn--primary</code> on screen at a time. Everything competing with Add&nbsp;to&nbsp;Cart is <code>--secondary</code> or <code>--quiet</code>.</p>
       </li>
       <li>
         <h3 class="pf-heading-support">Accessible by construction</h3>
-        <p class="pf-body pf-text-soft">Focus rings, target sizes, and contrast are properties of the tokens, not a pass at the end. Every pairing on this page states its measured ratio.</p>
+        <p class="pf-body-default pf-text-soft">Focus rings, target sizes, and contrast are properties of the tokens, not a pass at the end. Every pairing on this page states its measured ratio.</p>
       </li>
     </ol>
   </div>
@@ -91,9 +91,9 @@
 <!-- ====================================================================== -->
 <section class="sg-section sg-section--alt" id="colour">
   <div class="sg-wrap">
-    <p class="pf-label sg-eyebrow sg-eyebrow--dark">02 &nbsp;/&nbsp; Colour</p>
+    <p class="pf-label-inside pf-uppercase sg-eyebrow sg-eyebrow--dark">02 &nbsp;/&nbsp; Colour</p>
     <h2 class="pf-heading-section">Roles, not hex codes.</h2>
-    <p class="pf-body pf-text-soft pf-prose sg-lede">
+    <p class="pf-body-default pf-text-soft pf-prose sg-lede">
       Two tiers. The ramp below is raw material; the roles beneath it are what you actually reach for.
       Every ratio on this page is <strong>measured in the browser</strong> from the live token value — change a
       token and the number changes with it.
@@ -103,7 +103,7 @@
     <div class="sg-ramp" id="ramp"></div>
 
     <h3 class="pf-heading-support sg-subhead">Semantic roles</h3>
-    <p class="pf-caption pf-text-soft sg-note">Contrast is measured against the ground each role is approved for. <span class="sg-pill sg-pill--pass">AA</span> needs 4.5:1 for body text, <span class="sg-pill sg-pill--large">AA Large</span> 3:1 for 18.66px bold / 24px+ and for non-text UI.</p>
+    <p class="pf-label-caption pf-text-soft sg-note">Contrast is measured against the ground each role is approved for. <span class="sg-pill sg-pill--pass">AA</span> needs 4.5:1 for body text, <span class="sg-pill sg-pill--large">AA Large</span> 3:1 for 18.66px bold / 24px+ and for non-text UI.</p>
     <div class="sg-roles" id="roles"></div>
   </div>
 </section>
@@ -111,11 +111,13 @@
 <!-- ====================================================================== -->
 <section class="sg-section" id="type">
   <div class="sg-wrap">
-    <p class="pf-label sg-eyebrow sg-eyebrow--dark">03 &nbsp;/&nbsp; Typography</p>
-    <h2 class="pf-heading-section">Twelve styles. No exceptions.</h2>
-    <p class="pf-body pf-text-soft pf-prose sg-lede">
-      Each row is one Figma text style and one CSS class, with the same name. If a design needs a
-      thirteenth, it gets added here first — not inlined on the page.
+    <p class="pf-label-inside pf-uppercase sg-eyebrow sg-eyebrow--dark">03 &nbsp;/&nbsp; Typography</p>
+    <h2 class="pf-heading-section">Twenty-two styles. No exceptions.</h2>
+    <p class="pf-body-default pf-text-soft pf-prose sg-lede">
+      Each row is one Figma text style and one CSS class, with the same name —
+      <code>Puffy/Heading/Product desktop</code> is <code>.pf-heading-product-desktop</code>.
+      Metrics were read back from the library, not transcribed. If a design needs a
+      twenty-third, it gets added here first — not inlined on the page.
     </p>
 
     <div class="sg-typelist" id="typelist"></div>
@@ -125,9 +127,9 @@
 <!-- ====================================================================== -->
 <section class="sg-section sg-section--alt" id="space">
   <div class="sg-wrap">
-    <p class="pf-label sg-eyebrow sg-eyebrow--dark">04 &nbsp;/&nbsp; Space &amp; radius</p>
-    <h2 class="pf-heading-section">A 4px grid, and six corners.</h2>
-    <p class="pf-body pf-text-soft pf-prose sg-lede">
+    <p class="pf-label-inside pf-uppercase sg-eyebrow sg-eyebrow--dark">04 &nbsp;/&nbsp; Space &amp; radius</p>
+    <h2 class="pf-heading-section">A 4px grid, and nine corners.</h2>
+    <p class="pf-body-default pf-text-soft pf-prose sg-lede">
       Spacing comes off one ramp so vertical rhythm survives contact with a deadline.
       <code>8</code>, <code>16</code>, and <code>24</code> do most of the work; <code>48</code> and <code>64</code> separate sections.
     </p>
@@ -139,19 +141,19 @@
     <div class="sg-radii" id="radii"></div>
 
     <h3 class="pf-heading-support sg-subhead">Layout primitives</h3>
-    <p class="pf-caption pf-text-soft sg-note">Three helpers cover nearly every arrangement on a PDP. Set the gap with <code>--gap</code>.</p>
+    <p class="pf-label-caption pf-text-soft sg-note">Three helpers cover nearly every arrangement on a PDP. Set the gap with <code>--gap</code>.</p>
     <div class="sg-layoutdemo">
       <figure>
         <div class="sg-demo pf-stack" style="--gap: var(--puffy-space-8)"><span></span><span></span><span></span></div>
-        <figcaption class="pf-caption"><code>.pf-stack</code> — vertical rhythm</figcaption>
+        <figcaption class="pf-label-caption"><code>.pf-stack</code> — vertical rhythm</figcaption>
       </figure>
       <figure>
         <div class="sg-demo pf-cluster"><span></span><span></span><span></span><span></span></div>
-        <figcaption class="pf-caption"><code>.pf-cluster</code> — wraps, never overflows</figcaption>
+        <figcaption class="pf-label-caption"><code>.pf-cluster</code> — wraps, never overflows</figcaption>
       </figure>
       <figure>
         <div class="sg-demo pf-split"><span></span><span></span></div>
-        <figcaption class="pf-caption"><code>.pf-split</code> — two ends</figcaption>
+        <figcaption class="pf-label-caption"><code>.pf-split</code> — two ends</figcaption>
       </figure>
     </div>
   </div>
@@ -160,28 +162,30 @@
 <!-- ====================================================================== -->
 <section class="sg-section" id="effects">
   <div class="sg-wrap">
-    <p class="pf-label sg-eyebrow sg-eyebrow--dark">05 &nbsp;/&nbsp; Effects &amp; motion</p>
-    <h2 class="pf-heading-section">Five shadows, two easings.</h2>
-    <p class="pf-body pf-text-soft pf-prose sg-lede">
-      Elevation is scarce on purpose — a page where everything floats has no hierarchy.
-      All motion is short, eased, and cut entirely under <code>prefers-reduced-motion</code>.
+    <p class="pf-label-inside pf-uppercase sg-eyebrow sg-eyebrow--dark">05 &nbsp;/&nbsp; Effects &amp; motion</p>
+    <h2 class="pf-heading-section">Five elevations, used sparingly.</h2>
+    <p class="pf-body-default pf-text-soft pf-prose sg-lede">
+      The page is mainly flat: borders and tonal surfaces do the grouping, and elevation is
+      the exception. These are the five effect styles in the Figma library, which are the
+      shadows the live site actually paints.
     </p>
 
     <div class="sg-effects">
-      <figure><div class="sg-effect" style="box-shadow: var(--shadow-float)"></div><figcaption class="pf-caption"><code>--shadow-float</code><span class="pf-text-soft">Floating affordances</span></figcaption></figure>
-      <figure class="sg-effect-dark"><div class="sg-effect" style="box-shadow: var(--shadow-lift)"></div><figcaption class="pf-caption"><code>--shadow-lift</code><span class="pf-text-soft">Lifted off a dark ground</span></figcaption></figure>
-      <figure><div class="sg-effect" style="box-shadow: var(--ring-focus)"></div><figcaption class="pf-caption"><code>--ring-focus</code><span class="pf-text-soft">Keyboard focus · 2.4.13</span></figcaption></figure>
-      <figure><div class="sg-effect" style="box-shadow: var(--ring-selected)"></div><figcaption class="pf-caption"><code>--ring-selected</code><span class="pf-text-soft">Selected imagery</span></figcaption></figure>
-      <figure class="sg-effect-photo"><div class="sg-effect" style="box-shadow: var(--inset-hairline)"></div><figcaption class="pf-caption"><code>--inset-hairline</code><span class="pf-text-soft">Light on light</span></figcaption></figure>
+      <figure><div class="sg-effect" style="box-shadow: var(--elevation-subtle)"></div><figcaption class="pf-label-caption"><code>--elevation-subtle</code><span class="pf-text-soft">Puffy/Elevation/Subtle · y1 b2 · 5%</span></figcaption></figure>
+      <figure><div class="sg-effect" style="box-shadow: var(--elevation-medium)"></div><figcaption class="pf-label-caption"><code>--elevation-medium</code><span class="pf-text-soft">Puffy/Elevation/Medium · two layers · 10%</span></figcaption></figure>
+      <figure><div class="sg-effect" style="box-shadow: var(--elevation-raised)"></div><figcaption class="pf-label-caption"><code>--elevation-raised</code><span class="pf-text-soft">Puffy/Elevation/Raised · two layers · 10%</span></figcaption></figure>
+      <figure><div class="sg-effect" style="box-shadow: var(--elevation-sticky-bar)"></div><figcaption class="pf-label-caption"><code>--elevation-sticky-bar</code><span class="pf-text-soft">Puffy/Elevation/Sticky bar · y&minus;2 b8 · 5%</span></figcaption></figure>
+      <figure><div class="sg-effect" style="box-shadow: var(--elevation-soft-panel)"></div><figcaption class="pf-label-caption"><code>--elevation-soft-panel</code><span class="pf-text-soft">Puffy/Elevation/Soft panel · y4 b16 · 5%</span></figcaption></figure>
     </div>
 
     <h3 class="pf-heading-support sg-subhead">Motion</h3>
+    <p class="pf-label-caption pf-text-soft sg-note">Durations measured off the live controls, not chosen. Everything is cut under <code>prefers-reduced-motion</code>.</p>
     <div class="sg-motion">
-      <div><code>--duration-fast</code> <span class="pf-text-soft">150ms · state changes</span></div>
-      <div><code>--duration-base</code> <span class="pf-text-soft">200ms · hover, disclosure</span></div>
-      <div><code>--duration-slow</code> <span class="pf-text-soft">500ms · deliberate transitions</span></div>
-      <div><code>--ease-standard</code> <span class="pf-text-soft">cubic-bezier(.4, 0, .2, 1)</span></div>
-      <div><code>--ease-out</code> <span class="pf-text-soft">cubic-bezier(0, 0, .2, 1)</span></div>
+      <div><code>--time-faster</code> <span class="pf-text-soft">100ms · micro-feedback</span></div>
+      <div><code>--duration-control</code> <span class="pf-text-soft">300ms · size choices, general controls</span></div>
+      <div><code>--duration-action</code> <span class="pf-text-soft">500ms · the primary purchase action</span></div>
+      <div><code>--ease-standard</code> <span class="pf-text-soft">cubic-bezier(.4, 0, .2, 1) — what the live buttons use</span></div>
+      <div><code>--curve</code> <span class="pf-text-soft">cubic-bezier(.25, .1, .25, 1) — the live site's own token</span></div>
     </div>
   </div>
 </section>
@@ -189,13 +193,13 @@
 <!-- ====================================================================== -->
 <section class="sg-section sg-section--alt" id="icons">
   <div class="sg-wrap">
-    <p class="pf-label sg-eyebrow sg-eyebrow--dark">06 &nbsp;/&nbsp; Iconography</p>
+    <p class="pf-label-inside pf-uppercase sg-eyebrow sg-eyebrow--dark">06 &nbsp;/&nbsp; Iconography</p>
     <h2 class="pf-heading-section">Original marks. Consistent use.</h2>
-    <p class="pf-body pf-text-soft pf-prose sg-lede">
+    <p class="pf-body-default pf-text-soft pf-prose sg-lede">
       Extracted from the source page and kept as editable SVG. Size through <code>.pf-icon--*</code> so icons
       never drift off the grid. An icon-only control always carries a text label for screen readers.
     </p>
-    <p class="pf-caption pf-text-soft sg-note">
+    <p class="pf-label-caption pf-text-soft sg-note">
       Marks on <strong>navy tiles</strong> are single-colour light: they came off the dark navbar, the
       See&nbsp;Inside panel, or the USP bar, and will disappear on a white ground. Where a benefit needs both
       grounds the set carries a pair — <code>cooling-cloud</code> and <code>cooling-cloud-white</code>.
@@ -208,9 +212,9 @@
 <!-- ====================================================================== -->
 <section class="sg-section" id="components">
   <div class="sg-wrap">
-    <p class="pf-label sg-eyebrow sg-eyebrow--dark">07 &nbsp;/&nbsp; Components</p>
+    <p class="pf-label-inside pf-uppercase sg-eyebrow sg-eyebrow--dark">07 &nbsp;/&nbsp; Components</p>
     <h2 class="pf-heading-section">Built once, used everywhere.</h2>
-    <p class="pf-body pf-text-soft pf-prose sg-lede">
+    <p class="pf-body-default pf-text-soft pf-prose sg-lede">
       Every example below is live — it renders from <code>system/03-components.css</code>, not from a screenshot.
       Interact with them; the states are real.
     </p>
@@ -219,7 +223,7 @@
   <!-- BUTTONS -->
   <div class="sg-wrap sg-specimen">
     <h3 class="pf-heading-support">Button</h3>
-    <p class="pf-body pf-text-soft pf-prose">Three intents, three sizes. <code>--lg</code> is the add-to-cart moment and appears once per view.</p>
+    <p class="pf-body-default pf-text-soft pf-prose">Three intents, three sizes. <code>--lg</code> is the add-to-cart moment and appears once per view.</p>
     <div class="sg-canvas">
       <div class="pf-stack" style="--gap: var(--puffy-space-16)">
         <button class="pf-btn pf-btn--primary pf-btn--lg">
@@ -230,7 +234,7 @@
           <button class="pf-btn pf-btn--quiet">See inside</button>
           <button class="pf-btn pf-btn--primary" disabled>Sold out</button>
         </div>
-        <p class="pf-body"><a class="pf-link" href="#components">Size guide</a> &nbsp;·&nbsp; <a class="pf-link pf-link--strong" href="#components">Read 12,483 reviews</a></p>
+        <p class="pf-body-default"><a class="pf-link" href="#components">Size guide</a> &nbsp;·&nbsp; <a class="pf-link pf-link--strong" href="#components">Read 12,483 reviews</a></p>
       </div>
     </div>
     <pre class="sg-code"><code>&lt;button class="pf-btn pf-btn--primary pf-btn--lg"&gt;
@@ -241,11 +245,11 @@
   <!-- SELECTOR -->
   <div class="sg-wrap sg-specimen">
     <h3 class="pf-heading-support">Selector</h3>
-    <p class="pf-body pf-text-soft pf-prose">Mutually exclusive choices. Marked up as a <code>radiogroup</code> so the selected state reaches assistive tech — a styled <code>&lt;div&gt;</code> would not. Arrow keys move between options.</p>
+    <p class="pf-body-default pf-text-soft pf-prose">Mutually exclusive choices. Marked up as a <code>radiogroup</code> so the selected state reaches assistive tech — a styled <code>&lt;div&gt;</code> would not. Arrow keys move between options.</p>
     <div class="sg-canvas">
       <div class="pf-stack" style="--gap: var(--puffy-space-12)">
         <div class="pf-section-head">
-          <h4 class="pf-heading-row" id="size-label">Choose Your Size:</h4>
+          <h4 class="pf-label-section" id="size-label">Choose Your Size:</h4>
           <a class="pf-link" href="#components">Size guide</a>
         </div>
         <div class="pf-selector-grid" role="radiogroup" aria-labelledby="size-label" id="size-group">
@@ -263,7 +267,7 @@
   <!-- OPTION CARD -->
   <div class="sg-wrap sg-specimen">
     <h3 class="pf-heading-support">Option card</h3>
-    <p class="pf-body pf-text-soft pf-prose">A richer choice — image, name, price, and what you get. The notched corner exists so the <code>__flag</code> tab can dock without overlapping the border.</p>
+    <p class="pf-body-default pf-text-soft pf-prose">A richer choice — image, name, price, and what you get. The notched corner exists so the <code>__flag</code> tab can dock without overlapping the border.</p>
     <div class="sg-canvas">
       <div class="pf-option-grid">
         <div class="pf-option-card is-current">
@@ -301,7 +305,7 @@
   <!-- BADGES -->
   <div class="sg-wrap sg-specimen">
     <h3 class="pf-heading-support">Badge</h3>
-    <p class="pf-body pf-text-soft pf-prose"><code>--rule</code> is the quiet amber treatment that sits inline with a product name. <code>--solid</code> and <code>--chip</code> are louder and should be rationed.</p>
+    <p class="pf-body-default pf-text-soft pf-prose"><code>--rule</code> is the quiet amber treatment that sits inline with a product name. <code>--solid</code> and <code>--chip</code> are louder and should be rationed.</p>
     <div class="sg-canvas">
       <div class="pf-cluster" style="--gap: var(--puffy-space-16)">
         <span class="pf-badge pf-badge--rule">Hybrid</span>
@@ -317,14 +321,14 @@
   <!-- PANEL + PRICE -->
   <div class="sg-wrap sg-specimen">
     <h3 class="pf-heading-support">Offer panel</h3>
-    <p class="pf-body pf-text-soft pf-prose">Groups a price with the things that justify it. The chip straddles the top border; the green ground is <code>--fill-green-soft</code> at 10% so <code>--success</code> text still clears AA on it (4.65:1).</p>
+    <p class="pf-body-default pf-text-soft pf-prose">Groups a price with the things that justify it. The chip straddles the top border; the green ground is <code>--fill-green-soft</code> — 5% teal, as the live site serves it — so <code>--success</code> text clears AA on it at 5.13:1.</p>
     <div class="sg-canvas">
       <div class="pf-panel pf-panel--offer" style="max-width: 450px">
         <span class="pf-badge pf-badge--chip pf-panel__chip">Labor Day Sale</span>
         <div class="pf-panel__head">
           <div class="pf-price-block">
-            <span class="pf-price">$1,699</span>
-            <span class="pf-price-block__was pf-caption"><s>$2,599</s> &nbsp;Save $900</span>
+            <span class="pf-price-large">$1,699</span>
+            <span class="pf-price-block__was pf-label-caption"><s>$2,599</s> &nbsp;Save $900</span>
           </div>
           <span class="pf-panel__row-label">Code<br><span class="pf-text-success">LUX900</span></span>
         </div>
@@ -351,7 +355,7 @@
   <!-- BENEFITS -->
   <div class="sg-wrap sg-specimen">
     <h3 class="pf-heading-support">Benefit row</h3>
-    <p class="pf-body pf-text-soft pf-prose">The workhorse of the buy box: one icon, one claim, no paragraph.</p>
+    <p class="pf-body-default pf-text-soft pf-prose">The workhorse of the buy box: one icon, one claim, no paragraph.</p>
     <div class="sg-canvas">
       <div class="pf-benefits" style="max-width: 450px">
         <div class="pf-benefit">
@@ -373,7 +377,7 @@
   <!-- ACCORDION -->
   <div class="sg-wrap sg-specimen">
     <h3 class="pf-heading-support">Accordion</h3>
-    <p class="pf-body pf-text-soft pf-prose">Built on <code>&lt;details&gt;</code>, so it works before JavaScript loads and announces its state for free.</p>
+    <p class="pf-body-default pf-text-soft pf-prose">Built on <code>&lt;details&gt;</code>, so it works before JavaScript loads and announces its state for free.</p>
     <div class="sg-canvas">
       <details class="pf-accordion" style="max-width: 450px">
         <summary class="pf-accordion__trigger">
@@ -382,7 +386,7 @@
           <img class="pf-accordion__chevron" src="../system/icons/chevron-down.svg" alt="">
         </summary>
         <div class="pf-accordion__panel">
-          <p class="pf-body pf-text-soft">We carry it in, set it up in the room you choose, and take the old mattress away. Available in 48 states.</p>
+          <p class="pf-body-default pf-text-soft">We carry it in, set it up in the room you choose, and take the old mattress away. Available in 48 states.</p>
         </div>
       </details>
     </div>
@@ -391,7 +395,7 @@
   <!-- USP -->
   <div class="sg-wrap sg-specimen">
     <h3 class="pf-heading-support">USP bar</h3>
-    <p class="pf-body pf-text-soft pf-prose">The navy reassurance strip. On this ground the focus ring inverts to white — add <code>.pf-on-dark</code>.</p>
+    <p class="pf-body-default pf-text-soft pf-prose">The navy reassurance strip. On this ground the focus ring inverts to white — add <code>.pf-on-dark</code>.</p>
   </div>
   <div class="pf-usp pf-on-dark">
     <div class="pf-usp__inner">
@@ -406,36 +410,36 @@
 <!-- ====================================================================== -->
 <section class="sg-section sg-section--alt" id="accessibility">
   <div class="sg-wrap">
-    <p class="pf-label sg-eyebrow sg-eyebrow--dark">08 &nbsp;/&nbsp; Accessibility</p>
+    <p class="pf-label-inside pf-uppercase sg-eyebrow sg-eyebrow--dark">08 &nbsp;/&nbsp; Accessibility</p>
     <h2 class="pf-heading-section">WCAG 2.2 AA, built into the tokens.</h2>
-    <p class="pf-body pf-text-soft pf-prose sg-lede">
+    <p class="pf-body-default pf-text-soft pf-prose sg-lede">
       These are commitments the system enforces, not a checklist someone runs at the end.
     </p>
 
     <div class="sg-a11y">
       <div>
         <h3 class="pf-heading-support">1.4.3 · Contrast</h3>
-        <p class="pf-body pf-text-soft">Every approved pairing is measured on this page. Two tokens are deliberately restricted: <code>--highlight-soft</code> is dark-grounds-only, and <code>--brand</code> is large-text-and-non-text only.</p>
+        <p class="pf-body-default pf-text-soft">Every approved pairing is measured on this page. Two tokens are deliberately restricted: <code>--highlight-soft</code> is dark-grounds-only, and <code>--brand</code> is large-text-and-non-text only.</p>
       </div>
       <div>
         <h3 class="pf-heading-support">1.4.11 · Non-text contrast</h3>
-        <p class="pf-body pf-text-soft">The softest border in the system, <code>--border-sub-strong</code>, measures 3.35:1 on white — clearing the 3:1 requirement for component boundaries.</p>
+        <p class="pf-body-default pf-text-soft">The softest border in the system, <code>--border-sub-strong</code>, measures 3.35:1 on white — clearing the 3:1 requirement for component boundaries.</p>
       </div>
       <div>
         <h3 class="pf-heading-support">2.4.13 · Focus appearance</h3>
-        <p class="pf-body pf-text-soft">One ring, defined once in <code>02-base.css</code>, inverted on dark grounds. Tab through this page — nothing loses its outline.</p>
+        <p class="pf-body-default pf-text-soft">One ring, defined once in <code>02-base.css</code>, inverted on dark grounds. Tab through this page — nothing loses its outline.</p>
       </div>
       <div>
         <h3 class="pf-heading-support">2.5.8 · Target size</h3>
-        <p class="pf-body pf-text-soft">Controls design to a 44px target. <code>.pf-target</code> extends the hit area of a small control without changing how it looks.</p>
+        <p class="pf-body-default pf-text-soft">Controls design to a 44px target. <code>.pf-target</code> extends the hit area of a small control without changing how it looks.</p>
       </div>
       <div>
         <h3 class="pf-heading-support">2.3.3 · Animation from interaction</h3>
-        <p class="pf-body pf-text-soft">Nothing in the system depends on motion to convey meaning, so <code>prefers-reduced-motion</code> cuts all of it safely.</p>
+        <p class="pf-body-default pf-text-soft">Nothing in the system depends on motion to convey meaning, so <code>prefers-reduced-motion</code> cuts all of it safely.</p>
       </div>
       <div>
         <h3 class="pf-heading-support">4.1.2 · Name, role, value</h3>
-        <p class="pf-body pf-text-soft">Selectors are <code>radiogroup</code>s, disclosures are <code>&lt;details&gt;</code>, icon-only controls carry <code>.pf-sr-only</code> text.</p>
+        <p class="pf-body-default pf-text-soft">Selectors are <code>radiogroup</code>s, disclosures are <code>&lt;details&gt;</code>, icon-only controls carry <code>.pf-sr-only</code> text.</p>
       </div>
     </div>
   </div>
@@ -445,8 +449,8 @@
 
 <footer class="sg-footer pf-surface--cta pf-on-dark">
   <div class="sg-wrap">
-    <p class="pf-label sg-eyebrow">Puffy &nbsp;·&nbsp; Foundations &nbsp;·&nbsp; v1.0</p>
-    <p class="pf-body">
+    <p class="pf-label-inside pf-uppercase sg-eyebrow">Puffy &nbsp;·&nbsp; Foundations &nbsp;·&nbsp; v1.0</p>
+    <p class="pf-body-default">
       Lux PDP &nbsp;·&nbsp; Source-derived reference &nbsp;·&nbsp; September 2026<br>
       <a class="pf-link pf-text-sub-soft" href="../baseline/index.html">View the source baseline →</a>
     </p>

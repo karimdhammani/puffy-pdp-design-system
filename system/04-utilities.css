@@ -75,9 +75,9 @@
   padding: var(--puffy-space-8) var(--puffy-space-16);
   border-radius: var(--puffy-radius-4);
   background: var(--fill-cta);
-  color: var(--text-on-fill);
+  color: var(--white);
   transform: translateY(-200%);
-  transition: transform var(--duration-fast) var(--ease-standard);
+  transition: transform var(--time-faster) var(--ease-standard);
 }
 .pf-skip-link:focus-visible { transform: translateY(0); }
 
@@ -107,7 +107,7 @@
 .pf-text-success { color: var(--success); }
 .pf-text-warning { color: var(--warning); }
 .pf-text-highlight { color: var(--highlight-strong); }
-.pf-text-on-fill { color: var(--text-on-fill); }
+.pf-text-on-fill { color: var(--white); }
 
 /* ==========================================================================
    ALIGNMENT & FLOW

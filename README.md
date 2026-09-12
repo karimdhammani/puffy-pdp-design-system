@@ -27,11 +27,11 @@ This repository turns that implicit language into something you can build agains
 
 | | |
 |---|---|
-| **One source of truth** | 137 CSS custom properties in three tiers. A component asks for `--fill-cta`, never `#2b2f44`. |
+| **One source of truth** | 206 CSS custom properties in three tiers. A component asks for `--fill-cta`, never `#2b2f44`. |
+| **Reconciled three ways** | Live site → Figma → CSS, with the live PDP winning any disagreement. `npm run check` proves it: 149 checks. |
+| **Complete typography** | All 22 Figma text styles, with metrics read back from the library rather than transcribed. |
 | **Audited, not asserted** | Six WCAG 2.2 AA findings measured against production — see [`findings/`](findings/). |
-| **Machine-readable** | The same tokens in W3C DTCG JSON — imports into Figma Variables, Style Dictionary, or Tokens Studio, and briefs an LLM on the design language in one paste. |
-| **Provably in sync** | `npm run check` resolves both files to literal values and diffs them. 179 values, currently matching. |
-| **Accessible by construction** | Contrast, focus, and target size are properties of the tokens. Every pairing in the style guide states its measured ratio. |
+| **Machine-readable** | Tokens generated to W3C DTCG JSON — imports into Figma Variables, Style Dictionary, or Tokens Studio, and briefs an LLM on the design language in one paste. |
 
 ---
 
@@ -40,14 +40,14 @@ This repository turns that implicit language into something you can build agains
 ```
 system/                 The design system. This is the product.
   01-tokens.css           Tier 1 primitives → Tier 2 semantic → Tier 3 component
-  02-base.css             Reset, a11y floor, type styles (see note below)
+  02-base.css             Reset, a11y floor, the 22 Figma text styles
   03-components.css       17 components, each with its real states
   04-utilities.css        Layout primitives and single-purpose helpers
   puffy.css               Single entry point — one <link> gets you everything
   icons/                  46 source SVGs
 
 tokens/
-  puffy.tokens.json       The same system, W3C DTCG format, for tooling
+  puffy.tokens.json       GENERATED — W3C DTCG format, for tooling
 
 style-guide/            The living style guide. Generated from the stylesheet,
                         so it can't document a value the system no longer has.
@@ -63,7 +63,8 @@ pages/                  New pages built on the system.
   _template.html          Start here.
 
 tools/
-  check-tokens.js         Proves the JSON and the CSS agree.
+  build-tokens.js         Generates the DTCG JSON from the CSS
+  check-tokens.js         Guards the three-way reconciliation
 ```
 
 ---
@@ -82,7 +83,7 @@ Then compose from tokens and components:
 ```html
 <section class="pf-surface pf-section">
   <div class="pf-container pf-stack" style="--gap: var(--puffy-space-24)">
-    <p class="pf-label pf-text-highlight">Limited offer</p>
+    <p class="pf-label-inside pf-uppercase pf-text-highlight">Limited offer</p>
     <h2 class="pf-heading-section">Comfort, made consistent.</h2>
     <button class="pf-btn pf-btn--primary pf-btn--lg">
       <span class="pf-btn__label">Add to Cart <span class="pf-btn__sub">$1,699</span></span>
@@ -103,10 +104,14 @@ npx --yes serve . -l 4173
 
 Then open `/style-guide/`.
 
-### Check the tokens
+### Change a token
+
+The CSS is the source; the JSON is generated from it.
 
 ```bash
-npm run check
+# edit system/01-tokens.css, then
+npm run build     # regenerate tokens/puffy.tokens.json
+npm run check     # prove the reconciliation still holds
 ```
 
 ---
@@ -127,38 +132,61 @@ by which a rebrand, a dark mode, or a seasonal promo stays a one-file change.
 
 ---
 
-## Provenance
+## Reconciliation
 
-Values come from two places, and the difference matters:
+Three sources describe this system. They are reconciled in a fixed order of authority:
 
-**The Figma library** — [Puffy · Foundations — PDP Style Guide](https://www.figma.com/design/DXYctvnL7dCQc653hMysBA/Puffy-%C2%B7-Foundations---PDP-Style-Guide).
-Variable names, the `puffy/space/*` and `puffy/radius/*` scales, and the text-style
-metrics were read back from the library itself rather than transcribed, so
-`Puffy/Heading/Section` in Figma and `.pf-heading-section` in CSS are guaranteed to be
-the same 40/48 PT Serif Regular.
+```
+1. puffy.com/products/puffy-lux-mattress     the source of truth
+2. Figma · Puffy · Foundations — PDP Style Guide   naming and intent
+3. system/*.css                              the implementation
+```
 
-The library holds 256 variables, 22 text styles, and 5 effect styles across eleven pages.
-Values read back directly from it cover the colour roles (`--fill-cta`, `--fill-offer`,
-`--bg-soft`, `--bg-sub-soft`, `--bg-base-white`, `--success`, `--highlight-soft`,
-`--highlight-strong`, `--text-strong`, `--text-soft`, `--icon-strong`) and the
-`puffy/space/*` and `puffy/radius/*` scales.
+Where they disagreed, the **live site won**.
 
-> **Known gap — typography.** `02-base.css` currently ships **12** text styles. Figma page
-> `03 · Typography` defines **22**, including a responsive product-title ramp
-> (`Heading/Product mobile` 24/32 → `desktop` 28/36 → `wide` 32/40), `Price/Small`,
-> `Label/Control` and `Label/Control selected`, `Action/Primary`, `Action/Link`,
-> `Heading/Footer`, and `Heading/Gallery mobile`. The 12 that ship have correct metrics,
-> but the set is incomplete and some class names don't match the Figma names. Reconciling
-> to all 22 is the next change.
+### What came from where
 
-**The live source CSS** — the rest is derived from puffy.com's own `:root` and the Lux PDP
-stylesheet, using the naming convention Figma established. Token names are kept 1:1 with
-the live site, so this system can be adopted incrementally rather than as a rewrite.
+**The live site** supplied every value. Its own `:root` serves 202 custom properties,
+harvested directly from the rendered page, plus measurements taken off live elements —
+the 52px size option, the 300ms control transition, the 500ms CTA transition, the 8px
+control radius, the 122px resolved header height.
 
-`tokens/puffy.tokens.json` imports straight back into Figma Variables, so the two stay
-reconcilable in either direction.
+**Figma** supplied the naming and the structure: the `puffy/space/*` and `puffy/radius/*`
+scales, all 22 text-style names and metrics, the five elevation styles, the responsive
+rail widths, and the 44px target guidance. Metrics were read back from the library through
+the Figma API rather than transcribed, so `Puffy/Heading/Section` in Figma and
+`.pf-heading-section` in CSS cannot disagree about being 40/48 PT Serif Regular.
 
----
+### What the reconciliation changed
+
+Reconciling corrected real errors in the first version of this system:
+
+| Token | Was | Now | Source |
+|---|---|---|---|
+| `--border-green-strong` | `rgba(6,122,87,.8)` | `#067a57` solid | live + Figma |
+| `--fill-green-soft` | `rgba(6,122,87,.1)` | `rgba(10,204,146,.05)` | live + Figma |
+| `--fill-cta-hover` | `#1b1d2b` | `--hover-cta-solid: #1b1e2b` | live |
+| disabled opacity | 0.45 | 0.5 | Figma page 05 |
+| Effect styles | 5 invented names | the 5 real `Puffy/Elevation/*` | Figma |
+| Text styles | 12, some misnamed | all 22, names matching | Figma |
+| Radius scale | missing 16, 20 | complete, `full` = 9999px | Figma |
+| Alpha ramps | absent | `-50/-200/-800` on every family | live |
+
+The alpha ramps were the biggest gap: the live site builds every colour family with
+50/200/800/1000 steps for Tailwind's `rgb(var(--x) / <alpha>)` composition, and the first
+version of this system had none of them.
+
+### How it stays reconciled
+
+`npm run check` runs three independent guards, because each catches a different way to drift:
+
+| Guard | Catches |
+|---|---|
+| **JSON currency** | A hand-edit to the generated `tokens/puffy.tokens.json`, or a forgotten `npm run build` |
+| **Figma metrics** | CSS drifting from the library — the 22 text styles are asserted against the metrics read from Figma |
+| **Live values** | The site rebranding. 38 colour primitives are asserted against what `puffy.com` serves |
+
+Each was tested by deliberately introducing the drift it is meant to catch.
 
 ## Where this improves on the baseline
 

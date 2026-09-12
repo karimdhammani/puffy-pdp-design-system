@@ -1,264 +1,1604 @@
 {
   "$schema": "https://design-tokens.github.io/community-group/format/",
-  "$description": "Puffy · Foundations — PDP design tokens. W3C DTCG format, so this file imports into Figma Variables, Style Dictionary, and Tokens Studio without translation. Mirrors system/01-tokens.css; `npm run check` proves the two agree.",
+  "$description": "Puffy · Foundations — PDP design tokens. GENERATED from system/01-tokens.css and system/02-base.css by tools/build-tokens.js — edit the CSS, not this file. W3C DTCG format, so it imports into Figma Variables, Style Dictionary, and Tokens Studio without translation. Values are reconciled against the live site at puffy.com/products/puffy-lux-mattress, which is the source of truth.",
   "puffy": {
-    "$description": "TIER 1 — primitives. Raw values with no assigned meaning.",
     "color": {
-      "navy-blue-light-1000": { "$type": "color", "$value": "#2b2f44" },
-      "navy-blue-dark-1000": { "$type": "color", "$value": "#777b91" },
-      "slate-gray-light-1000": { "$type": "color", "$value": "#596c7f" },
-      "slate-gray-dark-1000": { "$type": "color", "$value": "#869cb2" },
-      "solid-beige-700": { "$type": "color", "$value": "#464645" },
-      "solid-beige-600": { "$type": "color", "$value": "#8e8c89" },
-      "solid-beige-500": { "$type": "color", "$value": "#d5d2cc" },
-      "solid-beige-400": { "$type": "color", "$value": "#f1e3cf" },
-      "solid-beige-300": { "$type": "color", "$value": "#e5e3df" },
-      "solid-beige-200": { "$type": "color", "$value": "#ebeae7" },
-      "solid-beige-100": { "$type": "color", "$value": "#fbfbfa" },
-      "beige-100": { "$type": "color", "$value": "#faf6ef" },
-      "beige-200": { "$type": "color", "$value": "#f1eeea" },
-      "beige-600": { "$type": "color", "$value": "#e0c194" },
-      "beige-700": { "$type": "color", "$value": "#c79344" },
-      "primary-600": { "$type": "color", "$value": "#1b1d2b" },
-      "amber-light-1000": { "$type": "color", "$value": "#8f6c1a" },
-      "amber-dark-1000": { "$type": "color", "$value": "#e0be70" },
-      "green-light-1000": { "$type": "color", "$value": "#067a57" },
-      "red-light-1000": { "$type": "color", "$value": "#c73a3a" },
-      "base-black": { "$type": "color", "$value": "#333333" },
-      "base-white": { "$type": "color", "$value": "#ffffff" }
+      "$type": "color",
+      "base-white": {
+        "$value": "#ffffff",
+        "$extensions": {
+          "css": "--base-white"
+        }
+      },
+      "base-black": {
+        "$value": "#333333",
+        "$extensions": {
+          "css": "--base-black"
+        }
+      },
+      "base-green": {
+        "$value": "#067a57",
+        "$extensions": {
+          "css": "--base-green"
+        }
+      },
+      "base-red": {
+        "$value": "#8f6c1a",
+        "$extensions": {
+          "css": "--base-red"
+        }
+      },
+      "base-amber": {
+        "$value": "#c73a3a",
+        "$extensions": {
+          "css": "--base-amber"
+        }
+      },
+      "navy-blue-light-1000": {
+        "$value": "#2b2f44",
+        "$extensions": {
+          "css": "--navy-blue-light-1000"
+        }
+      },
+      "navy-blue-light-800": {
+        "$value": "rgba(43, 47, 68, 0.8)",
+        "$extensions": {
+          "css": "--navy-blue-light-800"
+        }
+      },
+      "navy-blue-light-200": {
+        "$value": "rgba(43, 47, 68, 0.2)",
+        "$extensions": {
+          "css": "--navy-blue-light-200"
+        }
+      },
+      "navy-blue-light-50": {
+        "$value": "rgba(43, 47, 68, 0.05)",
+        "$extensions": {
+          "css": "--navy-blue-light-50"
+        }
+      },
+      "navy-blue-dark-1000": {
+        "$value": "#777b91",
+        "$extensions": {
+          "css": "--navy-blue-dark-1000"
+        }
+      },
+      "navy-blue-dark-800": {
+        "$value": "rgba(119, 123, 145, 0.8)",
+        "$extensions": {
+          "css": "--navy-blue-dark-800"
+        }
+      },
+      "navy-blue-dark-200": {
+        "$value": "rgba(119, 123, 145, 0.2)",
+        "$extensions": {
+          "css": "--navy-blue-dark-200"
+        }
+      },
+      "navy-blue-dark-50": {
+        "$value": "rgba(119, 123, 145, 0.08)",
+        "$extensions": {
+          "css": "--navy-blue-dark-50"
+        }
+      },
+      "slate-gray-light-1000": {
+        "$value": "#596c7f",
+        "$extensions": {
+          "css": "--slate-gray-light-1000"
+        }
+      },
+      "slate-gray-light-800": {
+        "$value": "rgba(89, 108, 127, 0.8)",
+        "$extensions": {
+          "css": "--slate-gray-light-800"
+        }
+      },
+      "slate-gray-light-200": {
+        "$value": "rgba(89, 108, 127, 0.2)",
+        "$extensions": {
+          "css": "--slate-gray-light-200"
+        }
+      },
+      "slate-gray-light-50": {
+        "$value": "rgba(89, 108, 127, 0.08)",
+        "$extensions": {
+          "css": "--slate-gray-light-50"
+        }
+      },
+      "slate-gray-dark-1000": {
+        "$value": "#869cb2",
+        "$extensions": {
+          "css": "--slate-gray-dark-1000"
+        }
+      },
+      "slate-gray-dark-800": {
+        "$value": "rgba(134, 156, 178, 0.8)",
+        "$extensions": {
+          "css": "--slate-gray-dark-800"
+        }
+      },
+      "slate-gray-dark-200": {
+        "$value": "rgba(134, 156, 178, 0.2)",
+        "$extensions": {
+          "css": "--slate-gray-dark-200"
+        }
+      },
+      "slate-gray-dark-50": {
+        "$value": "rgba(134, 156, 178, 0.08)",
+        "$extensions": {
+          "css": "--slate-gray-dark-50"
+        }
+      },
+      "amber-light-1000": {
+        "$value": "#8f6c1a",
+        "$extensions": {
+          "css": "--amber-light-1000"
+        }
+      },
+      "amber-light-800": {
+        "$value": "rgba(143, 108, 26, 0.8)",
+        "$extensions": {
+          "css": "--amber-light-800"
+        }
+      },
+      "amber-light-200": {
+        "$value": "rgba(143, 108, 26, 0.2)",
+        "$extensions": {
+          "css": "--amber-light-200"
+        }
+      },
+      "amber-light-50": {
+        "$value": "rgba(255, 192, 46, 0.05)",
+        "$extensions": {
+          "css": "--amber-light-50"
+        }
+      },
+      "amber-dark-1000": {
+        "$value": "#e0be70",
+        "$extensions": {
+          "css": "--amber-dark-1000"
+        }
+      },
+      "amber-dark-800": {
+        "$value": "rgba(224, 190, 112, 0.8)",
+        "$extensions": {
+          "css": "--amber-dark-800"
+        }
+      },
+      "amber-dark-200": {
+        "$value": "rgba(224, 190, 112, 0.2)",
+        "$extensions": {
+          "css": "--amber-dark-200"
+        }
+      },
+      "amber-dark-50": {
+        "$value": "rgba(224, 190, 112, 0.08)",
+        "$extensions": {
+          "css": "--amber-dark-50"
+        }
+      },
+      "green-light-1000": {
+        "$value": "#067a57",
+        "$extensions": {
+          "css": "--green-light-1000"
+        }
+      },
+      "green-light-800": {
+        "$value": "rgba(6, 122, 87, 0.8)",
+        "$extensions": {
+          "css": "--green-light-800"
+        }
+      },
+      "green-light-200": {
+        "$value": "rgba(6, 122, 87, 0.14)",
+        "$extensions": {
+          "css": "--green-light-200"
+        }
+      },
+      "green-light-50": {
+        "$value": "rgba(10, 204, 146, 0.05)",
+        "$extensions": {
+          "css": "--green-light-50"
+        }
+      },
+      "green-dark-1000": {
+        "$value": "#77c7af",
+        "$extensions": {
+          "css": "--green-dark-1000"
+        }
+      },
+      "green-dark-800": {
+        "$value": "rgba(119, 199, 175, 0.8)",
+        "$extensions": {
+          "css": "--green-dark-800"
+        }
+      },
+      "green-dark-200": {
+        "$value": "rgba(119, 199, 175, 0.2)",
+        "$extensions": {
+          "css": "--green-dark-200"
+        }
+      },
+      "green-dark-50": {
+        "$value": "rgba(119, 199, 175, 0.08)",
+        "$extensions": {
+          "css": "--green-dark-50"
+        }
+      },
+      "red-light-1000": {
+        "$value": "#c73a3a",
+        "$extensions": {
+          "css": "--red-light-1000"
+        }
+      },
+      "red-light-800": {
+        "$value": "rgba(199, 58, 58, 0.8)",
+        "$extensions": {
+          "css": "--red-light-800"
+        }
+      },
+      "red-light-200": {
+        "$value": "rgba(199, 58, 58, 0.14)",
+        "$extensions": {
+          "css": "--red-light-200"
+        }
+      },
+      "red-light-50": {
+        "$value": "rgba(199, 58, 58, 0.05)",
+        "$extensions": {
+          "css": "--red-light-50"
+        }
+      },
+      "red-dark-1000": {
+        "$value": "#ff9c9c",
+        "$extensions": {
+          "css": "--red-dark-1000"
+        }
+      },
+      "red-dark-800": {
+        "$value": "rgba(255, 156, 156, 0.8)",
+        "$extensions": {
+          "css": "--red-dark-800"
+        }
+      },
+      "red-dark-200": {
+        "$value": "rgba(255, 156, 156, 0.2)",
+        "$extensions": {
+          "css": "--red-dark-200"
+        }
+      },
+      "red-dark-50": {
+        "$value": "rgba(255, 156, 156, 0.08)",
+        "$extensions": {
+          "css": "--red-dark-50"
+        }
+      },
+      "solid-beige-700": {
+        "$value": "#464645",
+        "$extensions": {
+          "css": "--solid-beige-700"
+        }
+      },
+      "solid-beige-600": {
+        "$value": "#8e8c89",
+        "$extensions": {
+          "css": "--solid-beige-600"
+        }
+      },
+      "solid-beige-500": {
+        "$value": "#d5d2cc",
+        "$extensions": {
+          "css": "--solid-beige-500"
+        }
+      },
+      "solid-beige-400": {
+        "$value": "#f1e3cf",
+        "$extensions": {
+          "css": "--solid-beige-400"
+        }
+      },
+      "solid-beige-300": {
+        "$value": "#e5e3df",
+        "$extensions": {
+          "css": "--solid-beige-300"
+        }
+      },
+      "solid-beige-200": {
+        "$value": "#ebeae7",
+        "$extensions": {
+          "css": "--solid-beige-200"
+        }
+      },
+      "solid-beige-100": {
+        "$value": "#fbfbfa",
+        "$extensions": {
+          "css": "--solid-beige-100"
+        }
+      },
+      "beige-100": {
+        "$value": "#faf6ef",
+        "$extensions": {
+          "css": "--beige-100"
+        }
+      },
+      "beige-150": {
+        "$value": "#f7f5f2",
+        "$extensions": {
+          "css": "--beige-150"
+        }
+      },
+      "beige-200": {
+        "$value": "#f1eeea",
+        "$extensions": {
+          "css": "--beige-200"
+        }
+      },
+      "beige-300": {
+        "$value": "#d9d1c5",
+        "$extensions": {
+          "css": "--beige-300"
+        }
+      },
+      "beige-500": {
+        "$value": "#f1e3cf",
+        "$extensions": {
+          "css": "--beige-500"
+        }
+      },
+      "beige-600": {
+        "$value": "#e0c194",
+        "$extensions": {
+          "css": "--beige-600"
+        }
+      },
+      "beige-700": {
+        "$value": "#c79344",
+        "$extensions": {
+          "css": "--beige-700"
+        }
+      },
+      "blue-100": {
+        "$value": "#f4f5f9",
+        "$extensions": {
+          "css": "--blue-100"
+        }
+      },
+      "blue-200": {
+        "$value": "#dadce8",
+        "$extensions": {
+          "css": "--blue-200"
+        }
+      },
+      "blue-300": {
+        "$value": "#9197b9",
+        "$extensions": {
+          "css": "--blue-300"
+        }
+      },
+      "blue-500": {
+        "$value": "#2b2f44",
+        "$extensions": {
+          "css": "--blue-500"
+        }
+      },
+      "blue-600": {
+        "$value": "#1b1d2b",
+        "$extensions": {
+          "css": "--blue-600"
+        }
+      },
+      "neutral-100": {
+        "$value": "#ffffff",
+        "$extensions": {
+          "css": "--neutral-100"
+        }
+      },
+      "neutral-200": {
+        "$value": "#f6f8f9",
+        "$extensions": {
+          "css": "--neutral-200"
+        }
+      },
+      "neutral-300": {
+        "$value": "#b1bdc8",
+        "$extensions": {
+          "css": "--neutral-300"
+        }
+      },
+      "neutral-500": {
+        "$value": "#596c7f",
+        "$extensions": {
+          "css": "--neutral-500"
+        }
+      },
+      "neutral-600": {
+        "$value": "#35495e",
+        "$extensions": {
+          "css": "--neutral-600"
+        }
+      },
+      "neutral-700": {
+        "$value": "#2c3640",
+        "$extensions": {
+          "css": "--neutral-700"
+        }
+      },
+      "neutral-800": {
+        "$value": "#1f1f1f",
+        "$extensions": {
+          "css": "--neutral-800"
+        }
+      },
+      "green-500": {
+        "$value": "#6e9672",
+        "$extensions": {
+          "css": "--green-500"
+        }
+      },
+      "green-600": {
+        "$value": "#157d12",
+        "$extensions": {
+          "css": "--green-600"
+        }
+      },
+      "red-500": {
+        "$value": "#ae4134",
+        "$extensions": {
+          "css": "--red-500"
+        }
+      }
     },
     "space": {
-      "$type": "dimension",
-      "$description": "4px base grid.",
-      "0": { "$value": "0px" },
-      "2": { "$value": "2px" },
-      "4": { "$value": "4px" },
-      "6": { "$value": "6px" },
-      "8": { "$value": "8px" },
-      "12": { "$value": "12px" },
-      "16": { "$value": "16px" },
-      "20": { "$value": "20px" },
-      "24": { "$value": "24px" },
-      "32": { "$value": "32px" },
-      "40": { "$value": "40px" },
-      "48": { "$value": "48px" },
-      "56": { "$value": "56px" },
-      "64": { "$value": "64px" },
-      "80": { "$value": "80px" },
-      "96": { "$value": "96px" }
+      "0": {
+        "$value": "0px",
+        "$extensions": {
+          "css": "--puffy-space-0"
+        }
+      },
+      "2": {
+        "$value": "2px",
+        "$extensions": {
+          "css": "--puffy-space-2"
+        }
+      },
+      "4": {
+        "$value": "4px",
+        "$extensions": {
+          "css": "--puffy-space-4"
+        }
+      },
+      "6": {
+        "$value": "6px",
+        "$extensions": {
+          "css": "--puffy-space-6"
+        }
+      },
+      "8": {
+        "$value": "8px",
+        "$extensions": {
+          "css": "--puffy-space-8"
+        }
+      },
+      "12": {
+        "$value": "12px",
+        "$extensions": {
+          "css": "--puffy-space-12"
+        }
+      },
+      "16": {
+        "$value": "16px",
+        "$extensions": {
+          "css": "--puffy-space-16"
+        }
+      },
+      "20": {
+        "$value": "20px",
+        "$extensions": {
+          "css": "--puffy-space-20"
+        }
+      },
+      "24": {
+        "$value": "24px",
+        "$extensions": {
+          "css": "--puffy-space-24"
+        }
+      },
+      "32": {
+        "$value": "32px",
+        "$extensions": {
+          "css": "--puffy-space-32"
+        }
+      },
+      "40": {
+        "$value": "40px",
+        "$extensions": {
+          "css": "--puffy-space-40"
+        }
+      },
+      "48": {
+        "$value": "48px",
+        "$extensions": {
+          "css": "--puffy-space-48"
+        }
+      },
+      "64": {
+        "$value": "64px",
+        "$extensions": {
+          "css": "--puffy-space-64"
+        }
+      },
+      "80": {
+        "$value": "80px",
+        "$extensions": {
+          "css": "--puffy-space-80"
+        }
+      },
+      "96": {
+        "$value": "96px",
+        "$extensions": {
+          "css": "--puffy-space-96"
+        }
+      },
+      "$type": "dimension"
     },
     "radius": {
+      "0": {
+        "$value": "0px",
+        "$extensions": {
+          "css": "--puffy-radius-0"
+        }
+      },
+      "2": {
+        "$value": "2px",
+        "$extensions": {
+          "css": "--puffy-radius-2"
+        }
+      },
+      "4": {
+        "$value": "4px",
+        "$extensions": {
+          "css": "--puffy-radius-4"
+        }
+      },
+      "6": {
+        "$value": "6px",
+        "$extensions": {
+          "css": "--puffy-radius-6"
+        }
+      },
+      "8": {
+        "$value": "8px",
+        "$extensions": {
+          "css": "--puffy-radius-8"
+        }
+      },
+      "12": {
+        "$value": "12px",
+        "$extensions": {
+          "css": "--puffy-radius-12"
+        }
+      },
+      "16": {
+        "$value": "16px",
+        "$extensions": {
+          "css": "--puffy-radius-16"
+        }
+      },
+      "20": {
+        "$value": "20px",
+        "$extensions": {
+          "css": "--puffy-radius-20"
+        }
+      },
       "$type": "dimension",
-      "0": { "$value": "0px" },
-      "2": { "$value": "2px" },
-      "4": { "$value": "4px" },
-      "6": { "$value": "6px" },
-      "8": { "$value": "8px" },
-      "12": { "$value": "12px" },
-      "pill": { "$value": "999px" },
-      "circle": { "$value": "50%" }
-    },
-    "size": {
-      "$type": "dimension",
-      "$description": "Font sizes.",
-      "10": { "$value": "10px" },
-      "12": { "$value": "12px" },
-      "14": { "$value": "14px" },
-      "16": { "$value": "16px" },
-      "18": { "$value": "18px" },
-      "20": { "$value": "20px" },
-      "24": { "$value": "24px" },
-      "28": { "$value": "28px" },
-      "32": { "$value": "32px" },
-      "40": { "$value": "40px" }
-    },
-    "leading": {
-      "$type": "dimension",
-      "12": { "$value": "12px" },
-      "15": { "$value": "15px" },
-      "18": { "$value": "18px" },
-      "20": { "$value": "20px" },
-      "24": { "$value": "24px" },
-      "28": { "$value": "28px" },
-      "32": { "$value": "32px" },
-      "36": { "$value": "36px" },
-      "40": { "$value": "40px" },
-      "48": { "$value": "48px" }
-    },
-    "weight": {
-      "$type": "fontWeight",
-      "regular": { "$value": 400 },
-      "medium": { "$value": 500 },
-      "semibold": { "$value": 600 },
-      "bold": { "$value": 700 }
-    },
-    "tracking": {
-      "$type": "dimension",
-      "tight": { "$value": "-0.03em" },
-      "none": { "$value": "0" },
-      "label": { "$value": "0.1em" },
-      "wide": { "$value": "0.12em" },
-      "wider": { "$value": "0.14em" }
+      "full": {
+        "$value": "9999px",
+        "$extensions": {
+          "css": "--puffy-radius-full"
+        }
+      },
+      "circle": {
+        "$value": "50%",
+        "$extensions": {
+          "css": "--puffy-radius-circle"
+        }
+      }
     },
     "family": {
       "$type": "fontFamily",
-      "sans": { "$value": ["Mukta", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"] },
-      "serif": { "$value": ["PT Serif", "ui-serif", "Georgia", "Cambria", "Times New Roman", "serif"] }
+      "serif": {
+        "$value": "\"PT Serif\", ui-serif, Georgia, Cambria, \"Times New Roman\", serif",
+        "$extensions": {
+          "css": "--font-serif"
+        }
+      },
+      "sans": {
+        "$value": "\"Mukta\", ui-sans-serif, system-ui, -apple-system, sans-serif",
+        "$extensions": {
+          "css": "--font-sans"
+        }
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": {
+        "$value": "400",
+        "$extensions": {
+          "css": "--puffy-weight-regular"
+        }
+      },
+      "medium": {
+        "$value": "500",
+        "$extensions": {
+          "css": "--puffy-weight-medium"
+        }
+      },
+      "semibold": {
+        "$value": "600",
+        "$extensions": {
+          "css": "--puffy-weight-semibold"
+        }
+      },
+      "bold": {
+        "$value": "700",
+        "$extensions": {
+          "css": "--puffy-weight-bold"
+        }
+      }
+    },
+    "size": {
+      "12": {
+        "$value": "12px",
+        "$extensions": {
+          "css": "--puffy-size-12"
+        }
+      },
+      "14": {
+        "$value": "14px",
+        "$extensions": {
+          "css": "--puffy-size-14"
+        }
+      },
+      "16": {
+        "$value": "16px",
+        "$extensions": {
+          "css": "--puffy-size-16"
+        }
+      },
+      "18": {
+        "$value": "18px",
+        "$extensions": {
+          "css": "--puffy-size-18"
+        }
+      },
+      "20": {
+        "$value": "20px",
+        "$extensions": {
+          "css": "--puffy-size-20"
+        }
+      },
+      "24": {
+        "$value": "24px",
+        "$extensions": {
+          "css": "--puffy-size-24"
+        }
+      },
+      "28": {
+        "$value": "28px",
+        "$extensions": {
+          "css": "--puffy-size-28"
+        }
+      },
+      "32": {
+        "$value": "32px",
+        "$extensions": {
+          "css": "--puffy-size-32"
+        }
+      },
+      "40": {
+        "$value": "40px",
+        "$extensions": {
+          "css": "--puffy-size-40"
+        }
+      },
+      "$type": "dimension"
+    },
+    "leading": {
+      "18": {
+        "$value": "18px",
+        "$extensions": {
+          "css": "--puffy-leading-18"
+        }
+      },
+      "20": {
+        "$value": "20px",
+        "$extensions": {
+          "css": "--puffy-leading-20"
+        }
+      },
+      "24": {
+        "$value": "24px",
+        "$extensions": {
+          "css": "--puffy-leading-24"
+        }
+      },
+      "25": {
+        "$value": "25px",
+        "$extensions": {
+          "css": "--puffy-leading-25"
+        }
+      },
+      "28": {
+        "$value": "28px",
+        "$extensions": {
+          "css": "--puffy-leading-28"
+        }
+      },
+      "32": {
+        "$value": "32px",
+        "$extensions": {
+          "css": "--puffy-leading-32"
+        }
+      },
+      "36": {
+        "$value": "36px",
+        "$extensions": {
+          "css": "--puffy-leading-36"
+        }
+      },
+      "40": {
+        "$value": "40px",
+        "$extensions": {
+          "css": "--puffy-leading-40"
+        }
+      },
+      "48": {
+        "$value": "48px",
+        "$extensions": {
+          "css": "--puffy-leading-48"
+        }
+      },
+      "$type": "dimension"
+    },
+    "tracking": {
+      "$type": "dimension",
+      "none": {
+        "$value": "0",
+        "$extensions": {
+          "css": "--puffy-tracking-none"
+        }
+      },
+      "label": {
+        "$value": "1.4px",
+        "$extensions": {
+          "css": "--puffy-tracking-label"
+        }
+      }
     }
   },
-
   "text": {
     "$type": "color",
-    "$description": "TIER 2 — semantic. Contrast ratios stated against the ground each role is approved for.",
-    "strong": { "$value": "{puffy.color.base-black}", "$extensions": { "contrast": "12.63:1 on bg.base-white — AAA" } },
-    "sub-strong": { "$value": "rgba(43, 47, 68, 0.8)", "$extensions": { "contrast": "8.20:1 on bg.base-white — AAA" } },
-    "soft": { "$value": "{puffy.color.slate-gray-light-1000}", "$extensions": { "contrast": "5.42:1 on bg.base-white — AA" } },
-    "sub-soft": { "$value": "{puffy.color.solid-beige-500}", "$extensions": { "contrast": "8.74:1 on fill.cta — AAA. Light-on-dark only." } },
-    "on-fill": { "$value": "{puffy.color.base-white}", "$extensions": { "contrast": "13.18:1 on fill.cta — AAA" } }
+    "strong": {
+      "$value": "{puffy.color.base-black}",
+      "$extensions": {
+        "css": "--text-strong"
+      }
+    },
+    "sub-strong": {
+      "$value": "{puffy.color.navy-blue-light-800}",
+      "$extensions": {
+        "css": "--text-sub-strong"
+      }
+    },
+    "soft": {
+      "$value": "{puffy.color.slate-gray-light-1000}",
+      "$extensions": {
+        "css": "--text-soft"
+      }
+    },
+    "sub-soft": {
+      "$value": "{puffy.color.solid-beige-500}",
+      "$extensions": {
+        "css": "--text-sub-soft"
+      }
+    }
   },
-
   "highlight": {
     "$type": "color",
-    "strong": { "$value": "{puffy.color.amber-light-1000}", "$extensions": { "contrast": "4.85:1 on bg.base-white — AA. The text-safe amber." } },
-    "soft": { "$value": "{puffy.color.amber-dark-1000}", "$extensions": { "contrast": "7.39:1 on fill.cta — AAA. Fails on white; dark grounds only." } }
+    "strong": {
+      "$value": "{puffy.color.amber-light-1000}",
+      "$extensions": {
+        "css": "--highlight-strong"
+      }
+    },
+    "soft": {
+      "$value": "{puffy.color.amber-dark-1000}",
+      "$extensions": {
+        "css": "--highlight-soft"
+      }
+    }
   },
-
   "status": {
     "$type": "color",
-    "success": { "$value": "{puffy.color.green-light-1000}", "$extensions": { "contrast": "5.34:1 on bg.base-white — AA" } },
-    "warning": { "$value": "{puffy.color.red-light-1000}", "$extensions": { "contrast": "5.13:1 on bg.base-white — AA" } },
-    "brand": { "$value": "{puffy.color.navy-blue-dark-1000}", "$extensions": { "contrast": "3.16:1 on fill.cta — large text and non-text only." } }
+    "success": {
+      "$value": "{puffy.color.green-light-1000}",
+      "$extensions": {
+        "css": "--success"
+      }
+    },
+    "warning": {
+      "$value": "{puffy.color.red-light-1000}",
+      "$extensions": {
+        "css": "--warning"
+      }
+    },
+    "brand": {
+      "$value": "{puffy.color.navy-blue-dark-1000}",
+      "$extensions": {
+        "css": "--brand"
+      }
+    },
+    "disabled": {
+      "$value": "{puffy.color.slate-gray-dark-800}",
+      "$extensions": {
+        "css": "--disabled"
+      }
+    },
+    "white": {
+      "$value": "{puffy.color.base-white}",
+      "$extensions": {
+        "css": "--white"
+      }
+    }
   },
-
   "border": {
     "$type": "color",
-    "$description": "Non-text boundaries. WCAG 2.2 · 1.4.11 requires 3:1; the softest in use clears it at 3.35:1.",
-    "strong": { "$value": "{puffy.color.navy-blue-light-1000}" },
-    "sub-strong": { "$value": "{puffy.color.solid-beige-600}" },
-    "soft": { "$value": "{puffy.color.solid-beige-500}" },
-    "hairline": { "$value": "{puffy.color.solid-beige-300}" },
-    "green-strong": { "$value": "rgba(6, 122, 87, 0.8)" },
-    "green-soft": { "$value": "rgba(6, 122, 87, 0.14)" },
-    "amber": { "$value": "{puffy.color.amber-dark-1000}" }
+    "strong": {
+      "$value": "{puffy.color.navy-blue-light-1000}",
+      "$extensions": {
+        "css": "--border-strong"
+      }
+    },
+    "sub-strong": {
+      "$value": "{puffy.color.solid-beige-600}",
+      "$extensions": {
+        "css": "--border-sub-strong"
+      }
+    },
+    "soft": {
+      "$value": "{puffy.color.solid-beige-500}",
+      "$extensions": {
+        "css": "--border-soft"
+      }
+    },
+    "white": {
+      "$value": "{puffy.color.base-white}",
+      "$extensions": {
+        "css": "--border-white"
+      }
+    },
+    "black": {
+      "$value": "{puffy.color.base-black}",
+      "$extensions": {
+        "css": "--border-black"
+      }
+    },
+    "green-strong": {
+      "$value": "{puffy.color.green-light-1000}",
+      "$extensions": {
+        "css": "--border-green-strong"
+      }
+    },
+    "green-soft": {
+      "$value": "{puffy.color.green-light-200}",
+      "$extensions": {
+        "css": "--border-green-soft"
+      }
+    },
+    "amber-strong": {
+      "$value": "{puffy.color.amber-light-1000}",
+      "$extensions": {
+        "css": "--border-amber-strong"
+      }
+    },
+    "amber-soft": {
+      "$value": "{puffy.color.amber-light-200}",
+      "$extensions": {
+        "css": "--border-amber-soft"
+      }
+    },
+    "red-strong": {
+      "$value": "{puffy.color.red-light-1000}",
+      "$extensions": {
+        "css": "--border-red-strong"
+      }
+    },
+    "red-soft": {
+      "$value": "{puffy.color.red-light-200}",
+      "$extensions": {
+        "css": "--border-red-soft"
+      }
+    }
   },
-
   "bg": {
     "$type": "color",
-    "$description": "Page and surface grounds.",
-    "base-white": { "$value": "{puffy.color.base-white}" },
-    "strong": { "$value": "{puffy.color.solid-beige-600}" },
-    "sub-strong": { "$value": "{puffy.color.solid-beige-500}" },
-    "normal": { "$value": "{puffy.color.solid-beige-300}" },
-    "soft": { "$value": "{puffy.color.solid-beige-200}" },
-    "sub-soft": { "$value": "{puffy.color.solid-beige-100}" },
-    "warm": { "$value": "{puffy.color.beige-100}" }
+    "base-white": {
+      "$value": "{puffy.color.base-white}",
+      "$extensions": {
+        "css": "--bg-base-white"
+      }
+    },
+    "base-black": {
+      "$value": "{puffy.color.base-black}",
+      "$extensions": {
+        "css": "--bg-base-black"
+      }
+    },
+    "strong": {
+      "$value": "{puffy.color.solid-beige-600}",
+      "$extensions": {
+        "css": "--bg-strong"
+      }
+    },
+    "sub-strong": {
+      "$value": "{puffy.color.solid-beige-500}",
+      "$extensions": {
+        "css": "--bg-sub-strong"
+      }
+    },
+    "normal": {
+      "$value": "{puffy.color.solid-beige-300}",
+      "$extensions": {
+        "css": "--bg-normal"
+      }
+    },
+    "soft": {
+      "$value": "{puffy.color.solid-beige-200}",
+      "$extensions": {
+        "css": "--bg-soft"
+      }
+    },
+    "sub-soft": {
+      "$value": "{puffy.color.solid-beige-100}",
+      "$extensions": {
+        "css": "--bg-sub-soft"
+      }
+    }
   },
-
   "fill": {
     "$type": "color",
-    "$description": "Deliberate blocks of colour that carry meaning.",
-    "strong": { "$value": "{puffy.color.solid-beige-700}" },
-    "offer": { "$value": "{puffy.color.solid-beige-400}" },
-    "cta": { "$value": "{puffy.color.navy-blue-light-1000}" },
-    "cta-hover": { "$value": "{puffy.color.primary-600}" },
-    "lighter": { "$value": "{puffy.color.solid-beige-200}" },
-    "green-strong": { "$value": "{puffy.color.green-light-1000}" },
-    "green-soft": { "$value": "rgba(6, 122, 87, 0.1)" }
+    "cta": {
+      "$value": "{puffy.color.navy-blue-light-1000}",
+      "$extensions": {
+        "css": "--fill-cta"
+      }
+    },
+    "strong": {
+      "$value": "{puffy.color.solid-beige-700}",
+      "$extensions": {
+        "css": "--fill-strong"
+      }
+    },
+    "sub": {
+      "$value": "{puffy.color.solid-beige-500}",
+      "$extensions": {
+        "css": "--fill-sub"
+      }
+    },
+    "soft": {
+      "$value": "{puffy.color.solid-beige-300}",
+      "$extensions": {
+        "css": "--fill-soft"
+      }
+    },
+    "lighter": {
+      "$value": "{puffy.color.solid-beige-200}",
+      "$extensions": {
+        "css": "--fill-lighter"
+      }
+    },
+    "offer": {
+      "$value": "{puffy.color.solid-beige-400}",
+      "$extensions": {
+        "css": "--fill-offer"
+      }
+    },
+    "white": {
+      "$value": "{puffy.color.base-white}",
+      "$extensions": {
+        "css": "--fill-white"
+      }
+    },
+    "green-strong": {
+      "$value": "{puffy.color.green-light-1000}",
+      "$extensions": {
+        "css": "--fill-green-strong"
+      }
+    },
+    "green-soft": {
+      "$value": "{puffy.color.green-light-50}",
+      "$extensions": {
+        "css": "--fill-green-soft"
+      }
+    },
+    "amber-strong": {
+      "$value": "{puffy.color.amber-light-1000}",
+      "$extensions": {
+        "css": "--fill-amber-strong"
+      }
+    },
+    "amber-soft": {
+      "$value": "{puffy.color.amber-light-50}",
+      "$extensions": {
+        "css": "--fill-amber-soft"
+      }
+    },
+    "red-strong": {
+      "$value": "{puffy.color.red-light-1000}",
+      "$extensions": {
+        "css": "--fill-red-strong"
+      }
+    },
+    "red-soft": {
+      "$value": "{puffy.color.red-light-50}",
+      "$extensions": {
+        "css": "--fill-red-soft"
+      }
+    }
   },
-
+  "state": {
+    "$type": "color",
+    "cta-solid": {
+      "$value": "#1b1e2b",
+      "$extensions": {
+        "css": "--hover-cta-solid"
+      }
+    },
+    "cta-solid-light": {
+      "$value": "#f1e3cf",
+      "$extensions": {
+        "css": "--hover-cta-solid-light"
+      }
+    },
+    "cta-outline": {
+      "$value": "rgba(241, 227, 207, 0.35)",
+      "$extensions": {
+        "css": "--hover-cta-outline"
+      }
+    },
+    "cta-outline-light": {
+      "$value": "rgba(235, 234, 231, 0.2)",
+      "$extensions": {
+        "css": "--hover-cta-outline-light"
+      }
+    }
+  },
   "icon": {
     "$type": "color",
-    "strong": { "$value": "{puffy.color.base-black}" },
-    "soft": { "$value": "{puffy.color.solid-beige-500}" },
-    "green": { "$value": "{puffy.color.green-light-1000}" },
-    "amber-soft": { "$value": "{puffy.color.amber-dark-1000}" },
-    "on-fill": { "$value": "{puffy.color.base-white}" }
-  },
-
-  "typography": {
-    "$type": "typography",
-    "$description": "The 12 text styles. Names map 1:1 to the Figma library and to the .pf-* classes in system/02-base.css.",
-    "display": {
-      "$value": { "fontFamily": "{puffy.family.serif}", "fontSize": "{puffy.size.28}", "lineHeight": "{puffy.leading.36}", "fontWeight": "{puffy.weight.regular}", "letterSpacing": "{puffy.tracking.none}" },
-      "$extensions": { "figma": "Puffy/Display", "class": ".pf-display", "use": "Product name, sticky-bar title." }
+    "strong": {
+      "$value": "{puffy.color.base-black}",
+      "$extensions": {
+        "css": "--icon-strong"
+      }
     },
-    "heading-section": {
-      "$value": { "fontFamily": "{puffy.family.serif}", "fontSize": "{puffy.size.40}", "lineHeight": "{puffy.leading.48}", "fontWeight": "{puffy.weight.regular}", "letterSpacing": "{puffy.tracking.none}" },
-      "$extensions": { "figma": "Puffy/Heading/Section", "class": ".pf-heading-section", "use": "One per section, at most." }
+    "soft": {
+      "$value": "{puffy.color.solid-beige-500}",
+      "$extensions": {
+        "css": "--icon-soft"
+      }
     },
-    "heading-support": {
-      "$value": { "fontFamily": "{puffy.family.serif}", "fontSize": "{puffy.size.24}", "lineHeight": "{puffy.leading.32}", "fontWeight": "{puffy.weight.bold}" },
-      "$extensions": { "figma": "Puffy/Heading/Support", "class": ".pf-heading-support", "use": "Sub-heads and panel titles." }
+    "soft-slate": {
+      "$value": "{puffy.color.slate-gray-dark-1000}",
+      "$extensions": {
+        "css": "--icon-soft-slate"
+      }
     },
-    "heading-row": {
-      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.20}", "lineHeight": "{puffy.leading.28}", "fontWeight": "{puffy.weight.regular}" },
-      "$extensions": { "figma": "Puffy/Heading/Row", "class": ".pf-heading-row", "use": "Buy-box row titles — \"Choose Your Size:\"." }
+    "green": {
+      "$value": "{puffy.color.green-light-1000}",
+      "$extensions": {
+        "css": "--icon-green"
+      }
     },
-    "price": {
-      "$value": { "fontFamily": "{puffy.family.serif}", "fontSize": "{puffy.size.32}", "lineHeight": "{puffy.leading.40}", "fontWeight": "{puffy.weight.bold}" },
-      "$extensions": { "figma": "Puffy/Price", "class": ".pf-price", "use": "Money, and only money. Tabular figures." }
+    "red": {
+      "$value": "{puffy.color.red-light-1000}",
+      "$extensions": {
+        "css": "--icon-red"
+      }
     },
-    "body-large": {
-      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.18}", "lineHeight": "{puffy.leading.24}", "fontWeight": "{puffy.weight.regular}" },
-      "$extensions": { "figma": "Puffy/Body/Large", "class": ".pf-body-lg" }
+    "amber-strong": {
+      "$value": "{puffy.color.amber-light-800}",
+      "$extensions": {
+        "css": "--icon-amber-strong"
+      }
     },
-    "body-default": {
-      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.16}", "lineHeight": "{puffy.leading.24}", "fontWeight": "{puffy.weight.regular}" },
-      "$extensions": { "figma": "Puffy/Body/Default", "class": ".pf-body", "use": "The page's baseline voice." }
-    },
-    "body-benefit": {
-      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.16}", "lineHeight": "{puffy.leading.24}", "fontWeight": "{puffy.weight.medium}" },
-      "$extensions": { "figma": "Puffy/Body/Benefit desktop", "class": ".pf-body-benefit" }
-    },
-    "body-small": {
-      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.14}", "lineHeight": "{puffy.leading.20}", "fontWeight": "{puffy.weight.regular}" },
-      "$extensions": { "figma": "Puffy/Body/Small", "class": ".pf-body-sm" }
-    },
-    "label-caption": {
-      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.14}", "lineHeight": "{puffy.leading.20}", "fontWeight": "{puffy.weight.medium}" },
-      "$extensions": { "figma": "Puffy/Label/Caption", "class": ".pf-caption", "use": "Metadata and helper text." }
-    },
-    "label-inside": {
-      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.14}", "lineHeight": "{puffy.leading.20}", "fontWeight": "{puffy.weight.semibold}", "letterSpacing": "{puffy.tracking.label}", "textCase": "uppercase" },
-      "$extensions": { "figma": "Puffy/Label/Inside", "class": ".pf-label", "use": "Eyebrows and section markers. Caps are baked in — never stack another text-transform on it." }
-    },
-    "label-micro": {
-      "$value": { "fontFamily": "{puffy.family.sans}", "fontSize": "{puffy.size.12}", "lineHeight": "{puffy.leading.15}", "fontWeight": "{puffy.weight.medium}", "letterSpacing": "{puffy.tracking.wide}", "textCase": "uppercase" },
-      "$extensions": { "figma": "Puffy/Label/Micro", "class": ".pf-label-micro", "use": "Badge interiors only." }
+    "amber-soft": {
+      "$value": "{puffy.color.amber-dark-1000}",
+      "$extensions": {
+        "css": "--icon-amber-soft"
+      }
     }
   },
-
   "effect": {
     "$type": "shadow",
-    "$description": "The five effect styles.",
-    "float": { "$value": { "offsetX": "0px", "offsetY": "4px", "blur": "16px", "spread": "0px", "color": "rgba(0,0,0,0.2)" }, "$extensions": { "use": "Floating affordances — help pill, toast." } },
-    "lift": { "$value": { "offsetX": "0px", "offsetY": "8px", "blur": "20px", "spread": "0px", "color": "rgba(0,0,0,0.5)" }, "$extensions": { "use": "An element pulled off a dark ground." } },
-    "ring-focus": { "$value": "0 0 0 3px #ffffff, 0 0 0 5px #2b2f44", "$extensions": { "use": "Keyboard focus. WCAG 2.2 · 2.4.13." } },
-    "ring-selected": { "$value": "0 0 0 3px #e0c194", "$extensions": { "use": "Selected state on imagery, where a border would be lost." } },
-    "inset-hairline": { "$value": "inset 0 0 0 1px rgba(255,255,255,0.25)", "$extensions": { "use": "Separates a light element from a light photo." } }
-  },
-
-  "motion": {
-    "duration": {
-      "$type": "duration",
-      "fast": { "$value": "150ms" },
-      "base": { "$value": "200ms" },
-      "slow": { "$value": "500ms" }
+    "subtle": {
+      "$value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "$extensions": {
+        "css": "--elevation-subtle"
+      }
     },
-    "ease": {
-      "$type": "cubicBezier",
-      "standard": { "$value": [0.4, 0, 0.2, 1] },
-      "out": { "$value": [0, 0, 0.2, 1] }
+    "medium": {
+      "$value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+      "$extensions": {
+        "css": "--elevation-medium"
+      }
+    },
+    "raised": {
+      "$value": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
+      "$extensions": {
+        "css": "--elevation-raised"
+      }
+    },
+    "sticky-bar": {
+      "$value": "0 -2px 8px 0 rgba(0, 0, 0, 0.05)",
+      "$extensions": {
+        "css": "--elevation-sticky-bar"
+      }
+    },
+    "soft-panel": {
+      "$value": "0 4px 16px 0 rgba(0, 0, 0, 0.05)",
+      "$extensions": {
+        "css": "--elevation-soft-panel"
+      }
     }
   },
-
+  "motion": {
+    "$type": "other",
+    "curve": {
+      "$value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      "$extensions": {
+        "css": "--curve"
+      }
+    },
+    "ease-standard": {
+      "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "$extensions": {
+        "css": "--ease-standard"
+      }
+    },
+    "time-faster": {
+      "$value": "0.1s",
+      "$extensions": {
+        "css": "--time-faster"
+      }
+    },
+    "duration-control": {
+      "$value": "0.3s",
+      "$extensions": {
+        "css": "--duration-control"
+      }
+    },
+    "duration-action": {
+      "$value": "0.5s",
+      "$extensions": {
+        "css": "--duration-action"
+      }
+    }
+  },
   "layout": {
     "$type": "dimension",
-    "max": { "$value": "1440px" },
-    "gutter": { "$value": "32px", "$extensions": { "responsive": "24px ≤1024, 16px ≤640" } },
-    "rhs-column": { "$value": "450px", "$extensions": { "use": "Buy-box width on the source PDP." } },
-    "navbar-height": { "$value": "64px" },
-    "banner-height": { "$value": "58px" },
-    "target-min": { "$value": "44px", "$extensions": { "use": "Comfortable interactive target. WCAG 2.2 · 2.5.8 floor is 24px." } }
+    "max": {
+      "$value": "1400px",
+      "$extensions": {
+        "css": "--layout-max"
+      }
+    },
+    "max-fold": {
+      "$value": "2560px",
+      "$extensions": {
+        "css": "--layout-max-fold"
+      }
+    },
+    "gutter": {
+      "$value": "{puffy.space.16}",
+      "$extensions": {
+        "css": "--layout-gutter"
+      }
+    },
+    "navbar-height": {
+      "$value": "64px",
+      "$extensions": {
+        "css": "--navbar-height"
+      }
+    },
+    "banner-height": {
+      "$value": "58px",
+      "$extensions": {
+        "css": "--banner-height"
+      }
+    },
+    "header-height": {
+      "$value": "122px",
+      "$extensions": {
+        "css": "--header-height"
+      }
+    },
+    "rail-width": {
+      "$value": "100%",
+      "$extensions": {
+        "css": "--rail-width"
+      }
+    },
+    "thumb-w": {
+      "$value": "96px",
+      "$extensions": {
+        "css": "--thumb-w"
+      }
+    },
+    "thumb-h": {
+      "$value": "80px",
+      "$extensions": {
+        "css": "--thumb-h"
+      }
+    },
+    "target-min": {
+      "$value": "44px",
+      "$extensions": {
+        "css": "--target-min"
+      }
+    }
+  },
+  "component": {
+    "$type": "dimension",
+    "btn-height-lg": {
+      "$value": "64px",
+      "$extensions": {
+        "css": "--pf-btn-height-lg"
+      }
+    },
+    "btn-height-md": {
+      "$value": "56px",
+      "$extensions": {
+        "css": "--pf-btn-height-md"
+      }
+    },
+    "btn-height-sm": {
+      "$value": "44px",
+      "$extensions": {
+        "css": "--pf-btn-height-sm"
+      }
+    },
+    "btn-radius": {
+      "$value": "{puffy.radius.8}",
+      "$extensions": {
+        "css": "--pf-btn-radius"
+      }
+    },
+    "selector-height": {
+      "$value": "52px",
+      "$extensions": {
+        "css": "--pf-selector-height"
+      }
+    },
+    "card-radius": {
+      "$value": "{puffy.radius.8}",
+      "$extensions": {
+        "css": "--pf-card-radius"
+      }
+    },
+    "panel-radius": {
+      "$value": "{puffy.radius.12}",
+      "$extensions": {
+        "css": "--pf-panel-radius"
+      }
+    },
+    "media-radius": {
+      "$value": "{puffy.radius.20}",
+      "$extensions": {
+        "css": "--pf-media-radius"
+      }
+    }
+  },
+  "typography": {
+    "$type": "typography",
+    "heading-product-mobile": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.24}",
+        "lineHeight": "{puffy.leading.32}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Heading/Product mobile",
+        "class": ".pf-heading-product-mobile"
+      }
+    },
+    "heading-product-desktop": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.28}",
+        "lineHeight": "{puffy.leading.36}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Heading/Product desktop",
+        "class": ".pf-heading-product-desktop"
+      }
+    },
+    "heading-product-wide": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.32}",
+        "lineHeight": "{puffy.leading.40}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Heading/Product wide",
+        "class": ".pf-heading-product-wide"
+      }
+    },
+    "heading-gallery-mobile": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.20}",
+        "lineHeight": "{puffy.leading.28}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Heading/Gallery mobile",
+        "class": ".pf-heading-gallery-mobile"
+      }
+    },
+    "heading-section": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.40}",
+        "lineHeight": "{puffy.leading.48}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Heading/Section",
+        "class": ".pf-heading-section"
+      }
+    },
+    "heading-support": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.24}",
+        "lineHeight": "{puffy.leading.32}",
+        "fontWeight": "{puffy.weight.bold}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Heading/Support",
+        "class": ".pf-heading-support"
+      }
+    },
+    "heading-footer": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.20}",
+        "lineHeight": "{puffy.leading.28}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Heading/Footer",
+        "class": ".pf-heading-footer"
+      }
+    },
+    "price-large": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.32}",
+        "lineHeight": "{puffy.leading.40}",
+        "fontWeight": "{puffy.weight.bold}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Price/Large",
+        "class": ".pf-price-large"
+      }
+    },
+    "price-small": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.16}",
+        "lineHeight": "{puffy.leading.24}",
+        "fontWeight": "{puffy.weight.bold}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Price/Small",
+        "class": ".pf-price-small"
+      }
+    },
+    "label-product-badge": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.14}",
+        "lineHeight": "{puffy.leading.20}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Label/Product badge",
+        "class": ".pf-label-product-badge"
+      }
+    },
+    "body-small": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.14}",
+        "lineHeight": "{puffy.leading.20}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Body/Small",
+        "class": ".pf-body-small"
+      }
+    },
+    "body-default": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.16}",
+        "lineHeight": "{puffy.leading.24}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Body/Default",
+        "class": ".pf-body-default"
+      }
+    },
+    "body-large": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.18}",
+        "lineHeight": "{puffy.leading.24}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Body/Large",
+        "class": ".pf-body-large"
+      }
+    },
+    "body-benefit-desktop": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.16}",
+        "lineHeight": "{puffy.leading.24}",
+        "fontWeight": "{puffy.weight.medium}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Body/Benefit desktop",
+        "class": ".pf-body-benefit-desktop"
+      }
+    },
+    "body-benefit-mobile": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.18}",
+        "lineHeight": "{puffy.leading.24}",
+        "fontWeight": "{puffy.weight.medium}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Body/Benefit mobile",
+        "class": ".pf-body-benefit-mobile"
+      }
+    },
+    "label-section": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.20}",
+        "lineHeight": "{puffy.leading.28}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Label/Section",
+        "class": ".pf-label-section"
+      }
+    },
+    "label-control": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.18}",
+        "lineHeight": "{puffy.leading.18}",
+        "fontWeight": "{puffy.weight.medium}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Label/Control",
+        "class": ".pf-label-control"
+      }
+    },
+    "label-control-selected": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.18}",
+        "lineHeight": "{puffy.leading.18}",
+        "fontWeight": "{puffy.weight.bold}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Label/Control selected",
+        "class": ".pf-label-control-selected"
+      }
+    },
+    "action-primary": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.20}",
+        "lineHeight": "{puffy.leading.25}",
+        "fontWeight": "{puffy.weight.medium}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Action/Primary",
+        "class": ".pf-action-primary"
+      }
+    },
+    "action-link": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.16}",
+        "lineHeight": "{puffy.leading.24}",
+        "fontWeight": "{puffy.weight.medium}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Action/Link",
+        "class": ".pf-action-link"
+      }
+    },
+    "label-inside": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.14}",
+        "lineHeight": "{puffy.leading.20}",
+        "fontWeight": "{puffy.weight.semibold}",
+        "letterSpacing": "{puffy.tracking.label}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Label/Inside",
+        "class": ".pf-label-inside"
+      }
+    },
+    "label-caption": {
+      "$value": {
+        "fontFamily": "{puffy.family.sans}",
+        "fontSize": "{puffy.size.14}",
+        "lineHeight": "{puffy.leading.20}",
+        "fontWeight": "{puffy.weight.medium}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Label/Caption",
+        "class": ".pf-label-caption"
+      }
+    },
+    "heading-product": {
+      "$value": {
+        "fontFamily": "{puffy.family.serif}",
+        "fontSize": "{puffy.size.24}",
+        "lineHeight": "{puffy.leading.32}",
+        "fontWeight": "{puffy.weight.regular}",
+        "letterSpacing": "{puffy.tracking.none}"
+      },
+      "$extensions": {
+        "figma": "Puffy/Heading/Product",
+        "class": ".pf-heading-product"
+      }
+    }
   }
 }

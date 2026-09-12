@@ -27,7 +27,7 @@
     grid-template-columns: repeat(4, 1fr);
     max-width: 520px;
     margin-block: var(--puffy-space-48);
-    border-radius: var(--puffy-radius-pill);
+    border-radius: var(--puffy-radius-full);
     overflow: hidden;
   }
   .home__rule span { height: 12px; }
@@ -42,8 +42,8 @@
     padding: var(--puffy-space-24);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: var(--pf-panel-radius);
-    transition: background-color var(--duration-base) var(--ease-standard),
-                border-color var(--duration-base) var(--ease-standard);
+    transition: background-color var(--duration-control) var(--ease-standard),
+                border-color var(--duration-control) var(--ease-standard);
   }
   .home__card:hover { background: rgba(255, 255, 255, 0.06); border-color: var(--highlight-soft); }
   .home__card h2 { color: var(--base-white); margin-bottom: var(--puffy-space-6); }
@@ -59,9 +59,9 @@
 <main class="home">
   <div class="pf-container">
     <img class="home__logo" src="system/icons/logo.svg" alt="Puffy" width="149" height="36">
-    <p class="pf-label" style="color: var(--highlight-soft)">Puffy &nbsp;/&nbsp; Foundations &nbsp;/&nbsp; v1.0</p>
+    <p class="pf-label-inside pf-uppercase" style="color: var(--highlight-soft)">Puffy &nbsp;/&nbsp; Foundations &nbsp;/&nbsp; v1.0</p>
     <h1 class="pf-heading-section" style="color: var(--base-white)">Comfort, made consistent.</h1>
-    <p class="pf-body-lg home__lede">
+    <p class="pf-body-large home__lede">
       A tokenised design system extracted from the Lux mattress PDP, so new pages can be
       built in the existing design language instead of re-deriving it each time.
     </p>
@@ -76,22 +76,22 @@
     <nav class="home__links" aria-label="Sections">
       <a class="home__card" href="style-guide/">
         <h2 class="pf-heading-support">Style guide</h2>
-        <p class="pf-body-sm">Tokens, type, components, and the rules for using them — generated live from the stylesheet.</p>
-        <span class="pf-caption">Open →</span>
+        <p class="pf-body-small">Tokens, type, components, and the rules for using them — generated live from the stylesheet.</p>
+        <span class="pf-label-caption">Open →</span>
       </a>
       <a class="home__card" href="baseline/">
         <h2 class="pf-heading-support">Source baseline</h2>
-        <p class="pf-body-sm">A 1:1 replica of the live Lux PDP. The reference floor the redesign has to beat.</p>
-        <span class="pf-caption">Open →</span>
+        <p class="pf-body-small">A 1:1 replica of the live Lux PDP. The reference floor the redesign has to beat.</p>
+        <span class="pf-label-caption">Open →</span>
       </a>
       <a class="home__card" href="pages/_template.html">
         <h2 class="pf-heading-support">Page template</h2>
-        <p class="pf-body-sm">A working starting point with the scaffolding and the pre-ship checklist in place.</p>
-        <span class="pf-caption">Open →</span>
+        <p class="pf-body-small">A working starting point with the scaffolding and the pre-ship checklist in place.</p>
+        <span class="pf-label-caption">Open →</span>
       </a>
     </nav>
 
-    <p class="pf-body-sm home__foot">
+    <p class="pf-body-small home__foot">
       Lux PDP &nbsp;·&nbsp; Source-derived reference &nbsp;·&nbsp; September 2026<br>
       <a href="https://github.com/karimdhammani/puffy-pdp-design-system">Repository and documentation on GitHub</a>
     </p>
