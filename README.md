@@ -28,6 +28,7 @@ This repository turns that implicit language into something you can build agains
 | | |
 |---|---|
 | **One source of truth** | 137 CSS custom properties in three tiers. A component asks for `--fill-cta`, never `#2b2f44`. |
+| **Audited, not asserted** | Six WCAG 2.2 AA findings measured against production — see [`findings/`](findings/). |
 | **Machine-readable** | The same tokens in W3C DTCG JSON — imports into Figma Variables, Style Dictionary, or Tokens Studio, and briefs an LLM on the design language in one paste. |
 | **Provably in sync** | `npm run check` resolves both files to literal values and diffs them. 179 values, currently matching. |
 | **Accessible by construction** | Contrast, focus, and target size are properties of the tokens. Every pairing in the style guide states its measured ratio. |
@@ -39,7 +40,7 @@ This repository turns that implicit language into something you can build agains
 ```
 system/                 The design system. This is the product.
   01-tokens.css           Tier 1 primitives → Tier 2 semantic → Tier 3 component
-  02-base.css             Reset, a11y floor, the 12 type styles
+  02-base.css             Reset, a11y floor, type styles (see note below)
   03-components.css       17 components, each with its real states
   04-utilities.css        Layout primitives and single-purpose helpers
   puffy.css               Single entry point — one <link> gets you everything
@@ -53,6 +54,10 @@ style-guide/            The living style guide. Generated from the stylesheet,
 
 baseline/               1:1 replica of the live Lux PDP. The reference floor —
                         what "no worse than today" actually looks like.
+
+findings/               Evidence gathered against the live site.
+  accessibility-audit.md  WCAG 2.2 AA audit — six findings, measured
+  audit.js                the script behind them, re-runnable on any page
 
 pages/                  New pages built on the system.
   _template.html          Start here.
@@ -132,11 +137,19 @@ metrics were read back from the library itself rather than transcribed, so
 `Puffy/Heading/Section` in Figma and `.pf-heading-section` in CSS are guaranteed to be
 the same 40/48 PT Serif Regular.
 
-The library holds 256 variables, 22 text styles, and 5 effect styles. Values read back
-directly from it so far cover the colour roles (`--fill-cta`, `--fill-offer`, `--bg-soft`,
-`--bg-sub-soft`, `--bg-base-white`, `--success`, `--highlight-soft`, `--highlight-strong`,
-`--text-strong`, `--text-soft`, `--icon-strong`), the `puffy/space/*` and `puffy/radius/*`
-scales, and 8 of the text styles.
+The library holds 256 variables, 22 text styles, and 5 effect styles across eleven pages.
+Values read back directly from it cover the colour roles (`--fill-cta`, `--fill-offer`,
+`--bg-soft`, `--bg-sub-soft`, `--bg-base-white`, `--success`, `--highlight-soft`,
+`--highlight-strong`, `--text-strong`, `--text-soft`, `--icon-strong`) and the
+`puffy/space/*` and `puffy/radius/*` scales.
+
+> **Known gap — typography.** `02-base.css` currently ships **12** text styles. Figma page
+> `03 · Typography` defines **22**, including a responsive product-title ramp
+> (`Heading/Product mobile` 24/32 → `desktop` 28/36 → `wide` 32/40), `Price/Small`,
+> `Label/Control` and `Label/Control selected`, `Action/Primary`, `Action/Link`,
+> `Heading/Footer`, and `Heading/Gallery mobile`. The 12 that ship have correct metrics,
+> but the set is incomplete and some class names don't match the Figma names. Reconciling
+> to all 22 is the next change.
 
 **The live source CSS** — the rest is derived from puffy.com's own `:root` and the Lux PDP
 stylesheet, using the naming convention Figma established. Token names are kept 1:1 with
@@ -153,18 +166,22 @@ The baseline is preserved unmodified as the reference floor. The system delibera
 diverges from it in three places:
 
 All three were verified against production `puffy.com/products/puffy-lux-mattress`, not
-just against the local replica.
+just against the local replica. Full evidence and three further page-level findings are
+in [`findings/accessibility-audit.md`](findings/accessibility-audit.md).
 
 1. **Interactive borders.** Unselected size selectors on the live PDP carry
    `1px solid rgb(213,210,204)` — `--border-soft` / #d5d2cc — on a white ground. Measured:
    **1.51:1**, against the 3:1 that WCAG 2.2 · 1.4.11 requires for the boundary of a UI
-   component. Nine interactive elements on the live page share that border. The selected
-   state is fine (#333333, 12.63:1); it's the unselected control boundaries that fail.
+   component. Eight elements share that exact pairing, and the full audit found seven
+   failing border/ground pairings across 25 elements. The selected state is fine
+   (#333333, 12.63:1); it's the unselected control boundaries that fail.
    The system uses `--border-sub-strong` (**3.35:1**) for anything interactive and keeps
    `--border-soft` for dividers, where the criterion doesn't apply.
 
-2. **Focus.** The source has no consistent focus treatment. The system defines one ring in
-   `02-base.css`, inverted on dark grounds, and never removes it.
+2. **Focus.** *Not a defect in the source* — tabbing to a control matches
+   `:focus-visible` and paints the browser's default ring, so 2.4.7 passes. What's missing
+   is a *designed* indicator with a known contrast on both the white and navy grounds. The
+   system defines one ring in `02-base.css`, inverted on dark, and never removes it.
 
 3. **Semantics.** The live size buttons are bare `<button>`s — no `role`, no `aria-checked`,
    no `aria-pressed`. The selected size is conveyed by border and background alone, so it
