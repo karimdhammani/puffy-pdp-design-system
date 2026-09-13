@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puffy Lux Hybrid Mattress — Puffy</title>
+<meta name="description" content="Puffy Lux Hybrid Mattress — 8 layers, 12&quot; profile, memory foam and Contour-Adapt wrapped coils. 365-night sleep trial, lifetime warranty, free shipping.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap">
+
+<!-- The whole design system. Nothing else should be needed. -->
+<link rel="stylesheet" href="../system/puffy.css">
+<!-- Patterns this page proves before they earn a place in the system. -->
+<link rel="stylesheet" href="lux-pdp-fold.css">
+</head>
+
+<body class="pf-fold">
+<a class="pf-skip-link" href="#main">Skip to content</a>
+
+<!-- ========================================================================
+     HEADER — 96px total. The live header costs 122px (64 navbar + 58 promo
+     banner) and pushes price and Add to Cart off a 900px screen. The banner
+     is cut to a 30px line that says something true, which buys back 26px.
+     ===================================================================== -->
+<header class="pf-fold__header">
+  <p class="pf-fold__announce pf-label-caption pf-uppercase">
+    Try the Lux Hybrid in person — 500+ showrooms across the US &amp; Canada
+  </p>
+
+  <nav class="pf-fold__navbar" aria-label="Primary">
+    <a class="pf-fold__logo" href="#main">
+      <img src="../system/icons/logo-ink.svg" alt="Puffy" width="104" height="25">
+    </a>
+
+    <ul class="pf-fold__nav">
+      <li><a class="pf-fold__nav-link pf-action-link" href="#main">Mattresses</a></li>
+      <li><a class="pf-fold__nav-link pf-action-link" href="#main">Bedding</a></li>
+      <li><a class="pf-fold__nav-link pf-action-link" href="#main">Bundles</a></li>
+      <li><a class="pf-fold__nav-link pf-action-link" href="#reviews">Reviews</a></li>
+    </ul>
+
+    <div class="pf-fold__nav-actions">
+      <button class="pf-fold__icon-btn" type="button" aria-label="Search">
+        <img class="pf-icon" src="../system/icons/search-ink.svg" alt="">
+      </button>
+      <button class="pf-fold__icon-btn" type="button" aria-label="Cart, 0 items">
+        <img class="pf-icon" src="../system/icons/cart-ink.svg" alt="">
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ========================================================================
+     THE FOLD — 804px. Media left, buy rail right. Everything a first-time
+     visitor needs to answer "what is this, why is it premium, what does it
+     cost, how do I buy it" sits inside it, in that order.
+
+     Nothing was designed below y=900, so the page ends here.
+     ===================================================================== -->
+<main id="main" class="pf-fold__body">
+
+  <!-- ---------------------------------------------------------------- Media -->
+  <section class="pf-fold__media-col" aria-label="Product media">
+
+    <div class="pf-media" id="pf-media">
+      <!-- The cutaway sits underneath; the dressed photograph is clipped back
+           to reveal it, so the comparison happens in place. -->
+      <img class="pf-media__layer" id="pf-xray" src="assets/xray-room.png"
+           alt="Cutaway of the Lux Hybrid showing its internal layers in the same bedroom">
+      <img class="pf-media__layer pf-media__hero" id="pf-hero" src="../baseline/assets/gallery/01.jpg"
+           alt="Puffy Lux Hybrid mattress dressed in white linen in a sunlit bedroom">
+
+      <div class="pf-media__reveal" id="pf-reveal" hidden>
+        <div class="pf-media__divider" id="pf-handle"
+             role="slider" tabindex="0"
+             aria-label="Reveal what is inside"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="52" aria-valuetext="52% revealed">
+          <span class="pf-media__grip" aria-hidden="true">
+            <img src="../system/icons/chevron-down.svg" alt="" class="pf-media__grip-left">
+            <img src="../system/icons/chevron-down.svg" alt="" class="pf-media__grip-right">
+          </span>
+        </div>
+
+        <div class="pf-media__legend">
+          <p class="pf-label-caption pf-uppercase pf-media__legend-title">Inside · 8 layers</p>
+          <ol class="pf-media__layers">
+            <li class="pf-body-small">1 · Cooling Cloud&trade; gel foam, 2"</li>
+            <li class="pf-body-small">2 · Plush Dual Cloud comfort foam</li>
+            <li class="pf-body-small">3 · Contour-Adapt wrapped coils</li>
+            <li class="pf-body-small">4 · Firm Core support base</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- One award, placed where it supports the claim rather than
+           decorating the photograph. -->
+      <p class="pf-media__award" id="pf-award">
+        <img class="pf-icon pf-icon--28" src="../system/icons/badge-best-luxury-2026.svg" alt="">
+        <span class="pf-label-caption pf-uppercase">Best Luxury Mattress 2026</span>
+      </p>
+
+      <button class="pf-media__pill" type="button" id="pf-reveal-btn" aria-expanded="false" aria-controls="pf-reveal">
+        <img class="pf-icon pf-icon--20" id="pf-reveal-icon" src="../system/icons/layers-ink.svg" alt="">
+        <span class="pf-body-small pf-media__pill-label" id="pf-reveal-label">See what's inside</span>
+      </button>
+
+      <div class="pf-media__nav">
+        <button class="pf-media__step" type="button" id="pf-prev" aria-label="Previous image">
+          <img src="../system/icons/chevron-down.svg" alt="" class="pf-media__grip-left">
+        </button>
+        <button class="pf-media__step" type="button" id="pf-next" aria-label="Next image">
+          <img src="../system/icons/chevron-down.svg" alt="" class="pf-media__grip-right">
+        </button>
+      </div>
+    </div>
+
+    <div class="pf-thumbs" role="group" aria-label="Product gallery">
+      <button class="pf-thumb is-current" type="button" data-slide="0" aria-current="true"
+              data-src="../baseline/assets/gallery/01.jpg" data-xray="assets/xray-room.png"
+              data-alt="Puffy Lux Hybrid mattress dressed in white linen in a sunlit bedroom"
+              aria-label="Bedroom view">
+        <img src="../baseline/assets/thumbs/01.jpg" alt="">
+      </button>
+      <button class="pf-thumb" type="button" data-slide="1" aria-current="false"
+              data-src="../baseline/assets/gallery/06.jpg"
+              data-alt="The eight layers of the Lux Hybrid, shown in cross-section"
+              aria-label="Layer construction">
+        <img src="../baseline/assets/thumbs/06.jpg" alt="">
+      </button>
+      <button class="pf-thumb" type="button" data-slide="2" aria-current="false"
+              data-src="../baseline/assets/gallery/04.jpg"
+              data-alt="A sleeper's shoulder and hip sinking into the plush top layer"
+              aria-label="Pressure relief">
+        <img src="../baseline/assets/thumbs/04.jpg" alt="">
+      </button>
+      <button class="pf-thumb" type="button" data-slide="3" aria-current="false"
+              data-src="../baseline/assets/gallery/03.jpg"
+              data-alt="Close-up of the quilted cover and the stitched side panel"
+              aria-label="Quilted cover detail">
+        <img src="../baseline/assets/thumbs/03.jpg" alt="">
+      </button>
+      <button class="pf-thumb" type="button" data-slide="4" aria-current="false"
+              data-src="../baseline/assets/gallery/09.jpg"
+              data-alt="The reinforced edge of the mattress holding its shape under weight"
+              aria-label="Edge-to-edge support">
+        <img src="../baseline/assets/thumbs/09.jpg" alt="">
+      </button>
+      <a class="pf-thumbs__all pf-body-small" href="#main">View all 11</a>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------------------- Rail -->
+  <section class="pf-rail" aria-label="Buy the Puffy Lux Hybrid Mattress">
+
+    <p class="pf-label-caption pf-uppercase pf-rail__eyebrow">Lux Collection · Hybrid</p>
+
+    <h1 class="pf-heading-product-wide pf-rail__title">Puffy <b>LUX</b> Hybrid Mattress</h1>
+
+    <p class="pf-rating pf-rail__rating" id="reviews">
+      <span class="pf-rating__stars" aria-hidden="true">
+        <img src="../system/icons/star.svg" alt=""><img src="../system/icons/star.svg" alt=""><img src="../system/icons/star.svg" alt=""><img src="../system/icons/star.svg" alt=""><img src="../system/icons/star.svg" alt="">
+      </span>
+      <b class="pf-body-small pf-rail__score">4.9</b>
+      <!-- The number is brand-wide. Say what it is actually counting. -->
+      <a class="pf-label-caption pf-rail__reviews" href="#reviews">based on all 14,072 Puffy Mattress reviews</a>
+    </p>
+
+    <ul class="pf-rail__claims">
+      <li class="pf-rail__claim">
+        <img class="pf-icon pf-icon--32" src="../system/icons/cooling-cloud.svg" alt="">
+        <span>
+          <b class="pf-body-small">Stay cool all night</b>
+          <span class="pf-body-small pf-pretty">Advanced cooling with the Cooling Cloud&trade; layer</span>
+        </span>
+      </li>
+      <li class="pf-rail__claim">
+        <img class="pf-icon pf-icon--32" src="../system/icons/back-support.svg" alt="">
+        <span>
+          <b class="pf-body-small">Cushioned back support</b>
+          <span class="pf-body-small pf-pretty">Contour-Adapt coils, endorsed by chiropractic experts</span>
+        </span>
+      </li>
+      <li class="pf-rail__claim">
+        <img class="pf-icon pf-icon--32" src="../system/icons/medium-plush-ink.svg" alt="">
+        <span>
+          <b class="pf-body-small">Plush on top, firm below</b>
+          <span class="pf-body-small pf-pretty">12" of luxurious comfort across 8 layers</span>
+        </span>
+      </li>
+    </ul>
+
+    <hr class="pf-rail__rule">
+
+    <p class="pf-rail__price">
+      <span class="pf-price-large" id="pf-price">$1,549</span>
+      <span class="pf-rail__value">
+        <span class="pf-body-small">(Total Value <s id="pf-value">$2,899</s>)</span>
+        <img src="../system/icons/info-dark.svg" class="pf-icon pf-icon--16"
+             alt="Total value is the price of this mattress plus the included upgrade and bedding bundle">
+      </span>
+    </p>
+
+    <!-- One APR, one divisor: the monthly figure now rises with the price.
+         On the live page it falls, because the term silently changes. -->
+    <p class="pf-body-small pf-rail__affirm">
+      Starting at <span id="pf-monthly">$97</span>/mo or 0% APR with <b>Affirm.</b>
+      <a class="pf-rail__affirm-link" href="#main">See if you qualify</a>.
+    </p>
+
+    <button class="pf-rail__size" type="button" id="pf-size-open" aria-haspopup="dialog">
+      <span class="pf-rail__size-current">
+        <span class="pf-label-caption pf-uppercase pf-rail__size-key">Size</span>
+        <span class="pf-heading-product-desktop pf-rail__size-name" id="pf-size-name">Queen</span>
+        <span class="pf-body-small pf-rail__size-dims" id="pf-size-dims">60" × 80"</span>
+      </span>
+      <span class="pf-action-link pf-rail__size-change">
+        Change size
+        <img src="../system/icons/chevron-down.svg" alt="" class="pf-media__grip-right">
+      </span>
+    </button>
+    <p class="pf-label-caption pf-rail__fit" id="pf-fit">Fits a room 10′ × 10′ or larger · two sleepers</p>
+
+    <!-- One offer, stated once. The live page runs "Royal + $900" and
+         "FREE Upgrade Included" against each other in the same rail. -->
+    <div class="pf-rail__cta">
+      <button class="pf-btn pf-btn--primary pf-btn--lg pf-rail__cta-btn" type="button" id="pf-add">
+        <span class="pf-rail__cta-label" id="pf-cta-label">Add to Cart</span>
+        <img src="../system/icons/cart.svg" alt="" class="pf-rail__cta-icon">
+      </button>
+      <button class="pf-rail__offer" type="button" id="pf-offer">
+        <img src="../system/icons/gift-amber.svg" alt="" class="pf-rail__offer-icon">
+        <span class="pf-label-caption pf-nowrap">
+          Get free upgrade to the 10-layer <b>Royal</b> — worth <span class="pf-rail__offer-worth">$2,449</span>, no extra cost
+        </span>
+      </button>
+    </div>
+
+    <p class="pf-rail__ship">
+      <img class="pf-icon pf-icon--20" src="../system/icons/delivery.svg" alt="">
+      <span class="pf-body-small" id="pf-ship">Ships in 1–2 days · free delivery &amp; returns</span>
+    </p>
+
+    <p class="pf-body-small pf-rail__included">
+      Included with every Lux Hybrid — 2 Signature Pillows and 2 Sleep Masks, worth $390
+    </p>
+
+    <ul class="pf-rail__trust">
+      <li class="pf-benefit pf-rail__trust-item">
+        <img class="pf-icon pf-icon--28" src="../system/icons/sleep-trial.svg" alt="">
+        <span class="pf-label-caption">365-Night<br>Sleep Trial</span>
+      </li>
+      <li class="pf-benefit pf-rail__trust-item">
+        <img class="pf-icon pf-icon--28" src="../system/icons/warranty.svg" alt="">
+        <span class="pf-label-caption">Lifetime<br>Warranty</span>
+      </li>
+      <li class="pf-benefit pf-rail__trust-item">
+        <img class="pf-icon pf-icon--28" src="../system/icons/badge-chiropractic.svg" alt="">
+        <span class="pf-label-caption">Chiropractic<br>Endorsed</span>
+      </li>
+      <li class="pf-benefit pf-rail__trust-item">
+        <img class="pf-icon pf-icon--28" src="../system/icons/usa-flag-ink.svg" alt="">
+        <span class="pf-label-caption">Assembled<br>in USA</span>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<!-- ========================================================================
+     SIZE DIALOG — size is a fixed need, not a browse. The rail states the
+     selection; the dialog draws every size to scale with room-fit guidance
+     and names each unavailable size with a reason and a date.
+     ===================================================================== -->
+<dialog class="pf-sizes" id="pf-sizes" aria-labelledby="pf-sizes-title">
+  <div class="pf-sizes__head">
+    <div class="pf-sizes__intro">
+      <p class="pf-label-caption pf-uppercase pf-sizes__step">Step 1 of 1</p>
+      <h2 class="pf-heading-product-wide" id="pf-sizes-title">Choose your size</h2>
+      <p class="pf-body-small pf-sizes__note">Dimensions are the mattress itself — allow 24–30" of walking space on each side you'll use.</p>
+    </div>
+    <button class="pf-fold__icon-btn" type="button" id="pf-sizes-close" aria-label="Close">
+      <img class="pf-icon" src="../system/icons/close.svg" alt="">
+    </button>
+  </div>
+
+  <div class="pf-sizes__grid" role="radiogroup" aria-label="Size" id="pf-sizes-grid">
+    <button class="pf-size-card" type="button" role="radio" aria-checked="false" data-size="twin"    data-price="749"  style="--w:38; --l:75">
+      <span class="pf-size-card__scale"><span class="pf-size-card__box"><span class="pf-label-caption">38×75</span></span></span>
+      <span class="pf-size-card__row"><span class="pf-heading-product-desktop pf-size-card__name">Twin</span><span class="pf-body-small">$749</span></span>
+      <span class="pf-body-small pf-size-card__dims">38" × 75" · one piece</span>
+      <span class="pf-label-caption pf-size-card__status pf-text-success">In stock — ships in 1–2 days</span>
+    </button>
+
+    <button class="pf-size-card" type="button" role="radio" aria-checked="false" aria-disabled="true" data-size="twin-xl" data-price="799" data-blocked style="--w:38; --l:80">
+      <span class="pf-size-card__scale"><span class="pf-size-card__box"><span class="pf-label-caption">38×80</span></span></span>
+      <span class="pf-size-card__row"><span class="pf-heading-product-desktop pf-size-card__name">Twin XL</span><span class="pf-body-small">$799</span></span>
+      <span class="pf-body-small pf-size-card__dims">38" × 80" · one piece</span>
+      <span class="pf-label-caption pf-size-card__status pf-text-warning">Out of stock — back 26 Sept · Notify me</span>
+    </button>
+
+    <button class="pf-size-card" type="button" role="radio" aria-checked="false" aria-disabled="true" data-size="full" data-price="999" data-blocked style="--w:54; --l:75">
+      <span class="pf-size-card__scale"><span class="pf-size-card__box"><span class="pf-label-caption">54×75</span></span></span>
+      <span class="pf-size-card__row"><span class="pf-heading-product-desktop pf-size-card__name">Full</span><span class="pf-body-small">$999</span></span>
+      <span class="pf-body-small pf-size-card__dims">54" × 75" · one piece</span>
+      <span class="pf-label-caption pf-size-card__status pf-text-warning">Out of stock — back 3 Oct · Notify me</span>
+    </button>
+
+    <button class="pf-size-card" type="button" role="radio" aria-checked="true" data-size="queen" data-price="1549" style="--w:60; --l:80">
+      <span class="pf-size-card__scale"><span class="pf-size-card__box"><span class="pf-label-caption">60×80</span></span></span>
+      <span class="pf-size-card__row"><span class="pf-heading-product-desktop pf-size-card__name">Queen</span><span class="pf-body-small">$1,549</span></span>
+      <span class="pf-body-small pf-size-card__dims">60" × 80" · one piece</span>
+      <span class="pf-label-caption pf-size-card__status pf-text-success">In stock — ships in 1–2 days</span>
+    </button>
+
+    <button class="pf-size-card" type="button" role="radio" aria-checked="false" data-size="king" data-price="1749" style="--w:76; --l:80">
+      <span class="pf-size-card__scale"><span class="pf-size-card__box"><span class="pf-label-caption">76×80</span></span></span>
+      <span class="pf-size-card__row"><span class="pf-heading-product-desktop pf-size-card__name">King</span><span class="pf-body-small">$1,749</span></span>
+      <span class="pf-body-small pf-size-card__dims">76" × 80" · one piece</span>
+      <span class="pf-label-caption pf-size-card__status pf-text-success">In stock — ships in 1–2 days</span>
+    </button>
+
+    <button class="pf-size-card" type="button" role="radio" aria-checked="false" data-size="cal-king" data-price="1749" style="--w:72; --l:84">
+      <span class="pf-size-card__scale"><span class="pf-size-card__box"><span class="pf-label-caption">72×84</span></span></span>
+      <span class="pf-size-card__row"><span class="pf-heading-product-desktop pf-size-card__name">Cal King</span><span class="pf-body-small">$1,749</span></span>
+      <span class="pf-body-small pf-size-card__dims">72" × 84" · one piece</span>
+      <span class="pf-label-caption pf-size-card__status pf-text-success">In stock — ships in 1–2 days</span>
+    </button>
+
+    <button class="pf-size-card" type="button" role="radio" aria-checked="false" data-size="split-king" data-price="1899" data-split style="--w:76; --l:80">
+      <span class="pf-size-card__scale"><span class="pf-size-card__box pf-size-card__box--split"><span class="pf-label-caption">76×80</span></span></span>
+      <span class="pf-size-card__row"><span class="pf-heading-product-desktop pf-size-card__name">Split King</span><span class="pf-body-small">$1,899</span></span>
+      <span class="pf-body-small pf-size-card__dims">76" × 80" · two sections</span>
+      <span class="pf-label-caption pf-size-card__status pf-text-soft">Made to order — ships in 3 weeks</span>
+    </button>
+
+    <button class="pf-size-card" type="button" role="radio" aria-checked="false" data-size="shq" data-price="1749" data-split style="--w:60; --l:80">
+      <span class="pf-size-card__scale"><span class="pf-size-card__box pf-size-card__box--split"><span class="pf-label-caption">60×80</span></span></span>
+      <span class="pf-size-card__row"><span class="pf-heading-product-desktop pf-size-card__name">Split Head Queen</span><span class="pf-body-small">$1,749</span></span>
+      <span class="pf-body-small pf-size-card__dims">60" × 80" · two sections</span>
+      <span class="pf-label-caption pf-size-card__status pf-text-soft">Made to order — ships in 3 weeks</span>
+    </button>
+
+    <button class="pf-size-card" type="button" role="radio" aria-checked="false" data-size="shk" data-price="1999" data-split style="--w:76; --l:80">
+      <span class="pf-size-card__scale"><span class="pf-size-card__box pf-size-card__box--split"><span class="pf-label-caption">76×80</span></span></span>
+      <span class="pf-size-card__row"><span class="pf-heading-product-desktop pf-size-card__name">Split Head King</span><span class="pf-body-small">$1,999</span></span>
+      <span class="pf-body-small pf-size-card__dims">76" × 80" · two sections</span>
+      <span class="pf-label-caption pf-size-card__status pf-text-soft">Made to order — ships in 3 weeks</span>
+    </button>
+  </div>
+
+  <div class="pf-sizes__foot">
+    <p class="pf-sizes__foot-note">
+      <img class="pf-icon pf-icon--20" src="../system/icons/info-dark.svg" alt="">
+      <span class="pf-body-small pf-pretty">Unavailable sizes are named with a reason and a date, never struck through. Split-head and split sizes are made to order for adjustable bases. <a href="#main">Full size &amp; room-fit guide</a></span>
+    </p>
+    <p class="pf-sizes__actions">
+      <button class="pf-btn pf-btn--quiet pf-btn--md" type="button" id="pf-sizes-cancel">Cancel</button>
+      <button class="pf-btn pf-btn--primary pf-btn--md pf-sizes__confirm" type="button" id="pf-sizes-confirm">
+        <span class="pf-btn__label" id="pf-sizes-confirm-label">Keep Queen</span>
+      </button>
+    </p>
+  </div>
+</dialog>
+
+<p class="pf-sr-only" role="status" aria-live="polite" id="pf-live"></p>
+
+<script src="lux-pdp-fold.js"></script>
+</body>
+</html>

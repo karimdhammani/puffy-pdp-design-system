@@ -61,6 +61,8 @@ findings/               Evidence gathered against the live site.
 
 pages/                  New pages built on the system.
   _template.html          Start here.
+  lux-pdp-fold.html       Lux Hybrid PDP, above the fold (1440 x 900).
+  assets/                 Art belonging to a page rather than to the system.
 
 tools/
   build-tokens.js         Generates the DTCG JSON from the CSS

@@ -269,6 +269,7 @@
   --fill-green-soft: var(--green-light-50);
   --fill-amber-strong: var(--amber-light-1000);
   --fill-amber-soft: var(--amber-light-50);
+  --fill-amber-glass: var(--amber-light-200);  /* translucent — for badges over photography */
   --fill-red-strong: var(--red-light-1000);
   --fill-red-soft: var(--red-light-50);
 
@@ -344,6 +345,8 @@
   --pf-card-radius: var(--puffy-radius-8);
   --pf-panel-radius: var(--puffy-radius-12);
   --pf-media-radius: var(--puffy-radius-20);
+
+  --text-price: var(--text-strong);  /* the price is ink, not a discount colour */
 }
 
 /* ==========================================================================

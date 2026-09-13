@@ -802,6 +802,12 @@
       "$extensions": {
         "css": "--text-sub-soft"
       }
+    },
+    "price": {
+      "$value": "{text.strong}",
+      "$extensions": {
+        "css": "--text-price"
+      }
     }
   },
   "highlight": {
@@ -1032,6 +1038,12 @@
       "$value": "{puffy.color.amber-light-50}",
       "$extensions": {
         "css": "--fill-amber-soft"
+      }
+    },
+    "amber-glass": {
+      "$value": "{puffy.color.amber-light-200}",
+      "$extensions": {
+        "css": "--fill-amber-glass"
       }
     },
     "red-strong": {
